@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/app-cms
+app-cms.so
+app-cms.dylib
+app-cms.dll
+app-cms.a
+app-cms.lib
+app-cms-test-*
+*.exe
+*.o
+*.obj
+*.lst

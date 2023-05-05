@@ -1,9 +1,69 @@
 {
-	"authors": [
-		"oz"
-	],
-	"copyright": "Copyright © 2022, oz",
+	"name": "app-cms",
 	"description": "A minimal D application.",
-	"license": "proprietary",
-	"name": "app-cms"
+	"authors": [
+		"Sicherheitsschmiede",
+		"Ozan Nurettin Süel"
+	],
+	"copyright": "Copyright © 2015-2023, Ozan Nurettin Süel",	
+	"license": "Apache-2.0",
+	"configurations": [
+		{
+			"name": "offline",
+			"targetType": "library"
+		},
+		{
+			"name": "test",
+			"targetType": "library",
+			"versions": [
+				"test_uim_cms"
+			]
+		}
+	],
+	"dependencies": {
+		"colored": "~>0.0.31",
+		"vibe-d": "~>0.9.6"
+	},
+	"importPaths": [
+		"../../LIBS/uim-core",
+		"../../LIBS/uim-oop",
+		"../../LIBS/uim-css",
+		"../../LIBS/uim-mvc",
+		"../../LIBS/uim-html",
+		"../../LIBS/uim-bootstrap",
+		"../../LIBS/uim-controls",
+		"../../LIBS/uim-apps",
+		"../../LIBS/uim-servers",
+		"../../LIBS/uim-jsonbase",
+		"../../LIBS/uim-models",
+		"../../LIBS/uim-entitybase",
+
+		"../../MODELS/model-cms",
+
+		"../../LANGS/lang-javascript",
+
+		"../../LAYOUTS/layout-tabler/source/layouts",
+		"./"
+	],
+	"sourcePaths": [
+		"../../LIBS/uim-core",
+		"../../LIBS/uim-oop",
+		"../../LIBS/uim-css",
+		"../../LIBS/uim-mvc",
+		"../../LIBS/uim-html",
+		"../../LIBS/uim-bootstrap",
+		"../../LIBS/uim-controls",
+		"../../LIBS/uim-apps",
+		"../../LIBS/uim-servers",
+		"../../LIBS/uim-jsonbase",
+		"../../LIBS/uim-models",
+		"../../LIBS/uim-entitybase",
+		
+		"../../MODELS/model-cms",
+
+		"../../LANGS/lang-javascript",
+		"../../LAYOUTS/layout-tabler/source/layouts",
+		"./"
+	],
+	"targetType": "library"
 }

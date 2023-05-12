@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.offers.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSOffersCreateActionController : DActionController {
   mixin(ControllerThis!("CMSOffersCreateActionController"));

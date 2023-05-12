@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.newsx;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.news;
 import models.cms.entities.news; 
 

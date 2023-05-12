@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.pages;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.pages;
 import models.cms.entities.page;
 

@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.themes.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesCreateActionController : DActionController {
   mixin(ControllerThis!("CMSThemesCreateActionController"));

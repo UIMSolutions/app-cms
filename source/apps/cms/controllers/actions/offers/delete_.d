@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.offers.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSOffersDeleteActionController : DActionController {
   mixin(ControllerThis!("CMSOffersDeleteActionController"));

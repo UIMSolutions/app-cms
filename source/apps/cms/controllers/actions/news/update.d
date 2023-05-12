@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.news.update;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsUpdateActionController : DActionController {
   mixin(ControllerThis!("CMSNewsUpdateActionController"));

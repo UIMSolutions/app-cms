@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.offers.update;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSOffersUpdateActionController : DActionController {
   mixin(ControllerThis!("CMSOffersUpdateActionController"));

@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.themesx;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.themes;
 import models.cms.entities.theme;
 

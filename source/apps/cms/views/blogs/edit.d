@@ -1,7 +1,7 @@
 module apps.cms.views.blogs.edit;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsEditView : DCMSEditView {
   mixin(ViewThis!("CMSBlogsEditView"));

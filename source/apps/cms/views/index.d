@@ -1,7 +1,7 @@
 module apps.cms.views.index;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSIndexView : DCMSView {
   mixin(ViewThis!("CMSIndexView"));

@@ -1,7 +1,7 @@
 module apps.cms.views.blogs.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsCreateView : DCMSCreateView {
   mixin(ViewThis!("CMSBlogsCreateView"));

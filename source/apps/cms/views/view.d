@@ -1,7 +1,7 @@
 module apps.cms.views.view;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSView : DView {
   mixin(ViewThis!("CMSView"));

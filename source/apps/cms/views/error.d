@@ -1,7 +1,7 @@
 module apps.cms.views.error;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSErrorView : DCMSView {
   mixin(ViewThis!("CMSErrorView"));

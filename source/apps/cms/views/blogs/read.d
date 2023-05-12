@@ -1,7 +1,7 @@
 module apps.cms.views.blogs.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsReadView : DCMSReadView {
   mixin(ViewThis!("CMSBlogsReadView"));

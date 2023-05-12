@@ -1,7 +1,7 @@
 module apps.cms.views.themes.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesDeleteView : DCMSView {
   mixin(ViewThis!("CMSThemesDeleteView"));

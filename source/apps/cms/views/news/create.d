@@ -1,7 +1,7 @@
 module apps.cms.views.news.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsCreateView : DCMSView {
   mixin(ViewThis!("CMSNewsCreateView"));

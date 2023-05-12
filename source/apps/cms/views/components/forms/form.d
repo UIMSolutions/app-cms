@@ -1,7 +1,7 @@
 module apps.cms.views.components.forms.form;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSFormViewComponent : DViewComponent {
   mixin(ViewComponentThis!("CMSFormViewComponent"));

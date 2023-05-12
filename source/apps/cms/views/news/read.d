@@ -1,7 +1,7 @@
 module apps.cms.views.news.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsReadView : DCMSView {
   mixin(ViewThis!("CMSNewsReadView"));

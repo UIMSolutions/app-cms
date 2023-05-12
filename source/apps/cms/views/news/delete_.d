@@ -1,7 +1,7 @@
 module apps.cms.views.news.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsDeleteView : DCMSView {
   mixin(ViewThis!("CMSNewsDeleteView"));

@@ -1,7 +1,7 @@
 module apps.cms.views.themes.edit;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesEditView : DCMSView {
   mixin(ViewThis!("CMSThemesEditView"));

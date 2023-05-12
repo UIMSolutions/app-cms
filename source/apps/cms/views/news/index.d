@@ -1,7 +1,7 @@
 module apps.cms.views.news.index;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsIndexView : DCMSView {
   mixin(ViewThis!("CMSNewsIndexView"));

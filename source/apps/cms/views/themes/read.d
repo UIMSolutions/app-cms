@@ -1,7 +1,7 @@
 module apps.cms.views.themes.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesReadView : DCMSView {
   mixin(ViewThis!("CMSThemesReadView"));

@@ -3,8 +3,8 @@ module apps.cms.controllers.actions.offersx;
 @safe:
 import colored;
 import apps.cms;
-import apps.cms.settings.offers;
-import models.cms.entities.offer;
+/* import apps.cms.settings.offers;
+import models.cms.entities.offer; */
 
 /* void uimOffersCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimOffersCreateAction~":uimOffersCreateAction");

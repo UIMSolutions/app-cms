@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.links;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.links;
-import models.cms.entities.link;
+/* import apps.cms.settings.links;
+import models.cms.entities.link; */
 
 /* void uimLinksCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimLinksCreateAction~":uimLinksCreateAction");

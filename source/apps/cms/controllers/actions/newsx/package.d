@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.newsx;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.news;
-import models.cms.entities.news; 
+/* import apps.cms.settings.news;
+import models.cms.entities.news;  */
 
 /* void uimNewsCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimNewsCreateAction~":uimNewsCreateAction");

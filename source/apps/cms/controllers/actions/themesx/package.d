@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.themesx;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.themes;
-import models.cms.entities.theme;
+/* import apps.cms.settings.themes;
+import models.cms.entities.theme; */
 
 /* void uimThemesCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimThemesCreateAction~":uimThemesCreateAction");

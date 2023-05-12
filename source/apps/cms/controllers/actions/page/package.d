@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.pages;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.pages;
-import models.cms.entities.page;
+/* import apps.cms.settings.pages;
+import models.cms.entities.page; */
 
 /* void uimPagesCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimPagesCreateAction~":uimPagesCreateAction");

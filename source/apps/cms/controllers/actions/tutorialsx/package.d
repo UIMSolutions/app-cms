@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.tutorialsx;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.tutorials;
-import models.cms.entities.tutorial;
+/* import apps.cms.settings.tutorials;
+import models.cms.entities.tutorial; */
 /* 
 void uimTutorialsCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimTutorialsCreateAction~":uimTutorialsCreateAction");

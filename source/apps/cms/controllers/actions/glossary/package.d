@@ -2,8 +2,8 @@ module apps.cms.controllers.actions.glossary;
 
 import apps.cms;
 @safe:
-import apps.cms.settings.glossary;
-import models.cms.entities.glossary_item;
+/* import apps.cms.settings.glossary;
+import models.cms.entities.glossary_item; */
 
 /* void uimGlossaryCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
   debugMethodCall(moduleName!uimGlossaryCreateAction~":uimGlossaryCreateAction");

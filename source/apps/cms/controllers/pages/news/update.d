@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.news.edit;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsEditPageController : DPageController {
   mixin(ControllerThis!("CMSNewsEditPageController"));

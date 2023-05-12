@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.themes.edit;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesEditPageController : DPageController {
   mixin(ControllerThis!("CMSThemesEditPageController"));

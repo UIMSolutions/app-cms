@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.themes.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesCreatePageController : DPageController {
   mixin(ControllerThis!("CMSThemesCreatePageController"));

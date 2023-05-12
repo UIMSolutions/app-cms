@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.themes.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesReadPageController : DPageController {
   mixin(ControllerThis!("CMSThemesReadPageController"));

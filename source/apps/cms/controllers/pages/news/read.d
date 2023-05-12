@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.news.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsReadPageController : DPageController {
   mixin(ControllerThis!("CMSNewsReadPageController"));

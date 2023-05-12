@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.news.index;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsIndexPageController : DPageController {
   mixin(ControllerThis!("CMSNewsIndexPageController"));

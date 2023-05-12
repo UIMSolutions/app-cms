@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.themes.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSThemesDeletePageController : DPageController {
   mixin(ControllerThis!("CMSThemesDeletePageController"));

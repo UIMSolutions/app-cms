@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.news.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsDeletePageController : DPageController {
   mixin(ControllerThis!("CMSNewsDeletePageController"));

@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.links;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.links;
 import models.cms.entities.link;
 

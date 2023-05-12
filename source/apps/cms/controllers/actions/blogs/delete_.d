@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.blogs.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsDeleteActionController : DCMSDeleteActionController {
   mixin(ControllerThis!("CMSBlogsDeleteActionController"));

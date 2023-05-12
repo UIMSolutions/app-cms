@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.blogs.update;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsUpdateActionController : DCMSUpdateActionController {
   mixin(ControllerThis!("CMSBlogsUpdateActionController"));

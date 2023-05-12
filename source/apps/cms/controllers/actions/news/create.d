@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.news.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsCreateActionController : DActionController {
   mixin(ControllerThis!("CMSNewsCreateActionController"));

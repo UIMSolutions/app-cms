@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.docus;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.docus;
 import models.cms.entities.docu;
 /* 

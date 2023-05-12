@@ -1,7 +1,7 @@
 /* module apps.cms.controllers.actions.blogs;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.blogs;
 import models.cms.entities.blog; */
 

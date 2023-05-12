@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.blogs.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsCreateActionController : DCMSCreateActionController {
   mixin(ControllerThis!("CMSBlogsCreateActionController"));

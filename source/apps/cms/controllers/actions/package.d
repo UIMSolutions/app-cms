@@ -1,15 +1,14 @@
 module apps.cms.controllers.actions;
 
-@safe:
-import apps.cms;
-
-public import apps.cms.controllers.actions.create;
-public import apps.cms.controllers.actions.update;
-public import apps.cms.controllers.actions.delete_;
+public {
+  import apps.cms.controllers.actions.create;
+  import apps.cms.controllers.actions.update;
+  import apps.cms.controllers.actions.delete_;
+}
 
 // Entities
 public import apps.cms.controllers.actions.blogs;
-public import apps.cms.controllers.actions.docus;
+// public import apps.cms.controllers.actions.docus;
 public import apps.cms.controllers.actions.glossary;
 public import apps.cms.controllers.actions.links;
 public import apps.cms.controllers.actions.news;

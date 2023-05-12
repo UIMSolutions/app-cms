@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.glossary;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.glossary;
 import models.cms.entities.glossary_item;
 

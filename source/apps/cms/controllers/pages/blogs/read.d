@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.blogs.read;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsReadPageController : DPageController {
   mixin(ControllerThis!("CMSBlogsReadPageController"));

@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.news.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSNewsCreatePageController : DPageController {
   mixin(ControllerThis!("CMSNewsCreatePageController"));

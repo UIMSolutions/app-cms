@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.error;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSErrorPageController : DPageController {
   mixin(ControllerThis!("CMSErrorPageController"));

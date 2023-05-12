@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.tutorials.update;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSTutorialsUpdateActionController : DCMSUpdateActionController {
   mixin(ControllerThis!("CMSTutorialsUpdateActionController"));

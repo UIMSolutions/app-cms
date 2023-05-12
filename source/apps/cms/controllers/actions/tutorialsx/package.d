@@ -1,7 +1,7 @@
 module apps.cms.controllers.actions.tutorialsx;
 
-@safe:
 import apps.cms;
+@safe:
 import apps.cms.settings.tutorials;
 import models.cms.entities.tutorial;
 /* 

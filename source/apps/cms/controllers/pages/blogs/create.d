@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.blogs.create;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsCreatePageController : DPageController {
   mixin(ControllerThis!("CMSBlogsCreatePageController"));

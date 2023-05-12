@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.index;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSIndexPageController : DPageController {
   mixin(ControllerThis!("CMSIndexPageController"));

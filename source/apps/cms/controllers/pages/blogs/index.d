@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.blogs.index;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsIndexPageController : DPageController {
   mixin(ControllerThis!("CMSBlogsIndexPageController"));

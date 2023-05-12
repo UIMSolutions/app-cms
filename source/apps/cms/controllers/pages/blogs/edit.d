@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.blogs.edit;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsEditPageController : DPageController {
   mixin(ControllerThis!("CMSBlogsEditPageController"));

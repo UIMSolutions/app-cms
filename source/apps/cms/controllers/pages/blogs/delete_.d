@@ -1,7 +1,7 @@
 module apps.cms.controllers.pages.blogs.delete_;
 
-@safe:
 import apps.cms;
+@safe:
 
 class DCMSBlogsDeletePageController : DPageController {
   mixin(ControllerThis!("CMSBlogsDeletePageController"));

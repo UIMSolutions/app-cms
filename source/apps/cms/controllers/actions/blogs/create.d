@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSBlogsCreateActionController : DCMSCreateActionController {
   mixin(ControllerThis!("CMSBlogsCreateActionController"));
 
-
-
   override void beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSBlogsCreateActionController~":DCMSBlogsCreateActionController::beforeResponse");
     super.beforeResponse(options);

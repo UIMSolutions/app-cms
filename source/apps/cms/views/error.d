@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSErrorView : DCMSView {
   mixin(ViewThis!("CMSErrorView"));
 
-
-
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
   }

@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSBlogsUpdateActionController : DCMSUpdateActionController {
   mixin(ControllerThis!("CMSBlogsUpdateActionController"));
 
-
-
   override void beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSBlogsUpdateActionController~":DCMSBlogsUpdateActionController::beforeResponse");
     super.beforeResponse(options);

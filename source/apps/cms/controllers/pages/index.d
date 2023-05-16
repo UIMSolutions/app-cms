@@ -24,7 +24,7 @@ class DCMSIndexPageController : DAPPPageController {
     this.view(
       CMSIndexView(this));
 
-    if (auto appSession = getAppSession(options)) {      
+    /* if (auto appSession = getAppSession(options)) {      
       debug writeln(appSession.debugInfo);
       auto session = appSession.session; 
       auto site    = appSession.site;
@@ -47,7 +47,7 @@ class DCMSIndexPageController : DAPPPageController {
     }
     else {
       debug writeln("No AppSession");
-    }
+    } */
   }
 }
 mixin(ControllerCalls!("CMSIndexPageController", "DCMSIndexPageController"));

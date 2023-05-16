@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.blogs.delete_;
 import apps.cms;
 @safe:
 
-class DCMSBlogsDeletePageController : DPageController {
+class DCMSBlogsDeletePageController : DAPPPageController {
   mixin(ControllerThis!("CMSBlogsDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

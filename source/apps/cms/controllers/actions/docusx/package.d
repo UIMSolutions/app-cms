@@ -1,4 +1,4 @@
-module apps.cms.controllers.actions.docus;
+module apps.cms.controllers.actions.docusx;
 
 import apps.cms;
 @safe:

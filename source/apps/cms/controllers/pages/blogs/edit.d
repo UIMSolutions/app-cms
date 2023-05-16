@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.blogs.edit;
 import apps.cms;
 @safe:
 
-class DCMSBlogsEditPageController : DPageController {
+class DCMSBlogsEditPageController : DAPPPageController {
   mixin(ControllerThis!("CMSBlogsEditPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

@@ -13,10 +13,10 @@
 			"targetType": "library"
 		},
 		{
-			"name": "test",
+			"name": "libtest",
 			"targetType": "library",
 			"versions": [
-				"test_uim_cms"
+				"test_app_cms"
 			]
 		}
 	],

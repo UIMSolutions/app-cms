@@ -1,6 +1,6 @@
-/* module apps.cms.controllers.actions.blogs;
+module apps.cms.controllers.actions.blogsx;
 
-import apps.cms;
+/* import apps.cms;
 @safe:
 import apps.cms.settings.blogs;
 import models.cms.entities.blog; */

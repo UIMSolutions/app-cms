@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.blogs.create;
 import apps.cms;
 @safe:
 
-class DCMSBlogsCreatePageController : DPageController {
+class DCMSBlogsCreatePageController : DAPPPageController {
   mixin(ControllerThis!("CMSBlogsCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

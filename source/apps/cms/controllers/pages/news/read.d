@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.news.read;
 import apps.cms;
 @safe:
 
-class DCMSNewsReadPageController : DPageController {
+class DCMSNewsReadPageController : DAPPPageController {
   mixin(ControllerThis!("CMSNewsReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

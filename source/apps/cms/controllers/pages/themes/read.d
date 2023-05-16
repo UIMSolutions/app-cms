@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.themes.read;
 import apps.cms;
 @safe:
 
-class DCMSThemesReadPageController : DPageController {
+class DCMSThemesReadPageController : DAPPPageController {
   mixin(ControllerThis!("CMSThemesReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

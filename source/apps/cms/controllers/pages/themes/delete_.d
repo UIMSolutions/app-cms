@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.themes.delete_;
 import apps.cms;
 @safe:
 
-class DCMSThemesDeletePageController : DPageController {
+class DCMSThemesDeletePageController : DAPPPageController {
   mixin(ControllerThis!("CMSThemesDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

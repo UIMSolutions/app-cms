@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.news.create;
 import apps.cms;
 @safe:
 
-class DCMSNewsCreatePageController : DPageController {
+class DCMSNewsCreatePageController : DAPPPageController {
   mixin(ControllerThis!("CMSNewsCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

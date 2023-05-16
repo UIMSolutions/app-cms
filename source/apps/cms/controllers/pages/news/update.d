@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.news.edit;
 import apps.cms;
 @safe:
 
-class DCMSNewsEditPageController : DPageController {
+class DCMSNewsEditPageController : DAPPPageController {
   mixin(ControllerThis!("CMSNewsEditPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

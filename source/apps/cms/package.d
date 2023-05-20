@@ -24,11 +24,11 @@ public {
   import apps.cms.views;
 }
 
-DApp cmsApp;
 static this() {
-  cmsApp = App
+  AppRegistry.register(  
+    App
     .name("cmsApp")
     .rootPath("/apps/cms")
     .addRoute(Route("", HTTPMethod.GET, CMSIndexPageController))
-    .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController));
+    .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController)));
 }

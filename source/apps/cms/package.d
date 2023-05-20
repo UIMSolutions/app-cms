@@ -24,8 +24,9 @@ public {
   import apps.cms.views;
 }
 
+@safe:
 static this() {
-  AppRegistry.register(  
+  AppRegistry.register("apps.cms",  
     App
     .name("cmsApp")
     .rootPath("/apps/cms")

@@ -3,26 +3,26 @@ module apps.cms.controllers.pages.index;
 import apps.cms;
 @safe:
 
-class DCMSIndexPageController : DAPPPageController {
-  mixin(ControllerThis!("CMSIndexPageController"));
+class DIndexPageController : DAPPPageController {
+  mixin(ControllerThis!("IndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       /* .checks([AppSessionHasSessionCheck]) */
-      .view(CMSIndexView(this));
+      .view(IndexView(this));
   }
 
   override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse");
+    debugMethodCall(moduleName!DIndexPageController~":DIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
 
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
 
     this.view(
-      CMSIndexView(this));
+      IndexView(this));
 
     /* if (auto appSession = getAppSession(options)) {      
       debug writeln(appSession.debugInfo);
@@ -33,7 +33,7 @@ class DCMSIndexPageController : DAPPPageController {
         debug writeln("Has Site", site.id, "/", site.name);
         session["siteId"] = site.id.toString;
         this.view(
-          CMSIndexView(this).selectedSite(site));
+          IndexView(this).selectedSite(site));
       }
       else {
         debug writeln("No Site");
@@ -42,7 +42,7 @@ class DCMSIndexPageController : DAPPPageController {
         debug writeln("Found sites = ", dbSites.length);
 
         this.view(
-          CMSIndexView(this).sites(dbSites));
+          IndexView(this).sites(dbSites));
       }
     }
     else {
@@ -50,6 +50,6 @@ class DCMSIndexPageController : DAPPPageController {
     } */
   }
 }
-mixin(ControllerCalls!("CMSIndexPageController", "DCMSIndexPageController"));
+mixin(ControllerCalls!("IndexPageController", "DIndexPageController"));
 
 

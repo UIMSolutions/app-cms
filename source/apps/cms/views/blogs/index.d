@@ -3,7 +3,7 @@ module apps.cms.views.blogs.index;
 import apps.cms;
 @safe:
 
-class DCMSBlogsIndexView : DCMSIndexView {
+class DCMSBlogsIndexView : DIndexView {
   mixin(ViewThis!("CMSBlogsIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {

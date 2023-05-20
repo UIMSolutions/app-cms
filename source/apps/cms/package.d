@@ -30,6 +30,6 @@ static this() {
     App
     .name("cmsApp")
     .rootPath("/apps/cms")
-    .addRoute(Route("", HTTPMethod.GET, CMSIndexPageController))
-    .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController)));
+    .addRoute(Route("", HTTPMethod.GET, IndexPageController))
+    .addRoute(Route("/", HTTPMethod.GET, IndexPageController)));
 }

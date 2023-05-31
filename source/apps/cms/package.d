@@ -12,7 +12,7 @@ public import uim.html;
 public import uim.oop;
 public import uim.models;
 public import uim.apps;
-public import uim.controls;
+public import web.controls;
 public import uim.servers;
 
 public import langs.javascript;
@@ -26,9 +26,21 @@ public {
 
 @safe:
 static this() {
+  auto app = App
+    .name("cmsApp");  
+
+  with (app) {
+    foreach(entityName; ["Blog", "Glossary", "LInk", "News", "Offer", "Theme"]) {
+      views["list"~entity] = View;
+      views["create"~entity] = View;
+      views["read"~entity] = View;
+      views["update"~entity] = View;
+      views["delete"~entity] = View;
+    }
+  }
+
   AppRegistry.register("apps.cms",  
-    App
-    .name("cmsApp")
+    app
     .rootPath("/apps/cms")
     .addRoute(Route("", HTTPMethod.GET, IndexPageController))
     .addRoute(Route("/", HTTPMethod.GET, IndexPageController)));

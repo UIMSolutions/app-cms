@@ -47,15 +47,13 @@ static this() {
 
       writeln("In App %s registered controllers:".format(name));
       writeln(controllers.keys);
-
-      this
-        .addRoute(Route("", HTTPMethod.GET, IndexPageController))
-        .addRoute(Route("/", HTTPMethod.GET, IndexPageController));
     }
-  }();
+  };
 
   AppRegistry.register("apps.cms",  
     myApp
       .rootPath("/apps/cms")
+      .addRoute(Route("", HTTPMethod.GET, IndexPageController))
+      .addRoute(Route("/", HTTPMethod.GET, IndexPageController))
   );
 }

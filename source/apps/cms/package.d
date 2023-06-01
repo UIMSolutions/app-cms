@@ -26,33 +26,36 @@ public {
 
 @safe:
 static this() {
-  auto app = App
-    .name("cmsApp");  
+  auto myApp = new class DApp {
+    override void initialize(Json configSettings = Json(null)) {
+      super.initialize(configSettings);
 
-  with (app) {
-    foreach(entityName; ["Blog", "Glossary", "LInk", "News", "Offer", "Theme"]) {      
-      views.add("list"~entityName,View);
-      views.add("create"~entityName, View);
-      views.add("read"~entityName, View);
-      views.add("update"~entityName, View);
-      views.add("delete"~entityName, View);
+      this
+        .name("cmsApp");  
 
-      controllers.add("list"~entityName, PageController);
-      controllers.add("create"~entityName, PageController);
-      controllers.add("read"~entityName, PageController);
-      controllers.add("update"~entityName, PageController);
-      controllers.add("delete"~entityName, PageController);
+      foreach(entityName; ["Blog", "Glossary", "Link", "News", "Offer", "Theme"]) {      
+        foreach(crudName; ["list", "create", "read", "update", "update", "delete"]) {  
+          auto myView = View;    
+          this.views.add(crudName~entityName, myView);
+
+          this.controllers.add(crudName~entityName, PageController.view(myView));
+        }
+      }
+
+      writeln("In App %s registered views:".format(name));
+      writeln(views.keys);
+
+      writeln("In App %s registered controllers:".format(name));
+      writeln(controllers.keys);
+
+      this
+        .addRoute(Route("", HTTPMethod.GET, IndexPageController))
+        .addRoute(Route("/", HTTPMethod.GET, IndexPageController));
     }
-  }
-  writeln("In App %s registered views:".format(app.name));
-  writeln(app.views.keys);
-
-  writeln("In App %s registered controllers:".format(app.name));
-  writeln(app.controllers.keys);
+  }();
 
   AppRegistry.register("apps.cms",  
-    app
-    .rootPath("/apps/cms")
-    .addRoute(Route("", HTTPMethod.GET, IndexPageController))
-    .addRoute(Route("/", HTTPMethod.GET, IndexPageController)));
+    myApp
+      .rootPath("/apps/cms")
+  );
 }

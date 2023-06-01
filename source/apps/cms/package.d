@@ -30,14 +30,25 @@ static this() {
     .name("cmsApp");  
 
   with (app) {
-    foreach(entityName; ["Blog", "Glossary", "LInk", "News", "Offer", "Theme"]) {
-      views["list"~entity] = View;
-      views["create"~entity] = View;
-      views["read"~entity] = View;
-      views["update"~entity] = View;
-      views["delete"~entity] = View;
+    foreach(entityName; ["Blog", "Glossary", "LInk", "News", "Offer", "Theme"]) {      
+      views.add("list"~entityName,View);
+      views.add("create"~entityName, View);
+      views.add("read"~entityName, View);
+      views.add("update"~entityName, View);
+      views.add("delete"~entityName, View);
+
+      controllers.add("list"~entityName, PageController);
+      controllers.add("create"~entityName, PageController);
+      controllers.add("read"~entityName, PageController);
+      controllers.add("update"~entityName, PageController);
+      controllers.add("delete"~entityName, PageController);
     }
   }
+  writeln("In App %s registered views:".format(app.name));
+  writeln(app.views.keys);
+
+  writeln("In App %s registered controllers:".format(app.name));
+  writeln(app.controllers.keys);
 
   AppRegistry.register("apps.cms",  
     app

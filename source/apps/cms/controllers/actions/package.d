@@ -7,12 +7,14 @@ public {
 }
 
 // Entities
-public import apps.cms.controllers.actions.blogs;
-// public import apps.cms.controllers.actions.docus;
-public import apps.cms.controllers.actions.glossary;
-public import apps.cms.controllers.actions.links;
-public import apps.cms.controllers.actions.news;
-public import apps.cms.controllers.actions.offers;
-public import apps.cms.controllers.actions.pages;
-public import apps.cms.controllers.actions.themes;
-public import apps.cms.controllers.actions.tutorials;
+public {
+  import apps.cms.controllers.actions.blogs;
+// import apps.cms.controllers.actions.docus;
+  import apps.cms.controllers.actions.glossary;
+  import apps.cms.controllers.actions.links;
+  import apps.cms.controllers.actions.news;
+  import apps.cms.controllers.actions.offers;
+  import apps.cms.controllers.actions.pages;
+  import apps.cms.controllers.actions.themes;
+  import apps.cms.controllers.actions.tutorials;
+}

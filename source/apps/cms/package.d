@@ -6,14 +6,20 @@ mixin(ImportPhobos!());
 public import vibe.d;
 
 // UIM
-public import uim.core;
-public import uim.bootstrap;
-public import uim.html;
-public import uim.oop;
-public import uim.models;
-public import uim.apps;
-public import web.controls;
-public import uim.servers;
+public {
+  import uim.core;
+  import uim.bootstrap;
+  import uim.html;
+  import uim.oop;
+  import uim.models;
+  import uim.apps;
+  import uim.servers;
+  import uim.web;
+}
+
+public {
+  import web.controls;
+}
 
 public import langs.javascript;
 
@@ -53,8 +59,10 @@ static this() {
 
           auto myPath = ("/"~entityName~"/"~crudName).toLower;
           this.addRoute(Route(myPath, HTTPMethod.GET, myController));
-          if (crudName == "create" || crudName == "update", || crudName == "delete") {
-            this.addRoute(Route(myPath_"action", HTTPMethod.POST, ActionController));
+          if (crudName == "create" || crudName == "update" || crudName == "delete") {
+            auto myAction = ActionController;
+            this.actions.add(crudName~entityName, myAction);
+            this.addRoute(Route(myPath~"_action", HTTPMethod.POST, myAction));
           }
         }
       }

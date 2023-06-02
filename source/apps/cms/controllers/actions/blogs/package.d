@@ -1,5 +1,7 @@
 module apps.cms.controllers.actions.blogs;
 
-public import apps.cms.controllers.actions.blogs.create;
-public import apps.cms.controllers.actions.blogs.update;
-public import apps.cms.controllers.actions.blogs.delete_;
+public {
+  import apps.cms.controllers.actions.blogs.create;
+  import apps.cms.controllers.actions.blogs.update;
+  import apps.cms.controllers.actions.blogs.delete_;
+}

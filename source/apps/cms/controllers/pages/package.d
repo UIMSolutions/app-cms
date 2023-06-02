@@ -5,6 +5,8 @@ public { // Pages Controllers
   import apps.cms.controllers.pages.error;
 }
 
-public import apps.cms.controllers.pages.blogs;
-public import apps.cms.controllers.pages.news;
-public import apps.cms.controllers.pages.themes;
+public {
+  import apps.cms.controllers.pages.blogs;
+  import apps.cms.controllers.pages.news;
+  import apps.cms.controllers.pages.themes;
+}

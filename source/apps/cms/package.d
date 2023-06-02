@@ -14,7 +14,7 @@ public {
   import uim.models;
   import uim.apps;
   import uim.servers;
-  import uim.web;
+  /* import uim.web; */
 }
 
 public {

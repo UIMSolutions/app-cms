@@ -1,5 +1,7 @@
 module apps.cms.controllers.actions.themes;
 
-public import apps.cms.controllers.actions.themes.create;
-public import apps.cms.controllers.actions.themes.update;
-public import apps.cms.controllers.actions.themes.delete_;
+public {
+  import apps.cms.controllers.actions.themes.create;
+  import apps.cms.controllers.actions.themes.update;
+  import apps.cms.controllers.actions.themes.delete_;
+}

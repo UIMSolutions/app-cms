@@ -1,6 +1,7 @@
 module apps.cms.controllers.actions;
 
 public {
+  import apps.cms.controllers.actions.action;
   import apps.cms.controllers.actions.create;
   import apps.cms.controllers.actions.update;
   import apps.cms.controllers.actions.delete_;

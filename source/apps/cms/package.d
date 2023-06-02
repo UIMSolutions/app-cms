@@ -60,7 +60,7 @@ static this() {
           auto myPath = ("/"~entityName~"/"~crudName).toLower;
           this.addRoute(Route(myPath, HTTPMethod.GET, myController));
           if (crudName == "create" || crudName == "update" || crudName == "delete") {
-            auto myAction = ActionController;
+            auto myAction = CMSActionController;
             this.actions.add(crudName~entityName, myAction);
             this.addRoute(Route(myPath~"_action", HTTPMethod.POST, myAction));
           }

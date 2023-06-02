@@ -1,6 +1,7 @@
 module apps.cms.views;
 
 public import apps.cms.views.view;
+public import apps.cms.views.factory;
 
 public import apps.cms.views.create;
 public import apps.cms.views.read;

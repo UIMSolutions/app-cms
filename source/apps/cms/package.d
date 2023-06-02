@@ -35,10 +35,27 @@ static this() {
 
       foreach(entityName; ["Blog", "Glossary", "Link", "News", "Offer", "Theme"]) {      
         foreach(crudName; ["list", "create", "read", "update", "update", "delete"]) {  
-          auto myView = View;    
+          auto myView = CMSView;
+          myView
+            .pageHeader(
+              PageHeaderViewComponent
+                .rootPath(rootPath)
+                .title("CMS -> "~crudName~" -> "~entityName)
+            )
+            .pageBody(PageBodyViewComponent)
+            .pageFooter(MVCPageFooterViewComponent)      
+            .rootPath("/cms");
+          
           this.views.add(crudName~entityName, myView);
 
-          this.controllers.add(crudName~entityName, PageController.view(myView));
+          auto myController = APPPageController.view(myView);
+          this.controllers.add(crudName~entityName, myController);
+
+          auto myPath = ("/"~entityName~"/"~crudName).toLower;
+          this.addRoute(Route(myPath, HTTPMethod.GET, myController));
+          if (crudName == "create" || crudName == "update", || crudName == "delete") {
+            this.addRoute(Route(myPath_"action", HTTPMethod.POST, ActionController));
+          }
         }
       }
 

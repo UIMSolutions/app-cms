@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSThemesCreateView : DCMSView {
   mixin(ViewThis!("CMSThemesCreateView"));
 
-
-
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 

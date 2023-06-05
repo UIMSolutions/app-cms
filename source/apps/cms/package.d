@@ -21,9 +21,11 @@ public {
   import web.controls;
 }
 
-public import langs.javascript;
-
 public {
+  import langs.javascript;
+}
+
+public { // App packages
   import apps.cms.controllers;
   import apps.cms.helpers;
   import apps.cms.tests;
@@ -31,7 +33,7 @@ public {
 }
 
 @safe:
-static this() {
+static this() { // Create and init app
   auto myApp = new class DApp {
     override void initialize(Json configSettings = Json(null)) {
       super.initialize(configSettings);

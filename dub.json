@@ -32,16 +32,17 @@
 		"../../LIBS/uim-mvc",
 		"../../LIBS/uim-html",
 		"../../LIBS/uim-bootstrap",
-		"../../WEBS/web-controls",
 		"../../LIBS/uim-apps",
 		"../../LIBS/uim-servers",
 		"../../LIBS/uim-jsonbase",
 		"../../LIBS/uim-models",
 		"../../LIBS/uim-entitybase",
-
+		
+		
 		"../../MODELS/model-systems",
 		"../../MODELS/model-cms",
-
+		
+		"../../WEBS/web-controls",
 		"../../LANGS/lang-javascript",
 
 		"../../LAYOUTS/layout-tabler/source/layouts",
@@ -54,7 +55,6 @@
 		"../../LIBS/uim-mvc",
 		"../../LIBS/uim-html",
 		"../../LIBS/uim-bootstrap",
-		"../../WEBS/web-controls",
 		"../../LIBS/uim-apps",
 		"../../LIBS/uim-servers",
 		"../../LIBS/uim-jsonbase",
@@ -63,7 +63,8 @@
 		
 		"../../MODELS/model-systems",
 		"../../MODELS/model-cms",
-
+		
+		"../../WEBS/web-controls",
 		"../../LANGS/lang-javascript",
 		
 		"../../LAYOUTS/layout-tabler/source/layouts",

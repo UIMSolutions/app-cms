@@ -39,6 +39,7 @@
 		"../../LIBS/uim-models",
 		"../../LIBS/uim-entitybase",
 
+		"../../MODELS/model-systems",
 		"../../MODELS/model-cms",
 
 		"../../LANGS/lang-javascript",
@@ -60,9 +61,11 @@
 		"../../LIBS/uim-models",
 		"../../LIBS/uim-entitybase",
 		
+		"../../MODELS/model-systems",
 		"../../MODELS/model-cms",
 
 		"../../LANGS/lang-javascript",
+		
 		"../../LAYOUTS/layout-tabler/source/layouts",
 		"./"
 	]

@@ -13,17 +13,17 @@ class DCMSDeleteActionController : DActionController {
 
     auto appSession = getAppSession(options);
     debug writeln("In DCMSDeleteActionController: appSession "~(appSession ? appSession.id : null));
-    if (auto tenant = databases[appSession.site]) {
+    if (auto myTenant = database[appSession.site]) {
       debug writeln("In DCMSDeleteActionController: tenant "/* ~tenant.name */);
 
-      if (auto collection = tenant[collectionName]) {
+      if (auto myCollection = myTenant[collectionName]) {
         debug writeln("In DCMSDeleteActionController: collection "~collectionName);
 
-        if (auto entity = collection.createFromTemplate) {
+        if (auto entity = myCollection.createFromTemplate) {
           entity.readFromRequest(options);   
           debug writeln("In DCMSDeleteActionController: entity "~entity.name);
 
-          collection.removeOne(entity);
+          myCollection.removeOne(entity);
         }
 
         options["redirect"] = rootPath;

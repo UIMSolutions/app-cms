@@ -3,12 +3,11 @@ module apps.cms.views.components.forms.form;
 import apps.cms;
 @safe:
 
-class DCMSFormViewComponent : DViewComponent {
-  mixin(ViewComponentThis!("CMSFormViewComponent"));
+class DCMSForm : DForm {
+  mixin(ViewComponentThis!("CMSForm"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);     
   }
 }
-mixin(ViewComponentCalls!("CMSFormViewComponent", "DCMSFormViewComponent"));
-mixin(ViewComponentCalls!("CMSForm", "DCMSFormViewComponent"));
+mixin(ViewComponentCalls!("CMSForm"));

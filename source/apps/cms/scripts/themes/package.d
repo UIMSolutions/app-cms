@@ -1,6 +1,6 @@
-module uim.cms.scripts.themes;
+module apps.cms.scripts.themes;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 auto myApi = "/api/v1/cms/themes";

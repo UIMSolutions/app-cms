@@ -1,8 +1,8 @@
-module uim.cms.scripts.themes.delete_;
+module apps.cms.scripts.themes.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.themes;
+import apps.cms.scripts.themes;
 
 auto deleteEntity() {  
   return 

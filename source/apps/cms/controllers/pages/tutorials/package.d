@@ -1,10 +1,10 @@
-module uim.cms.controllers.pages.tutorials;
+module apps.cms.controllers.pages.tutorials;
 
 // Main
-public import uim.cms.controllers.pages.tutorials.index;
+public import apps.cms.controllers.pages.tutorials.index;
 
 // CRUD Modules
-public import uim.cms.controllers.pages.tutorials.create;
-public import uim.cms.controllers.pages.tutorials.read;
-public import uim.cms.controllers.pages.tutorials.update;
-public import uim.cms.controllers.pages.tutorials.delete_;
+public import apps.cms.controllers.pages.tutorials.create;
+public import apps.cms.controllers.pages.tutorials.read;
+public import apps.cms.controllers.pages.tutorials.update;
+public import apps.cms.controllers.pages.tutorials.delete_;

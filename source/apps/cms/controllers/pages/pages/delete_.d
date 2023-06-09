@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.pages.delete_;
+module apps.cms.controllers.pages.pages.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXPagesDeletePageController : DCMSXDeletePageController {

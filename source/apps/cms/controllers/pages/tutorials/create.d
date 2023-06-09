@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.tutorials.create;
+module apps.cms.controllers.pages.tutorials.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXTutorialsCreatePageController : DCMSXCreatePageController {

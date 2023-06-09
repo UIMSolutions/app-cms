@@ -67,4 +67,27 @@ class DCMSBlogsIndexView : DCMSIndexView {
     
   }
 }
-mixin(ViewCalls!("CMSBlogsIndexView", "DCMSBlogsIndexView"));
+mixin(ViewCalls!("CMSBlogsIndexView"));
+
+
+/*   override DH5Obj[] toH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSXBlogsIndexView~":DCMSXBlogsIndexView("~this.name~")::toH5");
+    super.toH5(options);
+
+    options["rootPath"] = myRootPath;
+
+    this.rootPath(myRootPath);
+    debug writeln("RootPath in DCMSXBlogsIndexView:toH5 -> ", this.rootPath);
+    debug writeln("this.form.rootPath(",this.rootPath,")");
+
+    return [
+      H5Div(["content"],
+        H5Div(["container-xl"], 
+          BS5Row("messages", [""]),
+          BS5Row(["row-deck row-cards"], 
+          this.form
+          .rootPath(this.rootPath)
+          .entities(this.entities)
+          .toH5(options)
+    )))].toH5;              
+  }   */

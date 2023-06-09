@@ -1,75 +1,68 @@
-module apps.cms.views.news.index;
+module uim.cms.views.docus.index;
 
-import apps.cms;
+import uim.cms;
 @safe:
+import uim.cms.views.docus;
 
-class DCMSNewsIndexView : DCMSView {
-  mixin(ViewThis!("CMSNewsIndexView"));
+class DCMSXDocusIndexView : DAPPEntitiesListView {
+  mixin(ViewThis!("CMSXDocusIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
-    this.rootPath("/cms/news");
+    this.rootPath("/cms/docus");
 
     auto myPageHeader = PageHeader(this);
-    myPageHeader  
-      .title(titleView("Übersicht TuNewstorials")) 
+    myPageHeader
+      .title(titleView("Übersicht Docus")) 
       .actions([["refresh", "list", "create"]])
       .rootPath(this.rootPath)
       .breadcrumbs
         .items(
-          ["/", "UIM"],
-          ["/cms", "CMS"],
-          [this.rootPath, "News"]
+          ["/cms", "CMSX"],
+          [this.rootPath, "Docus"]
         );
 
-    /* auto headerTitle = titleList("News"); */
-    auto bodyTitle = "Gefundene News";
+    /* auto headerTitle = titleList("Docus"); */
+    auto bodyTitle = "Gefundene Docus";
 
     auto myForm = EntitiesListForm(this)
-      .header(
-        FormHeader
-          .mainTitle("News")
-          .subTitle("News anzeigen")
-          .actions([["print", "export"]]));
+          .header(
+            FormHeader
+              .mainTitle("Docus")
+              .subTitle("Docus anzeigen")
+              .actions([["print", "export"]]));
     this
       .header(myPageHeader)
       .form(
         myForm
           .content(EntitiesFormContent.form(myForm))
           .rootPath(this.rootPath));
-  }
+
+/*       .form
+        .header(FormHeader// .rootPath(myRootPath)// .mainTitle("Docus")// .subTitle("Docus anzeigen").actions([["print", "export"]]))
+        .content(ListFormContent// .rootPath(myRootPath));
+        
+ */  }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSNewsIndexView~":DCMSNewsIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSXDocusIndexView~":DCMSXDocusIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
     if (auto myForm = cast(DForm)this.form) {
       myForm.entities(this.entities);
     } 
-
-    this
-      .pageHeader
-        .title("News -> Index")
-        .breadcrumbs
-          .items(
-            ["/", "UIM"],
-            [this.rootPath, "CMS"],
-            [this.rootPath~"/news", "News"]
-          );
   }
-}
-mixin(ViewCalls!("CMSNewsIndexView", "DCMSNewsIndexView"));
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXNewsIndexView~":DCMSXNewsIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSXDocusIndexView~":DCMSXDocusIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this// .rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXNewsIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSXDocusIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [
@@ -83,3 +76,9 @@ mixin(ViewCalls!("CMSNewsIndexView", "DCMSNewsIndexView"));
           .toH5(options)
     )))].toH5;              
   }  */
+}
+mixin(ViewCalls!("CMSXDocusIndexView"));
+
+version(test_uim_cms) { unittest {
+    // TODO
+}}

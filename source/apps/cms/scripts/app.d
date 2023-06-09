@@ -1,8 +1,8 @@
-module uim.cms.scripts.app;
+module apps.cms.scripts.app;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.blogs;
+import apps.cms.scripts.blogs;
 
 auto cmsapp() {  
   return "";

@@ -1,2 +1,2 @@
-module uim.cms.layouts.main_;
+module apps.cms.layouts.main_;
 

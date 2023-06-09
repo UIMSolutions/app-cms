@@ -1,8 +1,8 @@
-module uim.cms.scripts.blogs.create;
+module apps.cms.scripts.blogs.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.blogs;
+import apps.cms.scripts.blogs;
 
 auto createEntity() {  
   return 

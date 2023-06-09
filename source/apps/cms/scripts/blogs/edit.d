@@ -1,8 +1,8 @@
-module uim.cms.scripts.blogs.edit;
+module apps.cms.scripts.blogs.edit;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.blogs;
+import apps.cms.scripts.blogs;
 
 public:
 auto editEntity() {  

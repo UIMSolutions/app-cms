@@ -1,6 +1,6 @@
-module uim.cms.scripts.blogs;
+module apps.cms.scripts.blogs;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 auto myApi = "/api/v1/cms/blogs";

@@ -1,1 +1,1 @@
-module uim.cms.scripts;
+module apps.cms.scripts;

@@ -1,8 +1,8 @@
-module uim.cms.scripts.blogs.list;
+module apps.cms.scripts.blogs.list;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.blogs;
+import apps.cms.scripts.blogs;
 
 auto listEntities() {  
   return 

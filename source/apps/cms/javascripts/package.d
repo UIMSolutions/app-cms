@@ -1,4 +1,4 @@
-module uim.cms.javascripts;
+module apps.cms.javascripts;
 
-import uim.cms;
+import apps.cms;
 @safe:

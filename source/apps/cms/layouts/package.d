@@ -1,10 +1,10 @@
-module uim.cms.layouts;
+module apps.cms.layouts;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.layouts.layout;
+public import apps.cms.layouts.layout;
 
 /*     new class DH5AppLayout {
 

@@ -1,6 +1,6 @@
-module uim.cms.layouts.layout;
+module apps.cms.layouts.layout;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXLayout : DLayout {

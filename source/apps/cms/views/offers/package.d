@@ -7,10 +7,12 @@ import apps.cms;
 public import apps.cms.views.offers.index;
 
 // CRUD Modules
-public import apps.cms.views.offers.create;
-public import apps.cms.views.offers.read;
-public import apps.cms.views.offers.update;
-public import apps.cms.views.offers.delete_;
+public {
+  import apps.cms.views.offers.create;
+  import apps.cms.views.offers.read;
+  import apps.cms.views.offers.update;
+  import apps.cms.views.offers.delete_;
+}
 
 package:
   string myRootPath = "/cms/offers";

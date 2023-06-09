@@ -2,9 +2,8 @@ module apps.cms.views.offers.update;
 
 import apps.cms;
 @safe:
-import apps.cms.views.offers;
 
-class DCMSOffersUpdateView : DEntityUpdateView {
+class DCMSOffersUpdateView : DCMSEditView {
   mixin(ViewThis!("CMSOffersUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {

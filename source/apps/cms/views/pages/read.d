@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.pages;
 
-class DCMSPagesReadView : DEntityReadView {
+class DCMSPagesReadView : DCMSReadView {
   mixin(ViewThis!("CMSPagesReadView"));
 
 override void initialize(Json configSettings = Json(null)) {

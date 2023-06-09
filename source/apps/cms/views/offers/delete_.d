@@ -2,9 +2,8 @@ module apps.cms.views.offers.delete_;
 
 import apps.cms;
 @safe:
-import apps.cms.views.offers;
 
-class DCMSOffersDeleteView : DEntityDeleteView {
+class DCMSOffersDeleteView : DCMSDeleteView {
   mixin(ViewThis!("CMSOffersDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {

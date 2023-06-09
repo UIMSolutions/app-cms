@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSReadView : DCMSView {
   mixin(ViewThis!("CMSReadView"));
 
-  mixin(OProperty!("DForm", "form"));
-
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 

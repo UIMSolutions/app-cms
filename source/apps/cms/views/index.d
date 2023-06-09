@@ -8,7 +8,6 @@ class DCMSIndexView : DCMSView {
 
   mixin(OProperty!("DEntity[]", "sites"));
   mixin(OProperty!("DEntity", "selectedSite"));
-  mixin(OProperty!("DForm", "form"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);

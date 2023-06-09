@@ -19,6 +19,7 @@ class DCMSView : DView {
   mixin(OProperty!("DPageHeaderViewComponent", "pageHeader"));
   mixin(OProperty!("DPageBodyViewComponent", "pageBody"));
   mixin(OProperty!("DMVCPageFooterViewComponent", "pageFooter"));
+  mixin(OProperty!("DForm", "form"));
 
   override void _afterSetEntity() {
     super._afterSetEntity;

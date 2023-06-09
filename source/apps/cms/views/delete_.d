@@ -6,8 +6,6 @@ import apps.cms;
 class DCMSDeleteView : DCMSView {
   mixin(ViewThis!("CMSDeleteView"));
 
-  mixin(OProperty!("DForm", "form"));
-
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 

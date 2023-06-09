@@ -22,7 +22,7 @@ class DCMSNewsEditView : DCMSView {
       myForm
         .action("/cms/news/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSFormContent.form(myForm));
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

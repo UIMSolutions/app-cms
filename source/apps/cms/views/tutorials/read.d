@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.tutorials;
 
-class DCMSXTutorialsReadView : DAPPEntityReadView {
-  mixin(ViewThis!("CMSXTutorialsReadView"));
+class DCMSTutorialsReadView : DAPPEntityReadView {
+  mixin(ViewThis!("CMSTutorialsReadView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -20,7 +20,7 @@ class DCMSXTutorialsReadView : DAPPEntityReadView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Tutorials"],
             ["this.rootPath", "Anzeigen"]
           );
@@ -29,7 +29,7 @@ class DCMSXTutorialsReadView : DAPPEntityReadView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .crudMode(this.crudMode)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -40,7 +40,7 @@ class DCMSXTutorialsReadView : DAPPEntityReadView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXTutorialsReadView~"::DCMSXTutorialsReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSTutorialsReadView~"::DCMSTutorialsReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -53,7 +53,7 @@ class DCMSXTutorialsReadView : DAPPEntityReadView {
       .entity(this.entity);
   }
 }
-mixin(ViewCalls!("CMSXTutorialsReadView"));
+mixin(ViewCalls!("CMSTutorialsReadView"));
 
 version(test_uim_cms) { unittest {
     // TODO

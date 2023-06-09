@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.offers;
 
-class DCMSXOffersUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXOffersUpdateView"));
+class DCMSOffersUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSOffersUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXOffersUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/offers/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSXOffersUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXOffersUpdateView~"::DCMSXOffersUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSOffersUpdateView~"::DCMSOffersUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -47,11 +47,11 @@ class DCMSXOffersUpdateView : DAPPEntityUpdateView {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Offers"],
           [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
         );
     }
   }
 }
-mixin(ViewCalls!("CMSXOffersUpdateView"));
+mixin(ViewCalls!("CMSOffersUpdateView"));

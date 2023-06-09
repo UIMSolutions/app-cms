@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.tutorials;
 
-class DCMSXTutorialsDeleteView : DAPPEntityDeleteView {
-  mixin(ViewThis!("CMSXTutorialsDeleteView"));
+class DCMSTutorialsDeleteView : DAPPEntityDeleteView {
+  mixin(ViewThis!("CMSTutorialsDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,7 +21,7 @@ class DCMSXTutorialsDeleteView : DAPPEntityDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -33,7 +33,7 @@ class DCMSXTutorialsDeleteView : DAPPEntityDeleteView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXTutorialsDeleteView~"::DCMSXTutorialsDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSTutorialsDeleteView~"::DCMSTutorialsDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Tutorial ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -44,11 +44,11 @@ class DCMSXTutorialsDeleteView : DAPPEntityDeleteView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Tutorials"],
             [rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"]
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXTutorialsDeleteView"));
+mixin(ViewCalls!("CMSTutorialsDeleteView"));

@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.pages;
 
-class DCMSXPagesCreateView : DAPPEntityCreateView {
-  mixin(ViewThis!("CMSXPagesCreateView"));
+class DCMSPagesCreateView : DAPPEntityCreateView {
+  mixin(ViewThis!("CMSPagesCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSXPagesCreateView : DAPPEntityCreateView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Pages"],
             [this.rootPath~"/create", "Create"]
           );
@@ -28,7 +28,7 @@ class DCMSXPagesCreateView : DAPPEntityCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -40,7 +40,7 @@ class DCMSXPagesCreateView : DAPPEntityCreateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXPagesCreateView~"::DCMSXPagesCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSPagesCreateView~"::DCMSPagesCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;
@@ -56,4 +56,4 @@ class DCMSXPagesCreateView : DAPPEntityCreateView {
     }
   }
 }
-mixin(ViewCalls!("CMSXPagesCreateView"));
+mixin(ViewCalls!("CMSPagesCreateView"));

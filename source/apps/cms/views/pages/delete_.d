@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.pages;
 
-class DCMSXPagesDeleteView : DAPPEntityDeleteView {
-  mixin(ViewThis!("CMSXPagesDeleteView"));
+class DCMSPagesDeleteView : DAPPEntityDeleteView {
+  mixin(ViewThis!("CMSPagesDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,7 +21,7 @@ class DCMSXPagesDeleteView : DAPPEntityDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -33,7 +33,7 @@ class DCMSXPagesDeleteView : DAPPEntityDeleteView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXPagesDeleteView~"::DCMSXPagesDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSPagesDeleteView~"::DCMSPagesDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Page ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -44,11 +44,11 @@ class DCMSXPagesDeleteView : DAPPEntityDeleteView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Pages"],
             [this.rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"]
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXPagesDeleteView"));
+mixin(ViewCalls!("CMSPagesDeleteView"));

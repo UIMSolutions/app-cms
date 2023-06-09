@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.tutorials;
 
-class DCMSXTutorialsCreateView : DAPPEntityCreateView {
-  mixin(ViewThis!("CMSXTutorialsCreateView"));
+class DCMSTutorialsCreateView : DAPPEntityCreateView {
+  mixin(ViewThis!("CMSTutorialsCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -18,7 +18,7 @@ class DCMSXTutorialsCreateView : DAPPEntityCreateView {
         .rootPath(this.rootPath)
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Tutorials"],
             [this.rootPath~"/create", "Create"]
           );
@@ -27,7 +27,7 @@ class DCMSXTutorialsCreateView : DAPPEntityCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -39,7 +39,7 @@ class DCMSXTutorialsCreateView : DAPPEntityCreateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXTutorialsCreateView~"::DCMSXTutorialsCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSTutorialsCreateView~"::DCMSTutorialsCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;
@@ -55,4 +55,4 @@ class DCMSXTutorialsCreateView : DAPPEntityCreateView {
     }
   }
 }
-mixin(ViewCalls!("CMSXTutorialsCreateView"));
+mixin(ViewCalls!("CMSTutorialsCreateView"));

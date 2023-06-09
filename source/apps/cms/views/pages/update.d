@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.pages;
 
-class DCMSXPagesUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXPagesUpdateView"));
+class DCMSPagesUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSPagesUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXPagesUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/pages/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSXPagesUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXPagesUpdateView~"::DCMSXPagesUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSPagesUpdateView~"::DCMSPagesUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -46,11 +46,11 @@ class DCMSXPagesUpdateView : DAPPEntityUpdateView {
       myHeader
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Pages"],
             [this.rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXPagesUpdateView"));
+mixin(ViewCalls!("CMSPagesUpdateView"));

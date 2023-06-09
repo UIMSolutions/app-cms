@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.tutorials;
 
-class DCMSXTutorialsUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXTutorialsUpdateView"));
+class DCMSTutorialsUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSTutorialsUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSXTutorialsUpdateView : DAPPEntityUpdateView {
         .rootPath(this.rootPath)
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Tutorials"],
             [" ", "Bearbeiten"]
           );
@@ -29,7 +29,7 @@ class DCMSXTutorialsUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/tutorials/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -40,7 +40,7 @@ class DCMSXTutorialsUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXTutorialsUpdateView~"::DCMSXTutorialsUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSTutorialsUpdateView~"::DCMSTutorialsUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -49,4 +49,4 @@ class DCMSXTutorialsUpdateView : DAPPEntityUpdateView {
     auto bodyTitle = "Tutorial Name:";
   }
 }
-mixin(ViewCalls!("CMSXTutorialsUpdateView"));
+mixin(ViewCalls!("CMSTutorialsUpdateView"));

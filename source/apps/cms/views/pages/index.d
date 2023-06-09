@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.pages;
 
-class DCMSXPagesIndexView : DAPPEntitiesListView {
-  mixin(ViewThis!("CMSXPagesIndexView"));
+class DCMSPagesIndexView : DAPPEntitiesListView {
+  mixin(ViewThis!("CMSPagesIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSXPagesIndexView : DAPPEntitiesListView {
       .rootPath(this.rootPath)
       .breadcrumbs
         .items(
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Pages"]
         );
 
@@ -42,7 +42,7 @@ class DCMSXPagesIndexView : DAPPEntitiesListView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXPagesIndexView~":DCMSXPagesIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSPagesIndexView~":DCMSPagesIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -58,13 +58,13 @@ class DCMSXPagesIndexView : DAPPEntitiesListView {
   }
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXPagesIndexView~":DCMSXPagesIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSPagesIndexView~":DCMSPagesIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this// .rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXPagesIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSPagesIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [
@@ -79,7 +79,7 @@ class DCMSXPagesIndexView : DAPPEntitiesListView {
     )))].toH5;              
   }  */
 }
-mixin(ViewCalls!("CMSXPagesIndexView"));
+mixin(ViewCalls!("CMSPagesIndexView"));
 
 version(test_uim_cms) { unittest {
     // TODO

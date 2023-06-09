@@ -1,17 +1,21 @@
-module apps.cms.controllers.pages.offers.index;
+module apps.cms.controllers.pages.glossary.index;
 
 import apps.cms;
 @safe:
 
-class DCMSXOffersIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXOffersIndexPageController"));
+class DCMSXGlossaryIndexPageController : DCMSXPageController {
+  mixin(PageControllerThis!("CMSXGlossaryIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
+
+    this
+      .view(
+        CMSXGlossaryIndexView(this));
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXOffersIndexPageController~":DCMSXOffersIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSXGlossaryIndexPageController~":DCMSXGlossaryIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -32,11 +36,11 @@ class DCMSXOffersIndexPageController : DCMSXPageController {
     if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_offers"].findMany();
+      auto dbEntities = db["uim", "cms_glossary"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView
-        .rootPath("/cms/offers")
+        .rootPath("/cms/glossary")
         .entities(dbEntities);
     }
     else { 
@@ -44,4 +48,4 @@ class DCMSXOffersIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXOffersIndexPageController"));
+mixin(PageControllerCalls!("CMSXGlossaryIndexPageController"));

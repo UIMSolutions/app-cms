@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.pages;
 
-class DCMSPagesDeleteView : DAPPEntityDeleteView {
+class DCMSPagesDeleteView : DEntityDeleteView {
   mixin(ViewThis!("CMSPagesDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {

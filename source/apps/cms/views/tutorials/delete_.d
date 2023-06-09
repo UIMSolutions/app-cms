@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.tutorials;
 
-class DCMSTutorialsDeleteView : DAPPEntityDeleteView {
+class DCMSTutorialsDeleteView : DEntityDeleteView {
   mixin(ViewThis!("CMSTutorialsDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {

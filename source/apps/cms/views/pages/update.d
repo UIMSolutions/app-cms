@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.pages;
 
-class DCMSPagesUpdateView : DAPPEntityUpdateView {
+class DCMSPagesUpdateView : DEntityUpdateView {
   mixin(ViewThis!("CMSPagesUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {

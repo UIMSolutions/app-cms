@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.offers;
 
-class DCMSOffersReadView : DAPPEntityReadView {
+class DCMSOffersReadView : DEntityReadView {
   mixin(ViewThis!("CMSOffersReadView"));
 
 override void initialize(Json configSettings = Json(null)) {

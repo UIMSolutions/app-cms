@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.pages;
 
-class DCMSPagesIndexView : DAPPEntitiesListView {
+class DCMSPagesIndexView : DEntitiesListView {
   mixin(ViewThis!("CMSPagesIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {

@@ -3,8 +3,8 @@ module apps.cms.views.news.edit;
 import apps.cms;
 @safe:
 
-class DCMSNewsEditView : DCMSView {
-  mixin(ViewThis!("CMSNewsEditView"));
+class DCMSNewsUpdateView : DCMSView {
+  mixin(ViewThis!("CMSNewsUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -33,7 +33,7 @@ class DCMSNewsEditView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSNewsEditView~"::DCMSNewsEditView:beforeH5");
+    debugMethodCall(moduleName!DCMSNewsUpdateView~"::DCMSNewsUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -64,4 +64,4 @@ class DCMSNewsEditView : DCMSView {
           );
   }
 }
-mixin(ViewCalls!("CMSNewsEditView"));
+mixin(ViewCalls!("CMSNewsUpdateView"));

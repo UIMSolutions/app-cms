@@ -3,8 +3,8 @@ module apps.cms.views.blogs.edit;
 import apps.cms;
 @safe:
 
-class DCMSBlogsEditView : DCMSUpdateView {
-  mixin(ViewThis!("CMSBlogsEditView"));
+class DCMSBlogsUpdateView : DCMSUpdateView {
+  mixin(ViewThis!("CMSBlogsUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -69,4 +69,4 @@ class DCMSBlogsEditView : DCMSUpdateView {
     }
   }
 }
-mixin(ViewCalls!("CMSBlogsEditView", "DCMSBlogsEditView"));
+mixin(ViewCalls!("CMSBlogsUpdateView", "DCMSBlogsUpdateView"));

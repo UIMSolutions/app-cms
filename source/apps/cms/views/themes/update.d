@@ -1,10 +1,10 @@
-module apps.cms.views.themes.edit;
+module apps.cms.views.themes.update;
 
 import apps.cms;
 @safe:
 
-class DCMSThemesEditView : DCMSView {
-  mixin(ViewThis!("CMSThemesEditView"));
+class DCMSThemesUpdateView : DCMSView {
+  mixin(ViewThis!("CMSThemesUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -65,4 +65,4 @@ class DCMSThemesEditView : DCMSView {
           );
   }
 }
-mixin(ViewCalls!("CMSThemesEditView", "DCMSThemesEditView"));
+mixin(ViewCalls!("CMSThemesUpdateView", "DCMSThemesUpdateView"));

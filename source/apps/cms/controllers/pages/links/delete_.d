@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.links.delete_;
 import apps.cms;
 @safe:
 
-class DCMSXLinksDeletePageController : DCMSXDeletePageController {
-  mixin(PageControllerThis!("CMSXLinksDeletePageController"));
+class DCMSLinksDeletePageController : DCMSDeletePageController {
+  mixin(PageControllerThis!("CMSLinksDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXBlogsDeleteView(this))    
+        CMSBlogsDeleteView(this))    
       .scripts
         .addContents(
           editorSummary~editorText~
@@ -24,4 +24,4 @@ class DCMSXLinksDeletePageController : DCMSXDeletePageController {
       .collectionName("cms_links"); 
   }
 }
-mixin(PageControllerCalls!("CMSXLinksDeletePageController"));
+mixin(PageControllerCalls!("CMSLinksDeletePageController"));

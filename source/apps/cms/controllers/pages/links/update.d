@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.links.update;
 import apps.cms;
 @safe:
 
-class DCMSXLinksUpdatePageController : DCMSXUpdatePageController {
-  mixin(PageControllerThis!("CMSXLinksUpdatePageController"));
+class DCMSLinksUpdatePageController : DCMSUpdatePageController {
+  mixin(PageControllerThis!("CMSLinksUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,4 +23,4 @@ class DCMSXLinksUpdatePageController : DCMSXUpdatePageController {
       .collectionName("cms_links"); 
   }
 }
-mixin(PageControllerCalls!("CMSXLinksUpdatePageController"));
+mixin(PageControllerCalls!("CMSLinksUpdatePageController"));

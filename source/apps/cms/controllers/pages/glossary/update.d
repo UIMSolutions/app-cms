@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.glossary.update;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryUpdatePageController : DCMSXUpdatePageController {
-  mixin(PageControllerThis!("CMSXGlossaryUpdatePageController"));
+class DCMSGlossaryUpdatePageController : DCMSUpdatePageController {
+  mixin(PageControllerThis!("CMSGlossaryUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXGlossaryUpdateView(this))
+        CMSGlossaryUpdateView(this))
       .scripts
         .addContents(
           editorSummary~editorText,
@@ -27,4 +27,4 @@ class DCMSXGlossaryUpdatePageController : DCMSXUpdatePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSXGlossaryUpdatePageController"));
+mixin(PageControllerCalls!("CMSGlossaryUpdatePageController"));

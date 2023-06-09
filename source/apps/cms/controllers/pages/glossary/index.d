@@ -3,19 +3,19 @@ module apps.cms.controllers.pages.glossary.index;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXGlossaryIndexPageController"));
+class DCMSGlossaryIndexPageController : DCMSPageController {
+  mixin(PageControllerThis!("CMSGlossaryIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXGlossaryIndexView(this));
+        CMSGlossaryIndexView(this));
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXGlossaryIndexPageController~":DCMSXGlossaryIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSGlossaryIndexPageController~":DCMSGlossaryIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -48,4 +48,4 @@ class DCMSXGlossaryIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXGlossaryIndexPageController"));
+mixin(PageControllerCalls!("CMSGlossaryIndexPageController"));

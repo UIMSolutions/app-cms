@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.glossary.delete_;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryDeletePageController : DCMSXDeletePageController {
-  mixin(PageControllerThis!("CMSXGlossaryDeletePageController"));
+class DCMSGlossaryDeletePageController : DCMSDeletePageController {
+  mixin(PageControllerThis!("CMSGlossaryDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXGlossaryDeleteView(this))
+        CMSGlossaryDeleteView(this))
       .scripts
         .addContents(
           editorSummary~editorText~
@@ -24,4 +24,4 @@ class DCMSXGlossaryDeletePageController : DCMSXDeletePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSXGlossaryDeletePageController"));
+mixin(PageControllerCalls!("CMSGlossaryDeletePageController"));

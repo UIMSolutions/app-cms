@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.offers.index;
 import apps.cms;
 @safe:
 
-class DCMSXOffersIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXOffersIndexPageController"));
+class DCMSOffersIndexPageController : DCMSPageController {
+  mixin(PageControllerThis!("CMSOffersIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXOffersIndexPageController~":DCMSXOffersIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSOffersIndexPageController~":DCMSOffersIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -44,4 +44,4 @@ class DCMSXOffersIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXOffersIndexPageController"));
+mixin(PageControllerCalls!("CMSOffersIndexPageController"));

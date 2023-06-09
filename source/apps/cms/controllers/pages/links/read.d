@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.links.read;
 import apps.cms;
 @safe:
 
-class DCMSXLinksReadPageController : DCMSXReadPageController {
-  mixin(PageControllerThis!("CMSXLinksReadPageController"));
+class DCMSLinksReadPageController : DCMSReadPageController {
+  mixin(PageControllerThis!("CMSLinksReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,4 +21,4 @@ class DCMSXLinksReadPageController : DCMSXReadPageController {
       .collectionName("cms_links");     
   }
 }
-mixin(PageControllerCalls!("CMSXLinksReadPageController"));
+mixin(PageControllerCalls!("CMSLinksReadPageController"));

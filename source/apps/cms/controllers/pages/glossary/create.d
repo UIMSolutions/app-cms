@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.glossary.create;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryCreatePageController : DCMSXCreatePageController {
-  mixin(PageControllerThis!("CMSXGlossaryCreatePageController"));
+class DCMSGlossaryCreatePageController : DCMSCreatePageController {
+  mixin(PageControllerThis!("CMSGlossaryCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXGlossaryCreateView(this))
+        CMSGlossaryCreateView(this))
       .scripts
         .addContents(
           editorSummary~editorText,
@@ -27,4 +27,4 @@ class DCMSXGlossaryCreatePageController : DCMSXCreatePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSXGlossaryCreatePageController"));
+mixin(PageControllerCalls!("CMSGlossaryCreatePageController"));

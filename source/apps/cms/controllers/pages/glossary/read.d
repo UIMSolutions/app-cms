@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.glossary.read;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryReadPageController : DCMSXReadPageController {
-  mixin(PageControllerThis!("CMSXGlossaryReadPageController"));
+class DCMSGlossaryReadPageController : DCMSReadPageController {
+  mixin(PageControllerThis!("CMSGlossaryReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXGlossaryReadView(this))
+        CMSGlossaryReadView(this))
       .scripts
         .addContents(
           editorSummary~editorText~
@@ -24,4 +24,4 @@ class DCMSXGlossaryReadPageController : DCMSXReadPageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSXGlossaryReadPageController"));
+mixin(PageControllerCalls!("CMSGlossaryReadPageController"));

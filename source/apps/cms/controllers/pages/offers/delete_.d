@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.offers.delete_;
 import apps.cms;
 @safe:
 
-class DCMSXOffersDeletePageController : DCMSXDeletePageController {
-  mixin(PageControllerThis!("CMSXOffersDeletePageController"));
+class DCMSOffersDeletePageController : DCMSDeletePageController {
+  mixin(PageControllerThis!("CMSOffersDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,4 +21,4 @@ class DCMSXOffersDeletePageController : DCMSXDeletePageController {
       .collectionName("cms_offers"); 
   }
 }
-mixin(PageControllerCalls!("CMSXOffersDeletePageController"));
+mixin(PageControllerCalls!("CMSOffersDeletePageController"));

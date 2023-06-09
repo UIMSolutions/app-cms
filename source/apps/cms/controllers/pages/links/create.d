@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.links.create;
 import apps.cms;
 @safe:
 
-class DCMSXLinksCreatePageController : DCMSXCreatePageController {
-  mixin(PageControllerThis!("CMSXLinksCreatePageController"));
+class DCMSLinksCreatePageController : DCMSCreatePageController {
+  mixin(PageControllerThis!("CMSLinksCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXBlogsCreateView(this))    
+        CMSBlogsCreateView(this))    
       .scripts.addContents(
         editorSummary~editorText,
         `window.addEventListener('load', (event) => {
@@ -26,4 +26,4 @@ class DCMSXLinksCreatePageController : DCMSXCreatePageController {
       .collectionName("cms_links");         
   }
 }
-mixin(PageControllerCalls!("CMSXLinksCreatePageController"));
+mixin(PageControllerCalls!("CMSLinksCreatePageController"));

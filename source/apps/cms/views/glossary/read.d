@@ -1,8 +1,8 @@
-module uim.cms.views.glossary.read;
+module apps.cms.views.glossary.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.glossary;
+import apps.cms.views.glossary;
 
 class DCMSGlossaryReadView : DCMSReadView {
   mixin(ViewThis!("CMSGlossaryReadView"));

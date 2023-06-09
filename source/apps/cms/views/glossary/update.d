@@ -1,8 +1,8 @@
-module uim.cms.views.glossary.update;
+module apps.cms.views.glossary.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.glossary;
+import apps.cms.views.glossary;
 
 class DCMSGlossaryUpdateView : DCMSUpdateView {
   mixin(ViewThis!("CMSGlossaryUpdateView"));

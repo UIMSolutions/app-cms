@@ -1,8 +1,8 @@
-module uim.cms.views.glossary.create;
+module apps.cms.views.glossary.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.glossary;
+import apps.cms.views.glossary;
 
 class DCMSGlossaryCreateView : DCMSCreateView {
   mixin(ViewThis!("CMSGlossaryCreateView"));

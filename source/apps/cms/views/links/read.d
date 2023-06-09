@@ -1,8 +1,8 @@
-module uim.cms.views.links.read;
+module apps.cms.views.links.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.links;
+import apps.cms.views.links;
 
 class DCMSLinksReadView : DCMSReadView {
   mixin(ViewThis!("CMSLinksReadView"));

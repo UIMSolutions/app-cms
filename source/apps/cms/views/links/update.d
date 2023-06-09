@@ -1,8 +1,8 @@
-module uim.cms.views.links.update;
+module apps.cms.views.links.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.links;
+import apps.cms.views.links;
 
 class DCMSLinksUpdateView : DCMSUpdateView {
   mixin(ViewThis!("CMSLinksUpdateView"));

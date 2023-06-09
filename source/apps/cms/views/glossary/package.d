@@ -1,16 +1,16 @@
-module uim.cms.views.glossary;
+module apps.cms.views.glossary;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.views.glossary.index;
+public import apps.cms.views.glossary.index;
 
 // CRUD Modules
-public import uim.cms.views.glossary.create;
-public import uim.cms.views.glossary.read;
-public import uim.cms.views.glossary.update;
-public import uim.cms.views.glossary.delete_;
+public import apps.cms.views.glossary.create;
+public import apps.cms.views.glossary.read;
+public import apps.cms.views.glossary.update;
+public import apps.cms.views.glossary.delete_;
 
 package:
   string myRootPath = "/cms/glossary";

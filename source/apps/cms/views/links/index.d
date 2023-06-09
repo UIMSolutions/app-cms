@@ -1,8 +1,8 @@
-module uim.cms.views.links.index;
+module apps.cms.views.links.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.links;
+import apps.cms.views.links;
 
 class DCMSLinksIndexView : DAPPEntitiesListView {
   mixin(ViewThis!("CMSLinksIndexView"));

@@ -1,8 +1,8 @@
-module uim.cms.views.links.delete_;
+module apps.cms.views.links.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.links;
+import apps.cms.views.links;
 
 class DCMSLinksDeleteView : DCMSDeleteView {
   mixin(ViewThis!("CMSLinksDeleteView"));

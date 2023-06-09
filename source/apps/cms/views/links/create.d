@@ -1,8 +1,8 @@
-module uim.cms.views.links.create;
+module apps.cms.views.links.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.links;
+import apps.cms.views.links;
 
 class DCMSLinksCreateView : DCMSCreateView {
   mixin(ViewThis!("CMSLinksCreateView"));

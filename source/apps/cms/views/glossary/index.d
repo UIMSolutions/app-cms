@@ -1,8 +1,8 @@
-module uim.cms.views.glossary.index;
+module apps.cms.views.glossary.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.glossary;
+import apps.cms.views.glossary;
 
 class DCMSGlossaryIndexView : DAPPEntitiesListView {
   mixin(ViewThis!("CMSGlossaryIndexView"));

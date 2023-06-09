@@ -1,8 +1,8 @@
-module uim.cms.scripts.news.create;
+module apps.cms.scripts.news.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.news;
+import apps.cms.scripts.news;
 
 auto createEntity() {  
   return 

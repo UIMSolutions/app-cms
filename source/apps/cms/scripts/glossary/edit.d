@@ -1,8 +1,8 @@
-module uim.cms.scripts.glossary.edit;
+module apps.cms.scripts.glossary.edit;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.glossary;
+import apps.cms.scripts.glossary;
 
 public:
 auto editEntity() {  

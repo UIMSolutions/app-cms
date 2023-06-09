@@ -1,8 +1,8 @@
-module uim.cms.scripts.glossary.list;
+module apps.cms.scripts.glossary.list;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.glossary;
+import apps.cms.scripts.glossary;
 
 auto listEntities() {  
   return 

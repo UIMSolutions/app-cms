@@ -1,8 +1,8 @@
-module uim.cms.scripts.links.list;
+module apps.cms.scripts.links.list;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.links;
+import apps.cms.scripts.links;
 
 auto listEntities() {  
   return 

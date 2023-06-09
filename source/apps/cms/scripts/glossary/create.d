@@ -1,8 +1,8 @@
-module uim.cms.scripts.glossary.create;
+module apps.cms.scripts.glossary.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.glossary;
+import apps.cms.scripts.glossary;
 
 auto createEntity() {  
   return 

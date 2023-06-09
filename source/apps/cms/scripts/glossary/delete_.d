@@ -1,8 +1,8 @@
-module uim.cms.scripts.glossary.delete_;
+module apps.cms.scripts.glossary.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.glossary;
+import apps.cms.scripts.glossary;
 
 auto deleteEntity() {  
   return 

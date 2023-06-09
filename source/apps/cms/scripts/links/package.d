@@ -1,6 +1,6 @@
-module uim.cms.scripts.links;
+module apps.cms.scripts.links;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 auto myApi = "/api/v1/cms/links";

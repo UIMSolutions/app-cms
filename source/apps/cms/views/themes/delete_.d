@@ -20,7 +20,7 @@ class DCMSThemesDeleteView : DCMSView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -32,7 +32,7 @@ class DCMSThemesDeleteView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesDeleteView~"::DCMSXThemesDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSThemesDeleteView~"::DCMSThemesDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Theme ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -42,7 +42,7 @@ class DCMSThemesDeleteView : DCMSView {
       myHeader
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Themes"],
             ["active", "Löschen"]
           );

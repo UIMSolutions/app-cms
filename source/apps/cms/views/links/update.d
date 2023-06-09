@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.links;
 
-class DCMSXLinksUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXLinksUpdateView"));
+class DCMSLinksUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSLinksUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXLinksUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/links/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSXLinksUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXLinksUpdateView~"::DCMSXLinksUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSLinksUpdateView~"::DCMSLinksUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -47,11 +47,11 @@ class DCMSXLinksUpdateView : DAPPEntityUpdateView {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Links"],
           [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"],
         );
     }
   }
 }
-mixin(ViewCalls!("CMSXLinksUpdateView"));
+mixin(ViewCalls!("CMSLinksUpdateView"));

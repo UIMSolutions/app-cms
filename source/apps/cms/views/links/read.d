@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.links;
 
-class DCMSXLinksReadView : DAPPEntityReadView {
-  mixin(ViewThis!("CMSXLinksReadView"));
+class DCMSLinksReadView : DAPPEntityReadView {
+  mixin(ViewThis!("CMSLinksReadView"));
 
 override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -22,7 +22,7 @@ override void initialize(Json configSettings = Json(null)) {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .crudMode(this.crudMode)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -33,7 +33,7 @@ override void initialize(Json configSettings = Json(null)) {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXLinksReadView~"::DCMSXLinksReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSLinksReadView~"::DCMSLinksReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -44,7 +44,7 @@ override void initialize(Json configSettings = Json(null)) {
       myHeader
         .breadcrumbs
           .items(
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Links"],
           [rootPath~"/view?id="~(this.entity ? this.entity["id"] : " -missing-"), "Anzeigen"]
         );
@@ -56,7 +56,7 @@ override void initialize(Json configSettings = Json(null)) {
       .entity(this.entity);
   }
 }
-mixin(ViewCalls!("CMSXLinksReadView"));
+mixin(ViewCalls!("CMSLinksReadView"));
 
 version(test_uim_cms) { unittest {
     // TODO

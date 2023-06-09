@@ -18,7 +18,7 @@ class DCMSThemesCreateView : DCMSView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Themes"],
             [this.rootPath~"/create", "Create"]
           );
@@ -27,7 +27,7 @@ class DCMSThemesCreateView : DCMSView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -39,7 +39,7 @@ class DCMSThemesCreateView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesCreateView~"::DCMSXThemesCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSThemesCreateView~"::DCMSThemesCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;

@@ -22,7 +22,7 @@ class DCMSThemesEditView : DCMSView {
       myForm
         .action("/cms/themes/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSThemesEditView : DCMSView {
 
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesUpdateView~"::DCMSXThemesUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSThemesUpdateView~"::DCMSThemesUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -47,7 +47,7 @@ class DCMSThemesEditView : DCMSView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Themes"],
             [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
           );

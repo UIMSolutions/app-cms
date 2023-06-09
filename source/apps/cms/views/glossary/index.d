@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSXGlossaryIndexView : DAPPEntitiesListView {
-  mixin(ViewThis!("CMSXGlossaryIndexView"));
+class DCMSGlossaryIndexView : DAPPEntitiesListView {
+  mixin(ViewThis!("CMSGlossaryIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSXGlossaryIndexView : DAPPEntitiesListView {
       .rootPath(this.rootPath)
       .breadcrumbs
         .items(
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Glossary"]
         );
 
@@ -41,7 +41,7 @@ class DCMSXGlossaryIndexView : DAPPEntitiesListView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXGlossaryIndexView~":DCMSXGlossaryIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSGlossaryIndexView~":DCMSGlossaryIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
   
@@ -51,13 +51,13 @@ class DCMSXGlossaryIndexView : DAPPEntitiesListView {
   }
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXGlossaryIndexView~":DCMSXGlossaryIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSGlossaryIndexView~":DCMSGlossaryIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this// .rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXGlossaryIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSGlossaryIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [
@@ -72,7 +72,7 @@ class DCMSXGlossaryIndexView : DAPPEntitiesListView {
     )))].toH5;              
   }  */
 }
-mixin(ViewCalls!("CMSXGlossaryIndexView"));
+mixin(ViewCalls!("CMSGlossaryIndexView"));
 
 version(test_uim_cms) { unittest {
     // TODO

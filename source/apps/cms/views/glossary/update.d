@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSXGlossaryUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXGlossaryUpdateView"));
+class DCMSGlossaryUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSGlossaryUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXGlossaryUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/glossarys/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSXGlossaryUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXGlossaryUpdateView~"::DCMSXGlossaryUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSGlossaryUpdateView~"::DCMSGlossaryUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -47,11 +47,11 @@ class DCMSXGlossaryUpdateView : DAPPEntityUpdateView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Glossarys"],
             [this.rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXGlossaryUpdateView"));
+mixin(ViewCalls!("CMSGlossaryUpdateView"));

@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSXGlossaryDeleteView : DAPPEntityDeleteView {
-  mixin(ViewThis!("CMSXGlossaryDeleteView"));
+class DCMSGlossaryDeleteView : DAPPEntityDeleteView {
+  mixin(ViewThis!("CMSGlossaryDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,7 +21,7 @@ class DCMSXGlossaryDeleteView : DAPPEntityDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -33,7 +33,7 @@ class DCMSXGlossaryDeleteView : DAPPEntityDeleteView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXGlossaryDeleteView~"::DCMSXGlossaryDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSGlossaryDeleteView~"::DCMSGlossaryDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Glossary ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -43,11 +43,11 @@ class DCMSXGlossaryDeleteView : DAPPEntityDeleteView {
       myHeader
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Glossary"],
             [this.rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"]
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXGlossaryDeleteView"));
+mixin(ViewCalls!("CMSGlossaryDeleteView"));

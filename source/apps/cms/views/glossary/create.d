@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSXGlossaryCreateView : DAPPEntityCreateView {
-  mixin(ViewThis!("CMSXGlossaryCreateView"));
+class DCMSGlossaryCreateView : DAPPEntityCreateView {
+  mixin(ViewThis!("CMSGlossaryCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -18,7 +18,7 @@ class DCMSXGlossaryCreateView : DAPPEntityCreateView {
         .rootPath(this.rootPath)
         .breadcrumbs
           .items(
-          ["/cms", "CMSX"], 
+          ["/cms", "CMS"], 
           [this.rootPath, "Glossary"], 
           [this.rootPath~"/create", "Create"]
         );
@@ -27,7 +27,7 @@ class DCMSXGlossaryCreateView : DAPPEntityCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -39,7 +39,7 @@ class DCMSXGlossaryCreateView : DAPPEntityCreateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXGlossaryCreateView~"::DCMSXGlossaryCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSGlossaryCreateView~"::DCMSGlossaryCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;
@@ -55,4 +55,4 @@ class DCMSXGlossaryCreateView : DAPPEntityCreateView {
     }
   }
 }
-mixin(ViewCalls!("CMSXGlossaryCreateView"));
+mixin(ViewCalls!("CMSGlossaryCreateView"));

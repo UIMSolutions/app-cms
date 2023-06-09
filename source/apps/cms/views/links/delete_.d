@@ -4,8 +4,8 @@ import uim.cms;
 @safe:
 import uim.cms.views.links;
 
-class DCMSXLinksDeleteView : DAPPEntityDeleteView {
-  mixin(ViewThis!("CMSXLinksDeleteView"));
+class DCMSLinksDeleteView : DAPPEntityDeleteView {
+  mixin(ViewThis!("CMSLinksDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,7 +21,7 @@ class DCMSXLinksDeleteView : DAPPEntityDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -33,7 +33,7 @@ class DCMSXLinksDeleteView : DAPPEntityDeleteView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXLinksDeleteView~"::DCMSXLinksDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSLinksDeleteView~"::DCMSLinksDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Link ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -44,11 +44,11 @@ class DCMSXLinksDeleteView : DAPPEntityDeleteView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Links"],
             [this.rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"],
           );
     }
   }
 }
-mixin(ViewCalls!("CMSXLinksDeleteView"));
+mixin(ViewCalls!("CMSLinksDeleteView"));

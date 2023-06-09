@@ -19,7 +19,7 @@ class DCMSThemesIndexView : DCMSView {
       .breadcrumbs
         .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Themes"]
         );
 

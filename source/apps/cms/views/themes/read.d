@@ -21,7 +21,7 @@ class DCMSThemesReadView : DCMSView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .crudMode(this.crudMode)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -32,7 +32,7 @@ class DCMSThemesReadView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesReadView~"::DCMSXThemesReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSThemesReadView~"::DCMSThemesReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -43,7 +43,7 @@ class DCMSThemesReadView : DCMSView {
       myHeader
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Themes"],
             [this.rootPath~"/view?id="~(this.entity ? this.entity["id"] : " -missing-"), "Anzeigen"]
           );

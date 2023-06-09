@@ -1,4 +1,4 @@
-module uim.cms.scripts.docus;
+module apps.cms.scripts.docus;
 
 auto myApi = "/api/v1/cms/docus";
 auto myUrl = "/cms/docus";

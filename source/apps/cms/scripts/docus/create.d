@@ -1,8 +1,8 @@
-module uim.cms.scripts.docus.create;
+module apps.cms.scripts.docus.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.docus;
+import apps.cms.scripts.docus;
 
 auto createEntity() {  
   return 

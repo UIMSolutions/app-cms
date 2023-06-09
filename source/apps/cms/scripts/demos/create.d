@@ -1,8 +1,8 @@
-module uim.cms.scripts.demos.create;
+module apps.cms.scripts.demos.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.demos;
+import apps.cms.scripts.demos;
 
 auto createEntity() {  
   return 

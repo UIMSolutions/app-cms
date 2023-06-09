@@ -1,6 +1,6 @@
-module uim.cms.scripts.demos;
+module apps.cms.scripts.demos;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 auto myApi = "/api/v1/cms/demos";

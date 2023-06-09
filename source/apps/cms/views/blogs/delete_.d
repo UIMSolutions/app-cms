@@ -58,7 +58,7 @@ class DCMSBlogsDeleteView : DCMSDeleteView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Blogs"],
             ["", "Löschen"]
           );

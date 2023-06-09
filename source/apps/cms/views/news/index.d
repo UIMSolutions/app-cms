@@ -19,7 +19,7 @@ class DCMSNewsIndexView : DCMSView {
       .breadcrumbs
         .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "News"]
         );
 
@@ -41,7 +41,7 @@ class DCMSNewsIndexView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXNewsIndexView~":DCMSXNewsIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSNewsIndexView~":DCMSNewsIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 

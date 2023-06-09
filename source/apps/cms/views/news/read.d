@@ -21,7 +21,7 @@ override void initialize(Json configSettings = Json(null)) {
   if (auto myForm = cast(DForm)this.form) {
     myForm
       .crudMode(this.crudMode)
-      .content(CMSXFormContent.form(myForm));
+      .content(CMSFormContent.form(myForm));
 
     if (auto myFormHeader = cast(DFormHeader)myForm.header) {
       myFormHeader
@@ -32,7 +32,7 @@ override void initialize(Json configSettings = Json(null)) {
 }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXNewsReadView~"::DCMSXNewsReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSNewsReadView~"::DCMSNewsReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -44,7 +44,7 @@ override void initialize(Json configSettings = Json(null)) {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "News"],
           [rootPath~"/view?id="~(this.entity ? this.entity["id"] : " -missing-"), "Anzeigen"]
         );

@@ -22,7 +22,7 @@ class DCMSNewsEditView : DCMSView {
       myForm
         .action("/cms/news/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -33,7 +33,7 @@ class DCMSNewsEditView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXNewsUpdateView~"::DCMSXNewsUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSNewsUpdateView~"::DCMSNewsUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -46,7 +46,7 @@ class DCMSNewsEditView : DCMSView {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "News"],
           [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
         );

@@ -22,7 +22,7 @@ class DCMSBlogsCreateView : DCMSCreateView {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Blogs"],
           ["", "Erstellen"]
         );

@@ -18,7 +18,7 @@ class DCMSNewsCreateView : DCMSView {
         .breadcrumbs
           .items(
           ["/", "UIM"],
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "News"],
           [this.rootPath~"/create", "Create"]
         );
@@ -27,7 +27,7 @@ class DCMSNewsCreateView : DCMSView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -39,7 +39,7 @@ class DCMSNewsCreateView : DCMSView {
   }
   
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXNewsCreateView~"::DCMSXNewsCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSNewsCreateView~"::DCMSNewsCreateView:beforeH5");
     super.beforeH5(options);
 
     this

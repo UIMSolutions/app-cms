@@ -31,7 +31,7 @@ class DCMSBlogsCreateView : DCMSCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(FormHeader.form(myForm));
+        .header(FormHeader.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -55,6 +55,18 @@ class DCMSBlogsCreateView : DCMSCreateView {
             [this.rootPath~"/blogs", "Blogs"],
             [this.rootPath~"/blogs/create", "Create"]
           );
+
+    options["rootPath"] = this.rootPath;
+
+    if (this.controller && this.controller.database) {
+      this.entity(this.controller.database["uim"]["cms_blogs"].createFromTemplate);
+    }
+
+    if (auto myForm = cast(DForm)this.form) {
+      myForm
+        .action(this.rootPath~"/actions/create")
+        .entity(this.entity);
+    }
   }
 }
 mixin(ViewCalls!("CMSBlogsCreateView", "DCMSBlogsCreateView"));

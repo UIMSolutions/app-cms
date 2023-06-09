@@ -13,6 +13,27 @@ class DCMSBlogsDeleteView : DCMSDeleteView {
       .pageHeader(MVCDeletePageHeader.rootPath(rootPath))
       .pageBody(PageBodyViewComponent)
       .pageFooter(MVCPageFooterViewComponent);  
+
+    this.rootPath("/cms/blogs");
+
+    if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
+      myHeader
+        .title(titleDelete("Blog löschen"))
+        .rootPath(this.rootPath);
+    }
+    
+     if (auto myForm = cast(DForm)this.form) {
+      myForm
+        .action(this.rootPath~"/actions/delete")
+        .content(CMSXFormContent.form(myForm))
+        .rootPath(this.rootPath);
+
+      if (auto myFormHeader = cast(DFormHeader)myForm.header) {
+        myFormHeader
+        .mainTitle("Blogs")
+        .subTitle("Blogs löschen");
+      }
+    }    
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -28,6 +49,20 @@ class DCMSBlogsDeleteView : DCMSDeleteView {
             [this.rootPath~"/blogs", "Blogs"],
             [this.rootPath~"/blogs/delete", "Delete"]
           );
+
+    auto headerTitle = "Blog ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
+    auto bodyTitle = "Blog Name:";
+
+    if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
+      myHeader
+        .breadcrumbs
+          .items(
+          ["/", "UIM"],
+          ["/cms", "CMSX"],
+          [this.rootPath, "Blogs"],
+          ["", "Löschen"]
+        );
+    }
   }
 }
 mixin(ViewCalls!("CMSBlogsDeleteView", "DCMSBlogsDeleteView"));

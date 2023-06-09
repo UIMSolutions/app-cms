@@ -4,7 +4,7 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSGlossaryCreateView : DAPPEntityCreateView {
+class DCMSGlossaryCreateView : DCMSCreateView {
   mixin(ViewThis!("CMSGlossaryCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {

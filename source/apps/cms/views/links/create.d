@@ -4,7 +4,7 @@ import uim.cms;
 @safe:
 import uim.cms.views.links;
 
-class DCMSLinksCreateView : DAPPEntityCreateView {
+class DCMSLinksCreateView : DCMSCreateView {
   mixin(ViewThis!("CMSLinksCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {

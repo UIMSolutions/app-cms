@@ -4,7 +4,7 @@ import uim.cms;
 @safe:
 import uim.cms.views.glossary;
 
-class DCMSGlossaryDeleteView : DAPPEntityDeleteView {
+class DCMSGlossaryDeleteView : DCMSDeleteView {
   mixin(ViewThis!("CMSGlossaryDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {

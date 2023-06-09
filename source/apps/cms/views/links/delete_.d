@@ -4,7 +4,7 @@ import uim.cms;
 @safe:
 import uim.cms.views.links;
 
-class DCMSLinksDeleteView : DAPPEntityDeleteView {
+class DCMSLinksDeleteView : DCMSDeleteView {
   mixin(ViewThis!("CMSLinksDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {

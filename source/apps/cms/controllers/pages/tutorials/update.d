@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSTutorialsUpdatePageController : DCMSUpdatePageController {
-  mixin(PageControllerThis!("CMSTutorialsUpdatePageController"));
+  mixin(ControllerThis!("CMSTutorialsUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);

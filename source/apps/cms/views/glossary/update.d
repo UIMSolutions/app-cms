@@ -23,7 +23,7 @@ class DCMSGlossaryUpdateView : DCMSUpdateView {
       myForm
         .action("/cms/glossarys/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSFormContent.form(myForm));
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.links;
 
-class DCMSLinksIndexView : DCMSListView {
+class DCMSLinksIndexView : DCMSIndexView {
   mixin(ViewThis!("CMSLinksIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {

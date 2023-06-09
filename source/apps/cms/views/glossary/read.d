@@ -20,8 +20,8 @@ override void initialize(Json configSettings = Json(null)) {
 
     if (auto myForm = cast(DForm)this.form) {
       myForm
-        .crudMode(this.crudMode)
-        .content(CMSFormContent.form(myForm));
+        .crudMode(CRUDModes.Read)
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

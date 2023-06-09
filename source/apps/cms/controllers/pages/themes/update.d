@@ -10,7 +10,7 @@ class DCMSThemesEditPageController : DPageController {
     super.initialize(configSettings);
 
     this
-      .view(CMSThemesEditView(this));
+      .view(CMSThemesUpdateView(this));
   }
 
   override void beforeResponse(STRINGAA options = null) {

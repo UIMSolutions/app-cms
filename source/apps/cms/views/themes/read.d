@@ -21,7 +21,7 @@ class DCMSThemesReadView : DCMSView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .crudMode(this.crudMode)
-        .content(CMSFormContent.form(myForm));
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

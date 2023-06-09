@@ -14,7 +14,7 @@ class DCMSBlogsCreatePageController : DPageController {
       .rootPath("/cms/blogs") 
       .collectionName("cms_blogs");     
 
-    if (auto myView = cast(DCMSBlogsEditView)this.view) {
+    if (auto myView = cast(DCMSBlogsUpdateView)this.view) {
       /* if (auto myForm = cast(DForm)myView.form) {
         this
           .scripts

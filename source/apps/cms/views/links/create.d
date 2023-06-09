@@ -27,7 +27,7 @@ class DCMSLinksCreateView : DCMSCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSFormContent.form(myForm));
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

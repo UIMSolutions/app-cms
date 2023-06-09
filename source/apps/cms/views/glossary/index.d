@@ -3,7 +3,7 @@ module apps.cms.views.glossary.index;
 import apps.cms;
 @safe:
 
-class DCMSGlossaryIndexView : DCMSListView {
+class DCMSGlossaryIndexView : DCMSIndexView {
   mixin(ViewThis!("CMSGlossaryIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {

@@ -21,7 +21,7 @@ class DCMSTutorialsDeleteView : DCMSDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSFormContent.form(myForm))
+        .content(FormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {

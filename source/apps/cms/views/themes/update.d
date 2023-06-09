@@ -1,40 +1,43 @@
-module apps.cms.views.themes.read;
+module apps.cms.views.themes.edit;
 
 import apps.cms;
 @safe:
 
-class DCMSThemesReadView : DCMSView {
-  mixin(ViewThis!("CMSThemesReadView"));
+class DCMSThemesEditView : DCMSView {
+  mixin(ViewThis!("CMSThemesEditView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
-    this.rootPath("/cms/themes");
+    this
+      .rootPath("/cms/themes");
 
     if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
       myHeader
-        .title(titleView("Theme anzeigen"))
-        .actions([["refresh", "list", "create"]])
+        .title(titleEdit("Theme bearbeiten"))
         .rootPath(this.rootPath);
     }
 
     if (auto myForm = cast(DForm)this.form) {
       myForm
-        .crudMode(this.crudMode)
+        .action("/cms/themes/actions/update")
+        .crudMode(CRUDModes.Update)
         .content(CMSXFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
           .mainTitle("Themes")
-          .subTitle("Themes anzeigen");
+          .subTitle("Themes bearbeiten");
       }
     }
   }
 
+
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesReadView~"::DCMSXThemesReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSXThemesUpdateView~"::DCMSXThemesUpdateView:beforeH5");
     super.beforeH5(options);
-    if (hasError || "redirect" in options) { return; }
+
+    if (this.header) this.header.entity(this.entity);
 
     auto headerTitle = "Theme ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
     auto bodyTitle = "Theme Name:";
@@ -43,27 +46,23 @@ class DCMSThemesReadView : DCMSView {
       myHeader
         .breadcrumbs
           .items(
+            ["/", "UIM"],
             ["/cms", "CMSX"],
             [this.rootPath, "Themes"],
-            [this.rootPath~"/view?id="~(this.entity ? this.entity["id"] : " -missing-"), "Anzeigen"]
+            [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
           );
     }
 
-    this.form
-      .parameter("headerTitle", headerTitle)
-      .parameter("bodyTitle", bodyTitle)
-      .entity(this.entity);
-
     this
       .pageHeader
-        .title("Themes -> Read")
+        .title("Themes -> Edit")
         .breadcrumbs
           .items(
             ["/", "UIM"],
             [this.rootPath, "CMS"],
             [this.rootPath~"/themes", "Themes"],
-            [this.rootPath~"/themes/read", "Read"]
+            [this.rootPath~"/themes/edit", "Edit"]
           );
   }
 }
-mixin(ViewCalls!("CMSThemesReadView", "DCMSThemesReadView"));
+mixin(ViewCalls!("CMSThemesEditView", "DCMSThemesEditView"));

@@ -27,4 +27,4 @@ class DCMSGlossaryUpdatePageController : DCMSUpdatePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSGlossaryUpdatePageController"));
+mixin(ControllerCalls!("CMSGlossaryUpdatePageController"));

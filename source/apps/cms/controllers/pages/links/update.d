@@ -23,4 +23,4 @@ class DCMSLinksUpdatePageController : DCMSUpdatePageController {
       .collectionName("cms_links"); 
   }
 }
-mixin(PageControllerCalls!("CMSLinksUpdatePageController"));
+mixin(ControllerCalls!("CMSLinksUpdatePageController"));

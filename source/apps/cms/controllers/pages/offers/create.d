@@ -25,4 +25,4 @@ class DCMSOffersCreatePageController : DCMSCreatePageController {
       .collectionName("cms_offers"); 
   }
 }
-mixin(PageControllerCalls!("CMSOffersCreatePageController"));
+mixin(ControllerCalls!("CMSOffersCreatePageController"));

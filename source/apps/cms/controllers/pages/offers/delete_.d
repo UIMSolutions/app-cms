@@ -21,4 +21,4 @@ class DCMSOffersDeletePageController : DCMSDeletePageController {
       .collectionName("cms_offers"); 
   }
 }
-mixin(PageControllerCalls!("CMSOffersDeletePageController"));
+mixin(ControllerCalls!("CMSOffersDeletePageController"));

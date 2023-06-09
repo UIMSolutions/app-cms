@@ -24,4 +24,4 @@ class DCMSGlossaryDeletePageController : DCMSDeletePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSGlossaryDeletePageController"));
+mixin(ControllerCalls!("CMSGlossaryDeletePageController"));

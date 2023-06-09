@@ -48,4 +48,4 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSGlossaryIndexPageController"));
+mixin(ControllerCalls!("CMSGlossaryIndexPageController"));

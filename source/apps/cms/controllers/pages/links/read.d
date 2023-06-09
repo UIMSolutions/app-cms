@@ -21,4 +21,4 @@ class DCMSLinksReadPageController : DCMSReadPageController {
       .collectionName("cms_links");     
   }
 }
-mixin(PageControllerCalls!("CMSLinksReadPageController"));
+mixin(ControllerCalls!("CMSLinksReadPageController"));

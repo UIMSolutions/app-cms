@@ -24,4 +24,4 @@ class DCMSGlossaryReadPageController : DCMSReadPageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSGlossaryReadPageController"));
+mixin(ControllerCalls!("CMSGlossaryReadPageController"));

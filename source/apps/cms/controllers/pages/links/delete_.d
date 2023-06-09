@@ -24,4 +24,4 @@ class DCMSLinksDeletePageController : DCMSDeletePageController {
       .collectionName("cms_links"); 
   }
 }
-mixin(PageControllerCalls!("CMSLinksDeletePageController"));
+mixin(ControllerCalls!("CMSLinksDeletePageController"));

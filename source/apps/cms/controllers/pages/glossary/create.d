@@ -27,4 +27,4 @@ class DCMSGlossaryCreatePageController : DCMSCreatePageController {
       .collectionName("cms_glossary"); 
   }
 }
-mixin(PageControllerCalls!("CMSGlossaryCreatePageController"));
+mixin(ControllerCalls!("CMSGlossaryCreatePageController"));

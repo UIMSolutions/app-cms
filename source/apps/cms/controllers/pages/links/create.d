@@ -26,4 +26,4 @@ class DCMSLinksCreatePageController : DCMSCreatePageController {
       .collectionName("cms_links");         
   }
 }
-mixin(PageControllerCalls!("CMSLinksCreatePageController"));
+mixin(ControllerCalls!("CMSLinksCreatePageController"));

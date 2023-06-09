@@ -44,4 +44,4 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSLinksIndexPageController"));
+mixin(ControllerCalls!("CMSLinksIndexPageController"));

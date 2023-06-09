@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.tutorials.delete_;
 import apps.cms;
 @safe:
 
-class DCMSXTutorialsDeletePageController : DCMSXDeletePageController {
-  mixin(PageControllerThis!("CMSXTutorialsDeletePageController"));
+class DCMSTutorialsDeletePageController : DCMSDeletePageController {
+  mixin(PageControllerThis!("CMSTutorialsDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,4 +21,4 @@ class DCMSXTutorialsDeletePageController : DCMSXDeletePageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSXTutorialsDeletePageController"));
+mixin(PageControllerCalls!("CMSTutorialsDeletePageController"));

@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.pages.read;
 import apps.cms;
 @safe:
 
-class DCMSXPagesReadPageController : DCMSXReadPageController {
-  mixin(PageControllerThis!("CMSXPagesReadPageController"));
+class DCMSPagesReadPageController : DCMSReadPageController {
+  mixin(PageControllerThis!("CMSPagesReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,4 +21,4 @@ class DCMSXPagesReadPageController : DCMSXReadPageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSXPagesReadPageController"));
+mixin(PageControllerCalls!("CMSPagesReadPageController"));

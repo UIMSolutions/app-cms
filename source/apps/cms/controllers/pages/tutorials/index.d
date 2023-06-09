@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.tutorials.index;
 import apps.cms;
 @safe:
 
-class DCMSXTutorialsIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXTutorialsIndexPageController"));
+class DCMSTutorialsIndexPageController : DCMSPageController {
+  mixin(PageControllerThis!("CMSTutorialsIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXTutorialsIndexPageController~":DCMSXTutorialsIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSTutorialsIndexPageController~":DCMSTutorialsIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -44,4 +44,4 @@ class DCMSXTutorialsIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXTutorialsIndexPageController"));
+mixin(PageControllerCalls!("CMSTutorialsIndexPageController"));

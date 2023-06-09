@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.pages.create;
 import apps.cms;
 @safe:
 
-class DCMSXPagesCreatePageController : DCMSXCreatePageController {
-  mixin(PageControllerThis!("CMSXPagesCreatePageController"));
+class DCMSPagesCreatePageController : DCMSCreatePageController {
+  mixin(PageControllerThis!("CMSPagesCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -25,4 +25,4 @@ class DCMSXPagesCreatePageController : DCMSXCreatePageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSXPagesCreatePageController"));
+mixin(PageControllerCalls!("CMSPagesCreatePageController"));

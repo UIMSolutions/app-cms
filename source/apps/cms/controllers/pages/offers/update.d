@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.offers.update;
 import apps.cms;
 @safe:
 
-class DCMSXOffersUpdatePageController : DCMSXUpdatePageController {
-  mixin(PageControllerThis!("CMSXOffersUpdatePageController"));
+class DCMSOffersUpdatePageController : DCMSUpdatePageController {
+  mixin(PageControllerThis!("CMSOffersUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,4 +23,4 @@ class DCMSXOffersUpdatePageController : DCMSXUpdatePageController {
       .collectionName("cms_offers"); 
   }
 }
-mixin(PageControllerCalls!("CMSXOffersUpdatePageController"));
+mixin(PageControllerCalls!("CMSOffersUpdatePageController"));

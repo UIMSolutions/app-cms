@@ -3,14 +3,14 @@ module apps.cms.views.indexnosite;
 import apps.cms;
 @safe:
 
-class DCMSXIndexNoSiteView : DView {
-  mixin(ViewThis!("CMSXIndexNoSiteView"));
+class DCMSIndexNoSiteView : DView {
+  mixin(ViewThis!("CMSIndexNoSiteView"));
 
   mixin(OProperty!("DEntity[]", "sites"));
   mixin(OProperty!("DEntity", "selectedSites"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXIndexNoSiteView~"DCMSXIndexNoSiteView::toH5");
+    debugMethodCall(moduleName!DCMSIndexNoSiteView~"DCMSIndexNoSiteView::toH5");
     super.toH5(options);
     // debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> reqParameters = ", options);
     // debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> pageTitle = ", options.get("pageTitle", ""));
@@ -36,4 +36,4 @@ class DCMSXIndexNoSiteView : DView {
             BS5Row(["row-deck row-cards"], sitesContent)))].toH5;
     }
   }
-mixin(ViewCalls!("CMSXIndexNoSiteView"));
+mixin(ViewCalls!("CMSIndexNoSiteView"));

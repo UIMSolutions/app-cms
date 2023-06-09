@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.tutorials.update;
 import apps.cms;
 @safe:
 
-class DCMSXTutorialsUpdatePageController : DCMSXUpdatePageController {
-  mixin(PageControllerThis!("CMSXTutorialsUpdatePageController"));
+class DCMSTutorialsUpdatePageController : DCMSUpdatePageController {
+  mixin(PageControllerThis!("CMSTutorialsUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,4 +23,4 @@ class DCMSXTutorialsUpdatePageController : DCMSXUpdatePageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSXTutorialsUpdatePageController"));
+mixin(PageControllerCalls!("CMSTutorialsUpdatePageController"));

@@ -3,13 +3,13 @@ module apps.cms.views.indexwithsite;
 import apps.cms;
 @safe:
 
-class DCMSXIndexWithSiteView : DView {
-  mixin(ViewThis!("CMSXIndexWithSiteView"));
+class DCMSIndexWithSiteView : DView {
+  mixin(ViewThis!("CMSIndexWithSiteView"));
 
   mixin(OProperty!("DEntity", "site"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXIndexWithSiteView~"DCMSXIndexWithSiteView::toH5");
+    debugMethodCall(moduleName!DCMSIndexWithSiteView~"DCMSIndexWithSiteView::toH5");
     super.toH5(options);
     // debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> reqParameters = ", options);
     // debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> pageTitle = ", options.get("pageTitle", ""));
@@ -21,4 +21,4 @@ class DCMSXIndexWithSiteView : DView {
           BS5Row(["row-deck row-cards"], site.id.toString)))].toH5;
     }
   }
-mixin(ViewCalls!("CMSXIndexWithSiteView"));
+mixin(ViewCalls!("CMSIndexWithSiteView"));

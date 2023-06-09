@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.pages.index;
 import apps.cms;
 @safe:
 
-class DCMSXPagesIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXPagesIndexPageController"));
+class DCMSPagesIndexPageController : DCMSPageController {
+  mixin(PageControllerThis!("CMSPagesIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXPagesIndexPageController~":DCMSXPagesIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSPagesIndexPageController~":DCMSPagesIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -44,4 +44,4 @@ class DCMSXPagesIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXPagesIndexPageController"));
+mixin(PageControllerCalls!("CMSPagesIndexPageController"));

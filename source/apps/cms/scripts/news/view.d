@@ -1,8 +1,8 @@
-module uim.cms.scripts.news.view;
+module apps.cms.scripts.news.view;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.news;
+import apps.cms.scripts.news;
 
 public:
 auto viewEntity() {  

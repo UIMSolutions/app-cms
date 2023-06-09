@@ -1,8 +1,8 @@
-module uim.cms.scripts.news.list;
+module apps.cms.scripts.news.list;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.news;
+import apps.cms.scripts.news;
 
 auto listEntities() {  
   return 

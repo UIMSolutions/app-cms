@@ -3,20 +3,20 @@ module apps.cms.layouts.layout;
 import apps.cms;
 @safe:
 
-class DCMSXLayout : DLayout {
+class DCMSLayout : DLayout {
   this() { super(); }
 
   override void initialize(Json configSettings = Json(null)) {
-    debug writeln("initialize 'DCMSXLayout");
+    debug writeln("initialize 'DCMSLayout");
     super.initialize(configSettings);
     
     _bodyAttributes["style"] = "background-color: #ffffff;";
 
     this
-    .title("UIM!CMSX")   
+    .title("UIM!CMS")   
     .parameters([
       "appLogo":"/img/servers/cms/logo.png",
-      "appTitle":"UIM!CMSX"
+      "appTitle":"UIM!CMS"
       ]);
 
     debug writeln("add metas");
@@ -47,12 +47,12 @@ class DCMSXLayout : DLayout {
     debug writeln("Add navigation");
     if (this.navigation) if (auto secNavBar = cast(DSecondNavbar)this.navigation.secondNavbar) {
       debug writeln("Adding leftslots");
-      secNavBar.leftSlots([CMSXNavSlot]);
+      secNavBar.leftSlots([CMSNavSlot]);
     }
   }
 
   override void renderBody(DH5Html html, string[] classes, STRINGAA attributes, string content, STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXLayout~"::DCMSXLayout:renderBody");
+    debugMethodCall(moduleName!DCMSLayout~"::DCMSLayout:renderBody");
     // super.renderBody(html, classes, attributes, content, options);
     
     auto nav = navigation ? navigation.render(options) : options.get("navigation", null);
@@ -71,7 +71,7 @@ class DCMSXLayout : DLayout {
 		.body_(bodyContent); 
   }
 }
-auto CMSXLayout() { return new DCMSXLayout; }
+auto CMSLayout() { return new DCMSLayout; }
 
 /* auto navigation(STRINGAA options = null) {
   auto rootPath = options.get("rootPath", "/");

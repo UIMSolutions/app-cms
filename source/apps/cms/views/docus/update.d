@@ -1,11 +1,11 @@
-module uim.cms.views.docus.update;
+module apps.cms.views.docus.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.docus;
+import apps.cms.views.docus;
 
-class DCMSXDocusUpdateView : DAPPEntityUpdateView {
-  mixin(ViewThis!("CMSXDocusUpdateView"));
+class DCMSDocusUpdateView : DAPPEntityUpdateView {
+  mixin(ViewThis!("CMSDocusUpdateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXDocusUpdateView : DAPPEntityUpdateView {
       myForm
         .action("/cms/docus/actions/update")
         .crudMode(CRUDModes.Update) 
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -34,7 +34,7 @@ class DCMSXDocusUpdateView : DAPPEntityUpdateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXDocusUpdateView~"::DCMSXDocusUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSDocusUpdateView~"::DCMSDocusUpdateView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);
@@ -46,11 +46,11 @@ class DCMSXDocusUpdateView : DAPPEntityUpdateView {
       myHeader
         .breadcrumbs
           .items(
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Docus"],
           [rootPath~"/update?id="~(this.entity ? this.entity["id"] : " -missing-"), "Bearbeiten"]
         );
     }
   }
 }
-mixin(ViewCalls!("CMSXDocusUpdateView"));
+mixin(ViewCalls!("CMSDocusUpdateView"));

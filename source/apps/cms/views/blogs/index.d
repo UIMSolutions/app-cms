@@ -71,13 +71,13 @@ mixin(ViewCalls!("CMSBlogsIndexView"));
 
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXBlogsIndexView~":DCMSXBlogsIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSBlogsIndexView~":DCMSBlogsIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this.rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXBlogsIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSBlogsIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [

@@ -1,16 +1,16 @@
-module uim.cms.views.docus;
+module apps.cms.views.docus;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.views.docus.index;
+public import apps.cms.views.docus.index;
 
 // CRUD Modules
-public import uim.cms.views.docus.create;
-public import uim.cms.views.docus.read;
-public import uim.cms.views.docus.update;
-public import uim.cms.views.docus.delete_;
+public import apps.cms.views.docus.create;
+public import apps.cms.views.docus.read;
+public import apps.cms.views.docus.update;
+public import apps.cms.views.docus.delete_;
 
 package:
   auto myRootPath = "/cms/docus";

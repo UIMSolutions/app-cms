@@ -1,11 +1,11 @@
-module uim.cms.views.docus.create;
+module apps.cms.views.docus.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.docus;
+import apps.cms.views.docus;
 
-class DCMSXDocusCreateView : DAPPEntityCreateView {
-  mixin(ViewThis!("CMSXDocusCreateView"));
+class DCMSDocusCreateView : DAPPEntityCreateView {
+  mixin(ViewThis!("CMSDocusCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,7 +23,7 @@ class DCMSXDocusCreateView : DAPPEntityCreateView {
         .rootPath(this.rootPath)
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Docus"],
             [this.rootPath~"/create", "Create"]
           );
@@ -32,7 +32,7 @@ class DCMSXDocusCreateView : DAPPEntityCreateView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -44,7 +44,7 @@ class DCMSXDocusCreateView : DAPPEntityCreateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXDocusCreateView~"::DCMSXDocusCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSDocusCreateView~"::DCMSDocusCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;
@@ -60,4 +60,4 @@ class DCMSXDocusCreateView : DAPPEntityCreateView {
     }
   }
 }
-mixin(ViewCalls!("CMSXDocusCreateView"));
+mixin(ViewCalls!("CMSDocusCreateView"));

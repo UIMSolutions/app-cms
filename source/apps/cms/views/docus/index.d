@@ -1,11 +1,11 @@
-module uim.cms.views.docus.index;
+module apps.cms.views.docus.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.docus;
+import apps.cms.views.docus;
 
-class DCMSXDocusIndexView : DAPPEntitiesListView {
-  mixin(ViewThis!("CMSXDocusIndexView"));
+class DCMSDocusIndexView : DAPPEntitiesListView {
+  mixin(ViewThis!("CMSDocusIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSXDocusIndexView : DAPPEntitiesListView {
       .rootPath(this.rootPath)
       .breadcrumbs
         .items(
-          ["/cms", "CMSX"],
+          ["/cms", "CMS"],
           [this.rootPath, "Docus"]
         );
 
@@ -46,7 +46,7 @@ class DCMSXDocusIndexView : DAPPEntitiesListView {
  */  }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXDocusIndexView~":DCMSXDocusIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSDocusIndexView~":DCMSDocusIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -56,13 +56,13 @@ class DCMSXDocusIndexView : DAPPEntitiesListView {
   }
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXDocusIndexView~":DCMSXDocusIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSDocusIndexView~":DCMSDocusIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this// .rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXDocusIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSDocusIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [
@@ -77,7 +77,7 @@ class DCMSXDocusIndexView : DAPPEntitiesListView {
     )))].toH5;              
   }  */
 }
-mixin(ViewCalls!("CMSXDocusIndexView"));
+mixin(ViewCalls!("CMSDocusIndexView"));
 
 version(test_uim_cms) { unittest {
     // TODO

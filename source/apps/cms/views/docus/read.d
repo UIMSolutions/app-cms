@@ -1,11 +1,11 @@
-module uim.cms.views.docus.read;
+module apps.cms.views.docus.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.docus;
+import apps.cms.views.docus;
 
-class DCMSXDocusReadView : DAPPEntityReadView {
-  mixin(ViewThis!("CMSXDocusReadView"));
+class DCMSDocusReadView : DAPPEntityReadView {
+  mixin(ViewThis!("CMSDocusReadView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -20,7 +20,7 @@ class DCMSXDocusReadView : DAPPEntityReadView {
         .breadcrumbs
           .items(
             ["/", "UIM"],
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Docus"],
             [" ", "Anzeigen"]
           );
@@ -29,7 +29,7 @@ class DCMSXDocusReadView : DAPPEntityReadView {
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .crudMode(this.crudMode) 
-        .content(CMSXFormContent.form(myForm));
+        .content(CMSFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
@@ -40,7 +40,7 @@ class DCMSXDocusReadView : DAPPEntityReadView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXDocusReadView~"::DCMSXDocusReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSDocusReadView~"::DCMSDocusReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -53,7 +53,7 @@ class DCMSXDocusReadView : DAPPEntityReadView {
       .entity(this.entity);
   }
 }
-mixin(ViewCalls!("CMSXDocusReadView"));
+mixin(ViewCalls!("CMSDocusReadView"));
 
 version(test_uim_cms) { unittest {
     // TODO

@@ -1,11 +1,11 @@
-module uim.cms.views.docus.delete_;
+module apps.cms.views.docus.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.docus;
+import apps.cms.views.docus;
 
-class DCMSXDocusDeleteView : DAPPEntityDeleteView {
-  mixin(ViewThis!("CMSXDocusDeleteView"));
+class DCMSDocusDeleteView : DAPPEntityDeleteView {
+  mixin(ViewThis!("CMSDocusDeleteView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -21,7 +21,7 @@ class DCMSXDocusDeleteView : DAPPEntityDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(CMSFormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
@@ -33,7 +33,7 @@ class DCMSXDocusDeleteView : DAPPEntityDeleteView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXBlogsDeleteView~"::DCMSXBlogsDeleteView:beforeH5");
+    debugMethodCall(moduleName!DCMSBlogsDeleteView~"::DCMSBlogsDeleteView:beforeH5");
     super.beforeH5(options);
 
     auto headerTitle = "Blog ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
@@ -43,11 +43,11 @@ class DCMSXDocusDeleteView : DAPPEntityDeleteView {
       myHeader
         .breadcrumbs
           .items(
-            ["/cms", "CMSX"],
+            ["/cms", "CMS"],
             [this.rootPath, "Blogs"],
             [this.rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"]
          );
     }
   }
 }
-mixin(ViewCalls!("CMSXDocusDeleteView"));
+mixin(ViewCalls!("CMSDocusDeleteView"));

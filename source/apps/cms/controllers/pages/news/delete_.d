@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.news.delete_;
 import apps.cms;
 @safe:
 
-class DCMSNewsDeletePageController : DAPPPageController {
+class DCMSNewsDeletePageController : DPageController {
   mixin(ControllerThis!("CMSNewsDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

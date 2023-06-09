@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.index;
 import apps.cms;
 @safe:
 
-class DIndexPageController : DAPPPageController {
+class DIndexPageController : DPageController {
   mixin(ControllerThis!("IndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
@@ -11,7 +11,7 @@ class DIndexPageController : DAPPPageController {
 
     this
       /* .checks([AppSessionHasSessionCheck]) */
-      .view(IndexView(this));
+      .view(CMSIndexView(this));
   }
 
   override void beforeResponse(STRINGAA options = null) {
@@ -22,7 +22,7 @@ class DIndexPageController : DAPPPageController {
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
 
     this.view(
-      IndexView(this));
+      CMSIndexView(this));
 
     /* if (auto appSession = getAppSession(options)) {      
       debug writeln(appSession.debugInfo);

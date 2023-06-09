@@ -56,7 +56,7 @@ static this() { // Create and init app
           
           this.views.add(crudName~entityName, myView);
 
-          auto myController = APPPageController.view(myView);
+          auto myController = PageController.view(myView);
           this.controllers.add(crudName~entityName, myController);
 
           auto myPath = ("/"~entityName~"/"~crudName).toLower;

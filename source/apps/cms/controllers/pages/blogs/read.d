@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.blogs.read;
 import apps.cms;
 @safe:
 
-class DCMSBlogsReadPageController : DAPPPageController {
+class DCMSBlogsReadPageController : DPageController {
   mixin(ControllerThis!("CMSBlogsReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

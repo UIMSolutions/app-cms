@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.blogs.index;
 import apps.cms;
 @safe:
 
-class DCMSBlogsIndexPageController : DAPPPageController {
+class DCMSBlogsIndexPageController : DPageController {
   mixin(ControllerThis!("CMSBlogsIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

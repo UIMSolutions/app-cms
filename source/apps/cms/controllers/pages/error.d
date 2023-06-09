@@ -8,7 +8,7 @@ module apps.cms.controllers.pages.error;
 import apps.cms;
 @safe:
 
-class DCMSErrorPageController : DAPPPageController {
+class DCMSErrorPageController : DPageController {
   mixin(ControllerThis!("CMSErrorPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

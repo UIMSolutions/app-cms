@@ -1,8 +1,8 @@
-module uim.cms.views.offers.create;
+module apps.cms.views.offers.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.offers;
+import apps.cms.views.offers;
 
 class DCMSOffersCreateView : DAPPEntityCreateView {
   mixin(ViewThis!("CMSOffersCreateView"));

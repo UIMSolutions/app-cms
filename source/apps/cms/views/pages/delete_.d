@@ -1,8 +1,8 @@
-module uim.cms.views.pages.delete_;
+module apps.cms.views.pages.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.pages;
+import apps.cms.views.pages;
 
 class DCMSPagesDeleteView : DAPPEntityDeleteView {
   mixin(ViewThis!("CMSPagesDeleteView"));

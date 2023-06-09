@@ -1,8 +1,8 @@
-module uim.cms.views.tutorials.update;
+module apps.cms.views.tutorials.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.tutorials;
+import apps.cms.views.tutorials;
 
 class DCMSTutorialsUpdateView : DAPPEntityUpdateView {
   mixin(ViewThis!("CMSTutorialsUpdateView"));

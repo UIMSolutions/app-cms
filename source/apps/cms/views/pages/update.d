@@ -1,8 +1,8 @@
-module uim.cms.views.pages.update;
+module apps.cms.views.pages.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.pages;
+import apps.cms.views.pages;
 
 class DCMSPagesUpdateView : DAPPEntityUpdateView {
   mixin(ViewThis!("CMSPagesUpdateView"));

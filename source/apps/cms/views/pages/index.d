@@ -1,8 +1,8 @@
-module uim.cms.views.pages.index;
+module apps.cms.views.pages.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.pages;
+import apps.cms.views.pages;
 
 class DCMSPagesIndexView : DAPPEntitiesListView {
   mixin(ViewThis!("CMSPagesIndexView"));

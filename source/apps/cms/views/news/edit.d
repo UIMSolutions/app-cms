@@ -64,4 +64,4 @@ class DCMSNewsEditView : DCMSView {
           );
   }
 }
-mixin(ViewCalls!("CMSNewsEditView", "DCMSNewsEditView"));
+mixin(ViewCalls!("CMSNewsEditView"));

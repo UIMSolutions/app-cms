@@ -20,8 +20,8 @@ class DCMSIndexView : DCMSView {
   override DH5Obj[] toH5(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSIndexView~"DCMSIndexView::toH5");
     super.toH5(options);
-    debug writeln("uim.cms.pages.index:serverCms.index:toH5 -> reqParameters = ", options);
-    debug writeln("uim.cms.pages.index:serverCms.index:toH5 -> pageTitle = ", options.get("pageTitle", ""));
+    debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> reqParameters = ", options);
+    debug writeln("apps.cms.pages.index:serverCms.index:toH5 -> pageTitle = ", options.get("pageTitle", ""));
 
     debug writeln("Existing sites: ", sites.length);
     DH5Obj[] sitesContent; 

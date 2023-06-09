@@ -1,8 +1,8 @@
-module uim.cms.views.tutorials.read;
+module apps.cms.views.tutorials.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.tutorials;
+import apps.cms.views.tutorials;
 
 class DCMSTutorialsReadView : DAPPEntityReadView {
   mixin(ViewThis!("CMSTutorialsReadView"));

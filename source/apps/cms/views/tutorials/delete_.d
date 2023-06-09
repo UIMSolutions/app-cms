@@ -1,8 +1,8 @@
-module uim.cms.views.tutorials.delete_;
+module apps.cms.views.tutorials.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.tutorials;
+import apps.cms.views.tutorials;
 
 class DCMSTutorialsDeleteView : DAPPEntityDeleteView {
   mixin(ViewThis!("CMSTutorialsDeleteView"));

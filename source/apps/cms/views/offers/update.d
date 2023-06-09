@@ -1,8 +1,8 @@
-module uim.cms.views.offers.update;
+module apps.cms.views.offers.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.offers;
+import apps.cms.views.offers;
 
 class DCMSOffersUpdateView : DAPPEntityUpdateView {
   mixin(ViewThis!("CMSOffersUpdateView"));

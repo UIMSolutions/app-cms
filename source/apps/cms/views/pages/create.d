@@ -1,8 +1,8 @@
-module uim.cms.views.pages.create;
+module apps.cms.views.pages.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.pages;
+import apps.cms.views.pages;
 
 class DCMSPagesCreateView : DAPPEntityCreateView {
   mixin(ViewThis!("CMSPagesCreateView"));

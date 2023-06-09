@@ -1,16 +1,16 @@
-module uim.cms.views.pages;
+module apps.cms.views.pages;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.views.pages.index;
+public import apps.cms.views.pages.index;
 
 // CRUD Modules
-public import uim.cms.views.pages.create;
-public import uim.cms.views.pages.read;
-public import uim.cms.views.pages.update;
-public import uim.cms.views.pages.delete_;
+public import apps.cms.views.pages.create;
+public import apps.cms.views.pages.read;
+public import apps.cms.views.pages.update;
+public import apps.cms.views.pages.delete_;
 
 package:
   string myRootPath = "/cms/pages";

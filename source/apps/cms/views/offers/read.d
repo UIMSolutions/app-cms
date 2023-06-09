@@ -1,8 +1,8 @@
-module uim.cms.views.offers.read;
+module apps.cms.views.offers.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.offers;
+import apps.cms.views.offers;
 
 class DCMSOffersReadView : DAPPEntityReadView {
   mixin(ViewThis!("CMSOffersReadView"));

@@ -1,8 +1,8 @@
-module uim.cms.views.tutorials.index;
+module apps.cms.views.tutorials.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.tutorials;
+import apps.cms.views.tutorials;
 
 class DCMSTutorialsIndexView : DAPPEntitiesListView {
   mixin(ViewThis!("CMSTutorialsIndexView"));

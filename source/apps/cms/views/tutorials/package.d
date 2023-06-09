@@ -1,16 +1,16 @@
-module uim.cms.views.tutorials;
+module apps.cms.views.tutorials;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.views.tutorials.index;
+public import apps.cms.views.tutorials.index;
 
 // CRUD Modules
-public import uim.cms.views.tutorials.create;
-public import uim.cms.views.tutorials.read;
-public import uim.cms.views.tutorials.update;
-public import uim.cms.views.tutorials.delete_;
+public import apps.cms.views.tutorials.create;
+public import apps.cms.views.tutorials.read;
+public import apps.cms.views.tutorials.update;
+public import apps.cms.views.tutorials.delete_;
 
 package:
   string myRootPath = "/cms/tutorials";

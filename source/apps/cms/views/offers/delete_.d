@@ -1,8 +1,8 @@
-module uim.cms.views.offers.delete_;
+module apps.cms.views.offers.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.offers;
+import apps.cms.views.offers;
 
 class DCMSOffersDeleteView : DAPPEntityDeleteView {
   mixin(ViewThis!("CMSOffersDeleteView"));

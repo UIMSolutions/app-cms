@@ -1,8 +1,8 @@
-module uim.cms.views.pages.read;
+module apps.cms.views.pages.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.pages;
+import apps.cms.views.pages;
 
 class DCMSPagesReadView : DAPPEntityReadView {
   mixin(ViewThis!("CMSPagesReadView"));

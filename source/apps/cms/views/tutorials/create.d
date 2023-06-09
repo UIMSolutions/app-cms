@@ -1,8 +1,8 @@
-module uim.cms.views.tutorials.create;
+module apps.cms.views.tutorials.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.views.tutorials;
+import apps.cms.views.tutorials;
 
 class DCMSTutorialsCreateView : DAPPEntityCreateView {
   mixin(ViewThis!("CMSTutorialsCreateView"));

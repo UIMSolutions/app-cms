@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.themes.edit;
 import apps.cms;
 @safe:
 
-class DCMSThemesEditPageController : DAPPPageController {
+class DCMSThemesEditPageController : DPageController {
   mixin(ControllerThis!("CMSThemesEditPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.themes.create;
 import apps.cms;
 @safe:
 
-class DCMSThemesCreatePageController : DAPPPageController {
+class DCMSThemesCreatePageController : DPageController {
   mixin(ControllerThis!("CMSThemesCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {

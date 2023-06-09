@@ -3,11 +3,12 @@ module apps.cms.views.index;
 import apps.cms;
 @safe:
 
-class DIndexView : DCMSView {
-  mixin(ViewThis!("IndexView"));
+class DCMSIndexView : DCMSView {
+  mixin(ViewThis!("CMSIndexView"));
 
   mixin(OProperty!("DEntity[]", "sites"));
   mixin(OProperty!("DEntity", "selectedSite"));
+  mixin(OProperty!("DForm", "form"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
@@ -18,7 +19,7 @@ class DIndexView : DCMSView {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DIndexView~"DIndexView::toH5");
+    debugMethodCall(moduleName!DCMSIndexView~"DCMSIndexView::toH5");
     super.toH5(options);
     debug writeln("uim.cms.pages.index:serverCms.index:toH5 -> reqParameters = ", options);
     debug writeln("uim.cms.pages.index:serverCms.index:toH5 -> pageTitle = ", options.get("pageTitle", ""));
@@ -48,4 +49,4 @@ class DIndexView : DCMSView {
     ].toH5;
   }
 }
-mixin(ViewCalls!("IndexView", "DIndexView"));
+mixin(ViewCalls!("CMSIndexView", "DCMSIndexView"));

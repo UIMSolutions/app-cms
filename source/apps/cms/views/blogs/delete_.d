@@ -25,13 +25,13 @@ class DCMSBlogsDeleteView : DCMSDeleteView {
      if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/delete")
-        .content(CMSXFormContent.form(myForm))
+        .content(FormContent.form(myForm))
         .rootPath(this.rootPath);
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
-        .mainTitle("Blogs")
-        .subTitle("Blogs löschen");
+          .mainTitle("Blogs")
+          .subTitle("Blogs löschen");
       }
     }    
   }
@@ -57,12 +57,12 @@ class DCMSBlogsDeleteView : DCMSDeleteView {
       myHeader
         .breadcrumbs
           .items(
-          ["/", "UIM"],
-          ["/cms", "CMSX"],
-          [this.rootPath, "Blogs"],
-          ["", "Löschen"]
-        );
+            ["/", "UIM"],
+            ["/cms", "CMSX"],
+            [this.rootPath, "Blogs"],
+            ["", "Löschen"]
+          );
     }
   }
 }
-mixin(ViewCalls!("CMSBlogsDeleteView", "DCMSBlogsDeleteView"));
+mixin(ViewCalls!("CMSBlogsDeleteView"));

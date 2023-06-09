@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.themes.index;
 import apps.cms;
 @safe:
 
-class DCMSThemesIndexPageController : DAPPPageController {
+class DCMSThemesIndexPageController : DPageController {
   mixin(ControllerThis!("CMSThemesIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

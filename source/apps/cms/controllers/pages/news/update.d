@@ -10,7 +10,7 @@ class DCMSNewsEditPageController : DPageController {
     super.initialize(configSettings);
 
     this
-      .view(CMSNewsEditView(this));
+      .view(CMSNewsUpdateView(this));
   }
 
   override void beforeResponse(STRINGAA options = null) {

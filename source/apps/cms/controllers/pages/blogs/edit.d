@@ -10,7 +10,7 @@ class DCMSBlogsEditPageController : DPageController {
     super.initialize(configSettings);
 
     this
-      .view(CMSBlogsEditView(this));
+      .view(CMSBlogsUpdateView(this));
   }
 
   override void beforeResponse(STRINGAA options = null) {
@@ -19,4 +19,4 @@ class DCMSBlogsEditPageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSBlogsEditPageController", "DCMSBlogsEditPageController"));
+mixin(ControllerCalls!("CMSBlogsEditPageController"));

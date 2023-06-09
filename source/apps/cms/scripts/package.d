@@ -1,0 +1,1 @@
+module uim.cms.scripts;

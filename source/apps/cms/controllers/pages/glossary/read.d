@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSGlossaryReadPageController : DCMSReadPageController {
-  mixin(PageControllerThis!("CMSGlossaryReadPageController"));
+  mixin(ControllerThis!("CMSGlossaryReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);

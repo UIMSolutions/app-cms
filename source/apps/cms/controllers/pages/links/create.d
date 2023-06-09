@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSLinksCreatePageController : DCMSCreatePageController {
-  mixin(PageControllerThis!("CMSLinksCreatePageController"));
+  mixin(ControllerThis!("CMSLinksCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);

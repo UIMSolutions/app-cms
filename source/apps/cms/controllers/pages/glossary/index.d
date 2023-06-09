@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSGlossaryIndexPageController : DCMSIndexPageController {
-  mixin(PageControllerThis!("CMSGlossaryIndexPageController"));
+  mixin(ControllerThis!("CMSGlossaryIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -33,7 +33,7 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
       this.error("Database missing"); 
       return; }
 
-    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
+    if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
       auto dbEntities = db["uim", "cms_glossary"].findMany();

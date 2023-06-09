@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSLinksDeletePageController : DCMSDeletePageController {
-  mixin(PageControllerThis!("CMSLinksDeletePageController"));
+  mixin(ControllerThis!("CMSLinksDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);

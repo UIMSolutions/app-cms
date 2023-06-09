@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSOffersCreatePageController : DCMSCreatePageController {
-  mixin(PageControllerThis!("CMSOffersCreatePageController"));
+  mixin(ControllerThis!("CMSOffersCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);

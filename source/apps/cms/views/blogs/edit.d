@@ -3,7 +3,7 @@ module apps.cms.views.blogs.edit;
 import apps.cms;
 @safe:
 
-class DCMSBlogsEditView : DCMSEditView {
+class DCMSBlogsEditView : DCMSUpdateView {
   mixin(ViewThis!("CMSBlogsEditView"));
 
   override void initialize(Json configSettings = Json(null)) {

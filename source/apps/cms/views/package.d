@@ -5,7 +5,7 @@ public {
   import apps.cms.views.factory;
   import apps.cms.views.create;
   import apps.cms.views.read;
-  import apps.cms.views.edit; // Edit for user, update for system 
+  import apps.cms.views.update; // Edit for user, update for system 
   import apps.cms.views.delete_;
   import apps.cms.views.components;
   import apps.cms.views.controls;

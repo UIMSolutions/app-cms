@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.tutorials;
 
-class DCMSTutorialsReadView : DEntityReadView {
+class DCMSTutorialsReadView : DCMSReadView {
   mixin(ViewThis!("CMSTutorialsReadView"));
 
   override void initialize(Json configSettings = Json(null)) {

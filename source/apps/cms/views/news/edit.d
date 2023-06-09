@@ -33,7 +33,7 @@ class DCMSNewsEditView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSNewsUpdateView~"::DCMSNewsUpdateView:beforeH5");
+    debugMethodCall(moduleName!DCMSNewsEditView~"::DCMSNewsEditView:beforeH5");
     super.beforeH5(options);
 
     if (this.header) this.header.entity(this.entity);

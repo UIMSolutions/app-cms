@@ -20,4 +20,4 @@ class DCMSOffersReadPageController : DCMSReadPageController {
       .rootPath("/cms/offers") 
       .collectionName("cms_offers");   }
 }
-mixin(PageControllerCalls!("CMSOffersReadPageController"));
+mixin(ControllerCalls!("CMSOffersReadPageController"));

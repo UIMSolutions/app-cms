@@ -20,4 +20,4 @@ class DCMSTutorialsReadPageController : DCMSReadPageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSTutorialsReadPageController"));
+mixin(ControllerCalls!("CMSTutorialsReadPageController"));

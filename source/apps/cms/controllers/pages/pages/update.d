@@ -23,4 +23,4 @@ class DCMSPagesUpdatePageController : DCMSUpdatePageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSPagesUpdatePageController"));
+mixin(ControllerCalls!("CMSPagesUpdatePageController"));

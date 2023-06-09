@@ -23,4 +23,4 @@ class DCMSOffersUpdatePageController : DCMSUpdatePageController {
       .collectionName("cms_offers"); 
   }
 }
-mixin(PageControllerCalls!("CMSOffersUpdatePageController"));
+mixin(ControllerCalls!("CMSOffersUpdatePageController"));

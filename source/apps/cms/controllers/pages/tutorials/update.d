@@ -23,4 +23,4 @@ class DCMSTutorialsUpdatePageController : DCMSUpdatePageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSTutorialsUpdatePageController"));
+mixin(ControllerCalls!("CMSTutorialsUpdatePageController"));

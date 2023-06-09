@@ -21,4 +21,4 @@ class DCMSTutorialsDeletePageController : DCMSDeletePageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSTutorialsDeletePageController"));
+mixin(ControllerCalls!("CMSTutorialsDeletePageController"));

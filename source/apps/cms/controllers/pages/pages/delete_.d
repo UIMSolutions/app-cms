@@ -21,4 +21,4 @@ class DCMSPagesDeletePageController : DCMSDeletePageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSPagesDeletePageController"));
+mixin(ControllerCalls!("CMSPagesDeletePageController"));

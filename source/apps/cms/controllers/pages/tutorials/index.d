@@ -44,4 +44,4 @@ class DCMSTutorialsIndexPageController : DCMSIndexPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSTutorialsIndexPageController"));
+mixin(ControllerCalls!("CMSTutorialsIndexPageController"));

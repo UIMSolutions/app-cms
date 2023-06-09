@@ -25,4 +25,4 @@ class DCMSPagesCreatePageController : DCMSCreatePageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSPagesCreatePageController"));
+mixin(ControllerCalls!("CMSPagesCreatePageController"));

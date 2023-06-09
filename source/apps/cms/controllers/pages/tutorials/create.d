@@ -25,4 +25,4 @@ class DCMSTutorialsCreatePageController : DCMSCreatePageController {
       .collectionName("cms_tutorials"); 
   }
 }
-mixin(PageControllerCalls!("CMSTutorialsCreatePageController"));
+mixin(ControllerCalls!("CMSTutorialsCreatePageController"));

@@ -44,4 +44,4 @@ class DCMSOffersIndexPageController : DCMSIndexPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSOffersIndexPageController"));
+mixin(ControllerCalls!("CMSOffersIndexPageController"));

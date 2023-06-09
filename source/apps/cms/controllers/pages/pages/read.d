@@ -21,4 +21,4 @@ class DCMSPagesReadPageController : DCMSReadPageController {
       .collectionName("cms_pages"); 
   }
 }
-mixin(PageControllerCalls!("CMSPagesReadPageController"));
+mixin(ControllerCalls!("CMSPagesReadPageController"));

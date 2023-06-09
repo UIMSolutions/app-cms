@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.offers.create;
+module apps.cms.controllers.pages.offers.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXOffersCreatePageController : DCMSXCreatePageController {

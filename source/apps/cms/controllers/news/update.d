@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.news.update;
+module apps.cms.controllers.pages.news.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNewsUpdatePageController : DCMSXUpdatePageController {

@@ -1,13 +1,13 @@
-module uim.cms.controllers.pages.offers;
+module apps.cms.controllers.pages.offers;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.controllers.pages.offers.index;
+public import apps.cms.controllers.pages.offers.index;
 
 // CRUD Modules
-public import uim.cms.controllers.pages.offers.create;
-public import uim.cms.controllers.pages.offers.read;
-public import uim.cms.controllers.pages.offers.update;
-public import uim.cms.controllers.pages.offers.delete_;
+public import apps.cms.controllers.pages.offers.create;
+public import apps.cms.controllers.pages.offers.read;
+public import apps.cms.controllers.pages.offers.update;
+public import apps.cms.controllers.pages.offers.delete_;

@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.glossary.create;
+module apps.cms.controllers.pages.glossary.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryCreatePageController : DCMSXCreatePageController {

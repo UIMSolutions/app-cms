@@ -1,13 +1,13 @@
-module uim.cms.controllers.pages.news;
+module apps.cms.controllers.pages.news;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 // Main
-public import uim.cms.controllers.pages.news.index;
+public import apps.cms.controllers.pages.news.index;
 
 // CRUD Modules
-public import uim.cms.controllers.pages.news.create;
-public import uim.cms.controllers.pages.news.read;
-public import uim.cms.controllers.pages.news.update;
-public import uim.cms.controllers.pages.news.delete_;
+public import apps.cms.controllers.pages.news.create;
+public import apps.cms.controllers.pages.news.read;
+public import apps.cms.controllers.pages.news.update;
+public import apps.cms.controllers.pages.news.delete_;

@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.offers.index;
+module apps.cms.controllers.pages.offers.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXOffersIndexPageController : DCMSXPageController {

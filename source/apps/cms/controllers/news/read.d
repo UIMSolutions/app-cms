@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.news.read;
+module apps.cms.controllers.pages.news.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNewsReadPageController : DCMSXReadPageController {

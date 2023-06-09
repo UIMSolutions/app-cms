@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.news.index;
+module apps.cms.controllers.pages.news.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNewsIndexPageController : DCMSXPageController {

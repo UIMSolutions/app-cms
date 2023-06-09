@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.offers.update;
+module apps.cms.controllers.pages.offers.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXOffersUpdatePageController : DCMSXUpdatePageController {

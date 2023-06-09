@@ -6,9 +6,40 @@ import apps.cms;
 class DCMSNewsCreateView : DCMSView {
   mixin(ViewThis!("CMSNewsCreateView"));
 
+  override void initialize(Json configSettings = Json(null)) {
+    super.initialize(configSettings);
+    
+    this.rootPath("/cms/news");
 
+    if(auto myHeader = cast(DPageHeaderViewComponent)this.header) {
+      myHeader
+        .title(titleCreate("News erstellen"))
+        .rootPath(this.rootPath)
+        .breadcrumbs
+          .items(
+          ["/", "UIM"],
+          ["/cms", "CMSX"],
+          [this.rootPath, "News"],
+          [this.rootPath~"/create", "Create"]
+        );
+    }
+    
+    if (auto myForm = cast(DForm)this.form) {
+      myForm
+        .action(this.rootPath~"/actions/create")
+        .content(CMSXFormContent.form(myForm));
 
+      if (auto myFormHeader = cast(DFormHeader)myForm.header) {
+        myFormHeader
+          .mainTitle("Neuer News")
+          .subTitle("Bitte Werte eingeben")
+          .actions([["cancel","save"]]);
+      }
+    }
+  }
+  
   override void beforeH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSXNewsCreateView~"::DCMSXNewsCreateView:beforeH5");
     super.beforeH5(options);
 
     this
@@ -21,6 +52,18 @@ class DCMSNewsCreateView : DCMSView {
             [this.rootPath~"/news", "News"],
             [this.rootPath~"/news/create", "Create"]
           );
+
+        options["rootPath"] = this.rootPath;
+
+    if (this.controller && this.controller.database) {
+      this.entity(this.controller.database["uim"]["cms_news"].createFromTemplate);
+    }
+
+    if (auto myForm = cast(DForm)this.form) {
+      myForm
+        .action(this.rootPath~"/actions/create")
+        .entity(this.entity);
+    }
   }
 }
-mixin(ViewCalls!("CMSNewsCreateView", "DCMSNewsCreateView"));
+mixin(ViewCalls!("CMSNewsCreateView"));

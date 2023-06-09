@@ -6,9 +6,33 @@ import apps.cms;
 class DCMSNewsDeleteView : DCMSView {
   mixin(ViewThis!("CMSNewsDeleteView"));
 
+  override void initialize(Json configSettings = Json(null)) {
+    super.initialize(configSettings);
 
+    this.rootPath("/cms/news");
+
+    if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
+      myHeader
+        .title(titleDelete("News löschen")) 
+        .rootPath(this.rootPath);
+    }
+    
+     if (auto myForm = cast(DForm)this.form) {
+      myForm
+        .action(this.rootPath~"/actions/delete")
+        .content(CMSXFormContent.form(myForm))
+        .rootPath(this.rootPath);
+
+      if (auto myFormHeader = cast(DFormHeader)myForm.header) {
+        myFormHeader
+        .mainTitle("News")
+        .subTitle("News löschen");
+      }
+    }    
+  }
 
   override void beforeH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSXNewsDeleteView~"::DCMSXNewsDeleteView:beforeH5");
     super.beforeH5(options);
 
     this
@@ -21,6 +45,20 @@ class DCMSNewsDeleteView : DCMSView {
             [this.rootPath~"/news", "News"],
             [this.rootPath~"/news/delete", "Delete"]
           );
+
+    auto headerTitle = "News ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
+    auto bodyTitle = "News Name:";
+
+    if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
+      myHeader
+        .breadcrumbs
+          .items(
+            ["/", "UIM"],
+            ["/cms", "CMSX"],
+            [this.rootPath, "News"],
+            [this.rootPath~"/delete?id="~(this.entity ? this.entity["id"] : " -missing-"), "Löschen"]
+          );
+    }
   }
 }
 mixin(ViewCalls!("CMSNewsDeleteView", "DCMSNewsDeleteView"));

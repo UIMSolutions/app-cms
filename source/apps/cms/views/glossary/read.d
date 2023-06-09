@@ -2,7 +2,6 @@ module apps.cms.views.glossary.read;
 
 import apps.cms;
 @safe:
-import apps.cms.views.glossary;
 
 class DCMSGlossaryReadView : DCMSReadView {
   mixin(ViewThis!("CMSGlossaryReadView"));

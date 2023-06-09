@@ -11,7 +11,15 @@ public {
   import apps.cms.views.controls;
   import apps.cms.views.index;
   import apps.cms.views.error;
+}
+
+public { // Entities
   import apps.cms.views.blogs;
+  import apps.cms.views.glossary;
+  import apps.cms.views.links;
   import apps.cms.views.news;
+  import apps.cms.views.offers;
+  import apps.cms.views.pages;
   import apps.cms.views.themes;
+  import apps.cms.views.tutorials;
 }

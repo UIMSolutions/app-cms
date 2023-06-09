@@ -2,7 +2,6 @@ module apps.cms.views.glossary.delete_;
 
 import apps.cms;
 @safe:
-import apps.cms.views.glossary;
 
 class DCMSGlossaryDeleteView : DCMSDeleteView {
   mixin(ViewThis!("CMSGlossaryDeleteView"));

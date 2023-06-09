@@ -2,7 +2,6 @@ module apps.cms.views.glossary.index;
 
 import apps.cms;
 @safe:
-import apps.cms.views.glossary;
 
 class DCMSGlossaryIndexView : DAPPEntitiesListView {
   mixin(ViewThis!("CMSGlossaryIndexView"));

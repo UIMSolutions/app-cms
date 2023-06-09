@@ -1,52 +1,51 @@
-module apps.cms.views.offers.read;
+module uim.cms.views.glossary.read;
 
-import apps.cms;
+import uim.cms;
 @safe:
-import apps.cms.views.offers;
+import uim.cms.views.glossary;
 
-class DCMSOffersReadView : DCMSReadView {
-  mixin(ViewThis!("CMSOffersReadView"));
+class DCMSXGlossaryReadView : DAPPEntityReadView {
+  mixin(ViewThis!("CMSXGlossaryReadView"));
 
 override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
-    this.rootPath("/cms/offers");
+    this.rootPath("/cms/glossary");
 
     if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
       myHeader
-        .title(titleView("Offer anzeigen"))
+        .title(titleView("Glossary anzeigen")) 
         .actions([["refresh", "list", "create"]])
         .rootPath(this.rootPath);
     }
 
     if (auto myForm = cast(DForm)this.form) {
       myForm
-        .crudMode(CRUDModes.Read)
-        .content(FormContent.form(myForm));
+        .crudMode(this.crudMode)
+        .content(CMSXFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
-          .mainTitle("Offers")
-          .subTitle("Offers anzeigen");
+          .mainTitle("Glossary")
+          .subTitle("Glossary anzeigen");
       }
     }
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSOffersReadView~"::DCMSOffersReadView:beforeH5");
+    debugMethodCall(moduleName!DCMSXGlossaryReadView~"::DCMSXGlossaryReadView:beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
-    auto headerTitle = "Offer ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
-    auto bodyTitle = "Offer Name:";
+    auto headerTitle = "Glossary ID:"~(this.entity ? this.entity.id.toString : " - Unbekannt -");
+    auto bodyTitle = "Glossary Name:";
 
     if (auto myHeader = cast(DPageHeaderViewComponent)this.header) {
       myHeader
         .breadcrumbs
           .items(
-          ["/", "UIM"],
-          ["/cms", "CMS"],
-          [this.rootPath, "Offers"],
+          ["/cms", "CMSX"],
+          [this.rootPath, "Glossary"],
           [rootPath~"/view?id="~(this.entity ? this.entity["id"] : " -missing-"), "Anzeigen"]
         );
     }
@@ -57,7 +56,7 @@ override void initialize(Json configSettings = Json(null)) {
       .entity(this.entity);
   }
 }
-mixin(ViewCalls!("CMSOffersReadView"));
+mixin(ViewCalls!("CMSXGlossaryReadView"));
 
 version(test_uim_cms) { unittest {
     // TODO

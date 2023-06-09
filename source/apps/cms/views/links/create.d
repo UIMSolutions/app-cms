@@ -1,38 +1,37 @@
-module apps.cms.views.offers.create;
+module uim.cms.views.links.create;
 
-import apps.cms;
+import uim.cms;
 @safe:
-import apps.cms.views.offers;
+import uim.cms.views.links;
 
-class DCMSOffersCreateView : DCMSCreateView {
-  mixin(ViewThis!("CMSOffersCreateView"));
+class DCMSXLinksCreateView : DAPPEntityCreateView {
+  mixin(ViewThis!("CMSXLinksCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
     
-    this.rootPath("/cms/offers");
+    this.rootPath("/cms/links");
 
     if(auto myHeader = cast(DPageHeaderViewComponent)this.header) {
       myHeader
-        .title(titleCreate("Offer erstellen"))
+        .title(titleCreate("Link erstellen"))
         .rootPath(this.rootPath)
         .breadcrumbs
           .items(
-            ["/", "UIM"],
-            ["/cms", "CMS"],
-            [this.rootPath, "Offers"],
-            [this.rootPath~"/create", "Erstellen"]
-          );
-      }
+          ["/cms", "CMSX"],
+          [this.rootPath, "Links"],
+          [this.rootPath~"/create", "Create"]
+        );
+    }
     
     if (auto myForm = cast(DForm)this.form) {
       myForm
         .action(this.rootPath~"/actions/create")
-        .content(FormContent.form(myForm));
+        .content(CMSXFormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader
-          .mainTitle("Neuer Offer")
+          .mainTitle("Neuer Link")
           .subTitle("Bitte Werte eingeben")
           .actions([["cancel","save"]]);
       }
@@ -40,13 +39,13 @@ class DCMSOffersCreateView : DCMSCreateView {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSOffersCreateView~"::DCMSOffersCreateView:beforeH5");
+    debugMethodCall(moduleName!DCMSXLinksCreateView~"::DCMSXLinksCreateView:beforeH5");
     super.beforeH5(options);
 
     options["rootPath"] = this.rootPath;
 
     if (this.controller && this.controller.database) {
-      this.entity(this.controller.database["uim"]["cms_offers"].createFromTemplate);
+      this.entity(this.controller.database["uim"]["cms_links"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {
@@ -56,4 +55,4 @@ class DCMSOffersCreateView : DCMSCreateView {
     }
   }
 }
-mixin(ViewCalls!("CMSOffersCreateView"));
+mixin(ViewCalls!("CMSXLinksCreateView"));

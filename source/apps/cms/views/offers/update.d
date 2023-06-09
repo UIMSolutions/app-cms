@@ -22,7 +22,7 @@ class DCMSOffersUpdateView : DCMSUpdateView {
       myForm
         .action("/cms/offers/actions/update")
         .crudMode(CRUDModes.Update)
-        .content(CMSFormContent.form(myForm));
+        .content(FormContent.form(myForm));
 
       if (auto myFormHeader = cast(DFormHeader)myForm.header) {
         myFormHeader

@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.links.read;
+module apps.cms.controllers.pages.links.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXLinksReadPageController : DCMSXReadPageController {

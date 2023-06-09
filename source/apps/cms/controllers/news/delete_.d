@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.news.delete_;
+module apps.cms.controllers.pages.news.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNewsDeletePageController : DCMSXDeletePageController {

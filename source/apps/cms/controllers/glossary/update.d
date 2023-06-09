@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.glossary.update;
+module apps.cms.controllers.pages.glossary.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryUpdatePageController : DCMSXUpdatePageController {

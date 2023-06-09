@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.glossary.index;
+module apps.cms.controllers.pages.glossary.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryIndexPageController : DCMSXPageController {

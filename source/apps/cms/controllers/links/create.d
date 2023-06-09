@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.links.create;
+module apps.cms.controllers.pages.links.create;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXLinksCreatePageController : DCMSXCreatePageController {

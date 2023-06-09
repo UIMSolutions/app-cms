@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.glossary.delete_;
+module apps.cms.controllers.pages.glossary.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryDeletePageController : DCMSXDeletePageController {

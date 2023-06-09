@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.glossary.read;
+module apps.cms.controllers.pages.glossary.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryReadPageController : DCMSXReadPageController {

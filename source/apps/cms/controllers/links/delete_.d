@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.links.delete_;
+module apps.cms.controllers.pages.links.delete_;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXLinksDeletePageController : DCMSXDeletePageController {

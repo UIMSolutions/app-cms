@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.tutorials.index;
 import apps.cms;
 @safe:
 
-class DCMSTutorialsIndexPageController : DCMSPageController {
+class DCMSTutorialsIndexPageController : DCMSIndexPageController {
   mixin(PageControllerThis!("CMSTutorialsIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

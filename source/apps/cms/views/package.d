@@ -15,7 +15,7 @@ public {
 
 public { // Entities
   import apps.cms.views.blogs;
-  import apps.cms.views.docs;
+  import apps.cms.views.docus;
   import apps.cms.views.glossary;
   import apps.cms.views.links;
   import apps.cms.views.news;

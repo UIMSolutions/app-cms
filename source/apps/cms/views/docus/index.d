@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.docus;
 
-class DCMSDocusIndexView : DAPPEntitiesListView {
+class DCMSDocusIndexView : DCMSIndexView {
   mixin(ViewThis!("CMSDocusIndexView"));
 
   override void initialize(Json configSettings = Json(null)) {

@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.links.index;
 import apps.cms;
 @safe:
 
-class DCMSLinksIndexPageController : DCMSPageController {
+class DCMSLinksIndexPageController : DCMSIndexPageController {
   mixin(PageControllerThis!("CMSLinksIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

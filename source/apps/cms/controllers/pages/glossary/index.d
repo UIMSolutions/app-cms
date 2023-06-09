@@ -3,7 +3,7 @@ module apps.cms.controllers.pages.glossary.index;
 import apps.cms;
 @safe:
 
-class DCMSGlossaryIndexPageController : DCMSPageController {
+class DCMSGlossaryIndexPageController : DCMSIndexPageController {
   mixin(PageControllerThis!("CMSGlossaryIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {

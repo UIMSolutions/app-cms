@@ -3,20 +3,19 @@
   License: Subject to the terms of the Apache 2.0 license, as written in the included LICENSE.txt file.  
   Authors: Ozan Nurettin Süel (Sicherheitsschmiede)                                                      
 **********************************************************************************************************/
-module apps.cms.controllers.pages;
+module apps.cms.controllers.pages.read;
 
-public { // Pages Controllers
-  import apps.cms.controllers.pages.index;
-  import apps.cms.controllers.pages.error;
-  
-  import apps.cms.controllers.pages.create;
-  import apps.cms.controllers.pages.read;
-  import apps.cms.controllers.pages.update;
-  import apps.cms.controllers.pages.delete_;
-}
+import apps.cms;
+@safe:
 
-public {
-  import apps.cms.controllers.pages.blogs;
-  import apps.cms.controllers.pages.news;
-  import apps.cms.controllers.pages.themes;
+class DCMSReadPageController : DPageController {
+  mixin(ControllerThis!("CMSReadPageController"));
+
+  override void initialize(Json configSettings = Json(null)) {
+    super.initialize(configSettings);
+
+    this
+      .view(CMSReadView(this));
+  }
 }
+mixin(ControllerCalls!("CMSReadPageController", "DCMSReadPageController"));

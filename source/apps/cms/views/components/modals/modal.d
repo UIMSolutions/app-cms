@@ -1,6 +1,6 @@
-module uim.cms.views.components.modals.modal;
+module apps.cms.views.components.modals.modal;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DACModal : DViewComponent {

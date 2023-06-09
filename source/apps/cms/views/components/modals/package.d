@@ -1,6 +1,6 @@
-module uim.cms.views.components.modals;
+module apps.cms.views.components.modals;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
-public import uim.cms.views.components.modals.modal;
+public import apps.cms.views.components.modals.modal;

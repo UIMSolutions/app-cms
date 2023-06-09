@@ -1,8 +1,8 @@
-module uim.cms.scripts.themes.view;
+module apps.cms.scripts.themes.view;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.themes;
+import apps.cms.scripts.themes;
 
 public:
 auto viewEntity() {  

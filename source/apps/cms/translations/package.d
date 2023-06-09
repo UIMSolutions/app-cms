@@ -1,4 +1,4 @@
-module uim.cms.translations;
+module apps.cms.translations;
 
-import uim.cms;
+import apps.cms;
 @safe:

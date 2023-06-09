@@ -1,8 +1,8 @@
-module uim.cms.scripts.tutorials.list;
+module apps.cms.scripts.tutorials.list;
 
-import uim.cms;
+import apps.cms;
 @safe:
-import uim.cms.scripts.tutorials;
+import apps.cms.scripts.tutorials;
 
 auto listEntities() {  
   return 

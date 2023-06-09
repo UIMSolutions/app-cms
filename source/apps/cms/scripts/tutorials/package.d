@@ -1,6 +1,6 @@
-module uim.cms.scripts.tutorials;
+module apps.cms.scripts.tutorials;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 auto myApi = "/api/v1/cms/tutorials";

@@ -11,6 +11,19 @@ class DCMSBlogsDeletePageController : DPageController {
 
     this
       .view(CMSBlogsDeleteView(this));
+
+    this
+      .view(
+        CMSXBlogsDeleteView(this))
+      .rootPath("/cms/blogs") 
+      .collectionName("cms_blogs")    
+      .scripts
+        .addContents(
+          editorSummary~
+          editorText~
+          "editorSummary.disabled();"~
+          "editorText.disabled();"
+        );
   }
 
   override void beforeResponse(STRINGAA options = null) {

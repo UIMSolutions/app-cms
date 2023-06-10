@@ -11,6 +11,26 @@ class DCMSBlogsEditPageController : DPageController {
 
     this
       .view(CMSBlogsUpdateView(this));
+
+     this
+      .view(
+        CMSXBlogsUpdateView(this))
+      .rootPath("/cms/blogs") 
+      .collectionName("cms_blogs");   
+
+    if (auto vw = cast(DCMSXBlogsUpdateView)this.view) {
+      if (auto form = cast(DForm)vw.form) {
+        this
+          .scripts
+            .addContents(
+              editorSummary~editorText,
+        `window.addEventListener('load', (event) => {
+          document.getElementById("`~form.id~`").addEventListener("submit", event => {
+            editorSummary.save();
+            editorText.save();
+          })
+        });`);
+    }}
   }
 
   override void beforeResponse(STRINGAA options = null) {

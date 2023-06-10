@@ -1,24 +1,23 @@
-module apps.cms.controllers.pages.blogs.index;
+module uim.cms.controllers.pages.docus.index;
 
-import apps.cms;
+import uim.cms;
 @safe:
 
-class DCMSBlogsIndexPageController : DPageController {
-  mixin(ControllerThis!("CMSBlogsIndexPageController"));
+class DCMSXDocusIndexPageController : DCMSXPageController {
+  mixin(PageControllerThis!("CMSXDocusIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
-      .view(CMSBlogsIndexView(this));
+      .view(
+        CMSXDocusIndexView(this));
   }
-
+  
   override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsIndexPageController~":DCMSBlogsIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSXDocusIndexPageController~":DCMSXDocusIndexPageController::beforeResponse");
     super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
-
-    // if (hasError || "redirect" in options) { return; }
+    if (hasError || "redirect" in options) { return; }
     
     auto appSession = getAppSession(options);
     if (appSession) {
@@ -37,16 +36,16 @@ class DCMSBlogsIndexPageController : DPageController {
     if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_blogs"].findMany();
+      auto dbEntities = db["uim", "cms_docus"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView
-        .rootPath("/cms/blogs")
+        .rootPath("/cms/docus")
         .entities(dbEntities);
     }
     else { 
       this.error("entitiesView missing"); 
       return; }
-  } 
+  }
 }
-mixin(ControllerCalls!("CMSBlogsIndexPageController"));
+mixin(PageControllerCalls!("CMSXDocusIndexPageController"));

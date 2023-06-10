@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.contents.news;
+module apps.cms.views.components.forms.contents.news;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNewsItemFormContent : DCMSXPostFormContent {

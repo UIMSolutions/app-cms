@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.contents.content;
+module apps.cms.views.components.forms.contents.content;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXFormContent : DEntityFormContent {

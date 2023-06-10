@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.contents.page;
+module apps.cms.views.components.forms.contents.page;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXPageFormContent : DCMSXPostFormContent {

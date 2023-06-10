@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.themes;
+module apps.cms.views.components.forms.themes;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXThemeForm : DForm {

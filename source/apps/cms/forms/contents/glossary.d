@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.contents.glossary;
+module apps.cms.views.components.forms.contents.glossary;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXGlossaryItemFormContent : DCMSXPostFormContent {

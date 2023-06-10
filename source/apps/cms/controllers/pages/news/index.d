@@ -16,7 +16,35 @@ class DCMSNewsIndexPageController : DPageController {
   override void beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSNewsIndexPageController~":DCMSNewsIndexPageController::beforeResponse");
     super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (hasError || hasRedirect) { return; } 
+
+        auto appSession = getAppSession(options);
+    if (appSession) {
+      if (!appSession.site) { 
+        this.error("AppSession missing"); 
+        return; }
+    }
+    else { debug writeln("AppSession missing"); return; }
+
+    auto db = this.database;
+    if (db) { debug writeln("Database found"); }
+    else { 
+      this.error("Database missing"); 
+      return; }
+
+    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
+      debug writeln("entitiesView found");
+
+      auto dbEntities = db["uim", "cms_news"].findMany();
+      debug writeln("Found entities: ", dbEntities.length);
+
+      entitiesView
+        .rootPath("/cms/news")
+        .entities(dbEntities);
+    }
+    else { 
+      this.error("entitiesView missing"); 
+      return; }       
   } 
 }
 mixin(ControllerCalls!("CMSNewsIndexPageController"));

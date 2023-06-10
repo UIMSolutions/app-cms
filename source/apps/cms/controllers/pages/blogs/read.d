@@ -22,6 +22,18 @@ class DCMSBlogsReadPageController : DPageController {
       editorText~
       "editorSummary.disabled();"~
       "editorText.disabled();"
+
+
+    this.scripts.addContents(
+      editorSummary~
+      editorText~
+      "editorSummary.disabled();"~
+      "editorText.disabled();"
+    );
+
+    this
+      .rootPath("/cms/themes") 
+      .collectionName("cms_themes"); 
     );
   }
 

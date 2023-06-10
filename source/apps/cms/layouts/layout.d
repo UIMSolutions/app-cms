@@ -28,9 +28,9 @@ class DCMSLayout : DLayout {
       );
 
     debug writeln("add links");
-    this.links.add(
+/*     this.links.add(
       ["rel":"icon", "type":"image/ico", "href":"/img/favicon.ico"],
-      );
+      ); */
 
     debug writeln("add styles");
     this

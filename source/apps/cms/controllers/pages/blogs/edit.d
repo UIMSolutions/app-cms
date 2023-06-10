@@ -30,6 +30,19 @@ class DCMSBlogsEditPageController : DPageController {
             editorText.save();
           })
         });`);
+
+            this.scripts.addContents(
+      editorSummary~editorText,
+`window.addEventListener('load', (event) => {
+  document.getElementById("form").addEventListener("submit", event => {
+    editorSummary.save();
+    editorText.save();
+  })
+});`);
+
+    this
+      .rootPath("/cms/themes") 
+      .collectionName("cms_themes"); 
     }}
   }
 

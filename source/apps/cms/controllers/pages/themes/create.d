@@ -11,6 +11,21 @@ class DCMSThemesCreatePageController : DPageController {
 
     this
       .view(CMSThemesCreateView(this));
+
+        this
+    .scripts.addContents(
+      editorSummary~
+      editorText,
+`window.addEventListener('load', (event) => {
+  document.getElementById("form").addEventListener("submit", event => {
+    editorSummary.save();
+    editorText.save();
+  })
+});`);
+
+    this
+      .rootPath("/cms/themes") 
+      .collectionName("cms_themes"); 
   }
 
   override void beforeResponse(STRINGAA options = null) {

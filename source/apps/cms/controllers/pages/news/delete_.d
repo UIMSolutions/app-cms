@@ -11,6 +11,17 @@ class DCMSNewsDeletePageController : DPageController {
 
     this
       .view(CMSNewsDeleteView(this));
+
+    this.scripts.addContents(
+      editorSummary~
+      editorText~
+      "editorSummary.disabled();"~
+      "editorText.disabled();"
+    );
+
+    this
+      .rootPath("/cms/news") 
+      .collectionName("cms_news"); 
   }
 
   override void beforeResponse(STRINGAA options = null) {

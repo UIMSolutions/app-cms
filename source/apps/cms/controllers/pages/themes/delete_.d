@@ -11,6 +11,17 @@ class DCMSThemesDeletePageController : DPageController {
 
     this
       .view(CMSThemesDeleteView(this));
+
+        this.scripts.addContents(
+      editorSummary~
+      editorText~
+      "editorSummary.disabled();"~
+      "editorText.disabled();"
+    );
+
+    this
+      .rootPath("/cms/themes") 
+      .collectionName("cms_themes"); 
   }
 
   override void beforeResponse(STRINGAA options = null) {

@@ -16,6 +16,21 @@ class DCMSNewsCreatePageController : DPageController {
 
     this
       .view(CMSNewsCreateView(this));
+
+        this
+    .scripts.addContents(
+      editorSummary~
+      editorText,
+`window.addEventListener('load', (event) => {
+  document.getElementById("form").addEventListener("submit", event => {
+    editorSummary.save();
+    editorText.save();
+  })
+});`);
+
+    this
+      .rootPath("/cms/news") 
+      .collectionName("cms_news"); 
   }
 
   override void beforeResponse(STRINGAA options = null) {

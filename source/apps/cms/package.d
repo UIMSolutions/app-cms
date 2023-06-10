@@ -28,7 +28,13 @@ public {
 public { // App packages
   import apps.cms.controllers;
   import apps.cms.helpers;
+  import apps.cms.javascripts;
+  import apps.cms.layouts;
+  import apps.cms.routes;
+  import apps.cms.scripts;
+  import apps.cms.settings;
   import apps.cms.tests;
+  import apps.cms.translations;
   import apps.cms.views;
 }
 
@@ -80,8 +86,8 @@ static this() { // Create and init app
   AppRegistry.register("apps.cms",  
     myApp
       .rootPath("/apps/cms")
-      .addRoute(Route("", HTTPMethod.GET, IndexPageController))
-      .addRoute(Route("/", HTTPMethod.GET, IndexPageController))
+      .addRoute(Route("", HTTPMethod.GET, CMSIndexPageController))
+      .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController))
   );
 }
 

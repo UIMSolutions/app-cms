@@ -6,4 +6,4 @@ import apps.cms;
 class DCMSOffersUpdateActionController : DActionController {
   mixin(ControllerThis!("CMSOffersUpdateActionController"));
 }
-mixin(ControllerCalls!("CMSOffersUpdateActionController", "DCMSOffersUpdateActionController"));
+mixin(ControllerCalls!("CMSOffersUpdateActionController"));

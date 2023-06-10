@@ -50,6 +50,6 @@ class DCMSIndexPageController : DPageController {
     } */
   }
 }
-mixin(ControllerCalls!("CMSIndexPageController", "DCMSIndexPageController"));
+mixin(ControllerCalls!("CMSIndexPageController"));
 
 

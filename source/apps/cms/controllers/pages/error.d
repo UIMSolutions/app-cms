@@ -18,4 +18,4 @@ class DCMSErrorPageController : DPageController {
       .view(CMSErrorView(this));
   }
 }
-mixin(ControllerCalls!("CMSErrorPageController", "DCMSErrorPageController"));
+mixin(ControllerCalls!("CMSErrorPageController"));

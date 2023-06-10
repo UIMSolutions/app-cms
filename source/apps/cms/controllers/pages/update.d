@@ -18,4 +18,4 @@ class DCMSUpdatePageController : DPageController {
       .view(CMSUpdateView(this));
   }
 }
-mixin(ControllerCalls!("CMSUpdatePageController", "DCMSUpdatePageController"));
+mixin(ControllerCalls!("CMSUpdatePageController"));

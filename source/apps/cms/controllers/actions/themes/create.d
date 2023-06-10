@@ -6,4 +6,4 @@ import apps.cms;
 class DCMSThemesCreateActionController : DActionController {
   mixin(ControllerThis!("CMSThemesCreateActionController"));
 }
-mixin(ControllerCalls!("CMSThemesCreateActionController", "DCMSThemesCreateActionController"));
+mixin(ControllerCalls!("CMSThemesCreateActionController"));

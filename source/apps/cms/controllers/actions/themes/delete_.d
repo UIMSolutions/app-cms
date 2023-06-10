@@ -6,4 +6,4 @@ import apps.cms;
 class DCMSThemesDeleteActionController : DActionController {
   mixin(ControllerThis!("CMSThemesDeleteActionController"));
 }
-mixin(ControllerCalls!("CMSThemesDeleteActionController", "DCMSThemesDeleteActionController"));
+mixin(ControllerCalls!("CMSThemesDeleteActionController"));

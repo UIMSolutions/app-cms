@@ -18,4 +18,4 @@ class DCMSCreatePageController : DPageController {
       .view(CMSCreateView(this));
   }
 }
-mixin(ControllerCalls!("CMSCreatePageController", "DCMSCreatePageController"));
+mixin(ControllerCalls!("CMSCreatePageController"));

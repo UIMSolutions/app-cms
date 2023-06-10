@@ -18,4 +18,4 @@ class DCMSDeletePageController : DPageController {
       .view(CMSDeleteView(this));
   }
 }
-mixin(ControllerCalls!("CMSDeletePageController", "DCMSDeletePageController"));
+mixin(ControllerCalls!("CMSDeletePageController"));

@@ -18,4 +18,4 @@ class DCMSReadPageController : DPageController {
       .view(CMSReadView(this));
   }
 }
-mixin(ControllerCalls!("CMSReadPageController", "DCMSReadPageController"));
+mixin(ControllerCalls!("CMSReadPageController"));

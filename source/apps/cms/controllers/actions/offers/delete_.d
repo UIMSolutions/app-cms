@@ -6,4 +6,4 @@ import apps.cms;
 class DCMSOffersDeleteActionController : DActionController {
   mixin(ControllerThis!("CMSOffersDeleteActionController"));
 }
-mixin(ControllerCalls!("CMSOffersDeleteActionController", "DCMSOffersDeleteActionController"));
+mixin(ControllerCalls!("CMSOffersDeleteActionController"));

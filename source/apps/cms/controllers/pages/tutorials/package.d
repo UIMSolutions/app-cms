@@ -4,7 +4,9 @@ module apps.cms.controllers.pages.tutorials;
 public import apps.cms.controllers.pages.tutorials.index;
 
 // CRUD Modules
-public import apps.cms.controllers.pages.tutorials.create;
-public import apps.cms.controllers.pages.tutorials.read;
-public import apps.cms.controllers.pages.tutorials.update;
-public import apps.cms.controllers.pages.tutorials.delete_;
+public {
+  import apps.cms.controllers.pages.tutorials.create;
+  import apps.cms.controllers.pages.tutorials.read;
+  import apps.cms.controllers.pages.tutorials.update;
+  import apps.cms.controllers.pages.tutorials.delete_;
+}

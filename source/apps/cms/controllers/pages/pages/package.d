@@ -6,8 +6,10 @@ import apps.cms;
 // Main
 public import apps.cms.controllers.pages.pages.index;
 
-// CRUD Modules
-public import apps.cms.controllers.pages.pages.create;
-public import apps.cms.controllers.pages.pages.read;
-public import apps.cms.controllers.pages.pages.update;
-public import apps.cms.controllers.pages.pages.delete_;
+
+public { // CRUD Modules
+  import apps.cms.controllers.pages.pages.create;
+  import apps.cms.controllers.pages.pages.read;
+  import apps.cms.controllers.pages.pages.update;
+  import apps.cms.controllers.pages.pages.delete_;
+}

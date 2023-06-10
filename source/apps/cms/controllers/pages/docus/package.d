@@ -6,8 +6,9 @@ import apps.cms;
 // Main
 public import apps.cms.controllers.pages.docus.index;
 
-// CRUD Modules
-public import apps.cms.controllers.pages.docus.create;
-public import apps.cms.controllers.pages.docus.read;
-public import apps.cms.controllers.pages.docus.update;
-public import apps.cms.controllers.pages.docus.delete_;
+public { // CRUD Modules
+  import apps.cms.controllers.pages.docus.create;
+  import apps.cms.controllers.pages.docus.read;
+  import apps.cms.controllers.pages.docus.update;
+  import apps.cms.controllers.pages.docus.delete_;
+}

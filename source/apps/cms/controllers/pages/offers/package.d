@@ -7,7 +7,9 @@ import apps.cms;
 public import apps.cms.controllers.pages.offers.index;
 
 // CRUD Modules
-public import apps.cms.controllers.pages.offers.create;
-public import apps.cms.controllers.pages.offers.read;
-public import apps.cms.controllers.pages.offers.update;
-public import apps.cms.controllers.pages.offers.delete_;
+public {
+  import apps.cms.controllers.pages.offers.create;
+  import apps.cms.controllers.pages.offers.read;
+  import apps.cms.controllers.pages.offers.update;
+  import apps.cms.controllers.pages.offers.delete_;
+}

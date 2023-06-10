@@ -14,7 +14,7 @@ class DCMSBlogsDeletePageController : DPageController {
 
     this
       .view(
-        CMSXBlogsDeleteView(this))
+        CMSBlogsDeleteView(this))
       .rootPath("/cms/blogs") 
       .collectionName("cms_blogs")    
       .scripts

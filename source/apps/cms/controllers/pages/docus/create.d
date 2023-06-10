@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.docus.create;
 import apps.cms;
 @safe:
 
-class DCMSXDocusCreatePageController : DCMSXCreatePageController {
-  mixin(PageControllerThis!("CMSXDocusCreatePageController"));
+class DCMSDocusCreatePageController : DCMSCreatePageController {
+  mixin(PageControllerThis!("CMSDocusCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
     .view(
-      CMSXDocusCreateView(this))
+      CMSDocusCreateView(this))
     .scripts
       .addContents(
         editorSummary~
@@ -28,4 +28,4 @@ class DCMSXDocusCreatePageController : DCMSXCreatePageController {
     .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSXDocusCreatePageController"));
+mixin(PageControllerCalls!("CMSDocusCreatePageController"));

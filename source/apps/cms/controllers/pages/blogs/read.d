@@ -14,7 +14,7 @@ class DCMSBlogsReadPageController : DPageController {
 
           this
       .view(
-        CMSXBlogsReadView(this))
+        CMSBlogsReadView(this))
       .rootPath("/cms/blogs") 
       .collectionName("cms_blogs")    
       .scripts.addContents(

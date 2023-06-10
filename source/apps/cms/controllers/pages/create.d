@@ -18,15 +18,15 @@ class DCMSCreatePageController : DPageController {
       .view(CMSCreateView(this));
 /*     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
-    .title("UIM!CMSX > "~myEntities~" > Erstellen")
+    .title("UIM!CMS > "~myEntities~" > Erstellen")
     .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck, APPCheckDatabaseExists])
     // .securityController(APPSecurityController(this))      
     .view(
-      CMSXCreateView
+      CMSCreateView
         .header(
           APPCreatePageHeader(pgPath, myEntities, myEntity).actions(["refresh", "list"])
           .breadcrumbs(BS5BreadcrumbList(["breadcrumb-arrows"])
-            .link(["href":"/"], "UIM!CMSX")
+            .link(["href":"/"], "UIM!CMS")
             .link(["href":pgPath], myEntities)
             .item(["active"], ["aria-current":"page"], H5A(["href":"#"], "Erstellen"))))
     )
@@ -69,17 +69,17 @@ override void jsCode(STRINGAA options = null) {
     }}
 
   override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXCreatePageController~":DCMSXCreatePageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse");
     super.beforeResponse(options);   
     if (hasError || hasRedirect) { return; }    
 
     if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSXCreateDCMSXCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
+      debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
       if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSXCreatePageController: tenant "/* ~tenant.name */);
+        debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
 
         if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSXCreatePageController: collection "~collectionName);
+          debug writeln("In DCMSCreatePageController: collection "~collectionName);
 
           if (auto entity = collection.createFromTemplate) {                            
             if (auto entityView = cast(DEntityCRUDView)this.view) {

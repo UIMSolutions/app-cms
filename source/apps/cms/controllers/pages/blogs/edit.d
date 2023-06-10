@@ -14,11 +14,11 @@ class DCMSBlogsEditPageController : DPageController {
 
      this
       .view(
-        CMSXBlogsUpdateView(this))
+        CMSBlogsUpdateView(this))
       .rootPath("/cms/blogs") 
       .collectionName("cms_blogs");   
 
-    if (auto vw = cast(DCMSXBlogsUpdateView)this.view) {
+    if (auto vw = cast(DCMSBlogsUpdateView)this.view) {
       if (auto form = cast(DForm)vw.form) {
         this
           .scripts

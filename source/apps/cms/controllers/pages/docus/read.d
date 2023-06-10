@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.docus.read;
 import apps.cms;
 @safe:
 
-class DCMSXDocusReadPageController : DCMSXReadPageController {
-  mixin(PageControllerThis!("CMSXDocusReadPageController"));
+class DCMSDocusReadPageController : DCMSReadPageController {
+  mixin(PageControllerThis!("CMSDocusReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXDocusReadView(this))
+        CMSDocusReadView(this))
       .scripts
         .addContents(
           editorSummary~editorText~
@@ -24,4 +24,4 @@ class DCMSXDocusReadPageController : DCMSXReadPageController {
       .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSXDocusReadPageController"));
+mixin(PageControllerCalls!("CMSDocusReadPageController"));

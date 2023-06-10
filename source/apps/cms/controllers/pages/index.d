@@ -56,14 +56,14 @@ class DCMSIndexPageController : DPageController {
 
     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
-    .title("UIM!CMSX > "~myEntities)
+    .title("UIM!CMS > "~myEntities)
     .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck, APPCheckDatabaseExists])
     .header(
       PageHeader
       .rootPath(pgPath).preTitle(myEntities).title("Übersicht "~myEntities).actions(["refresh", "create"])
       .breadcrumbs(
         BS5BreadcrumbList(["breadcrumb-arrows"])
-        .link(["href":"/"], "UIM!CMSX")
+        .link(["href":"/"], "UIM!CMS")
         .item(["active"], ["aria-current":"page"], H5A(["href":"#"], myEntities)))
     )
     .collectionName(myCollectionName)
@@ -93,7 +93,7 @@ class DCMSIndexPageController : DPageController {
     }}
 
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXListPageController~":DCMSXListPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSListPageController~":DCMSListPageController::beforeResponse");
     super.beforeResponse(options);   
     if ("redirect" in options) return; 
 
@@ -102,7 +102,7 @@ class DCMSIndexPageController : DPageController {
     auto session  = appSession.session;
     auto site     = appSession.site;
       
-    // debug writeln(moduleName!DCMSXCreatePageController~":DCMSXCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
+    // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
     auto entities = database[site.name, collectionName].findMany;
 
     auto poolId = uniform(1, 1_000_000_000);

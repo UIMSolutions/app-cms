@@ -3,15 +3,15 @@ module apps.cms.controllers.pages.docus.update;
 import apps.cms;
 @safe:
 
-class DCMSXDocusUpdatePageController : DCMSXUpdatePageController {
-  mixin(PageControllerThis!("CMSXDocusUpdatePageController"));
+class DCMSDocusUpdatePageController : DCMSUpdatePageController {
+  mixin(PageControllerThis!("CMSDocusUpdatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXDocusUpdateView(this))
+        CMSDocusUpdateView(this))
       .scripts
         .addContents(
           editorSummary~editorText,
@@ -27,4 +27,4 @@ class DCMSXDocusUpdatePageController : DCMSXUpdatePageController {
       .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSXDocusUpdatePageController"));
+mixin(PageControllerCalls!("CMSDocusUpdatePageController"));

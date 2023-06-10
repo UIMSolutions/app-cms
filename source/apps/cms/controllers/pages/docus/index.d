@@ -3,19 +3,19 @@ module apps.cms.controllers.pages.docus.index;
 import apps.cms;
 @safe:
 
-class DCMSXDocusIndexPageController : DCMSXPageController {
-  mixin(PageControllerThis!("CMSXDocusIndexPageController"));
+class DCMSDocusIndexPageController : DCMSPageController {
+  mixin(PageControllerThis!("CMSDocusIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .view(
-        CMSXDocusIndexView(this));
+        CMSDocusIndexView(this));
   }
   
   override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSXDocusIndexPageController~":DCMSXDocusIndexPageController::beforeResponse");
+    // debugMethodCall(moduleName!DCMSDocusIndexPageController~":DCMSDocusIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -48,4 +48,4 @@ class DCMSXDocusIndexPageController : DCMSXPageController {
       return; }
   }
 }
-mixin(PageControllerCalls!("CMSXDocusIndexPageController"));
+mixin(PageControllerCalls!("CMSDocusIndexPageController"));

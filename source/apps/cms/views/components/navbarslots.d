@@ -1,6 +1,6 @@
-module uim.cms.views.components.navbarslots;
+module apps.cms.views.components.navbarslots;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXNavSlot : DNavbarSlotViewComponent {

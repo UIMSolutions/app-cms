@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.posts.offers;;
+module apps.cms.views.components.forms.posts.offers;;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXOfferForm : DCMSXPostForm {

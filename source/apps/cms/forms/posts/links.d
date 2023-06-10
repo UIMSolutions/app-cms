@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.posts.links;
+module apps.cms.views.components.forms.posts.links;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXLinkForm : DCMSXPostForm {

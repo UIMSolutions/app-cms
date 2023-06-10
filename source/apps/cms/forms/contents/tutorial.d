@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.contents.tutorial;
+module apps.cms.views.components.forms.contents.tutorial;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXTutorialFormContent : DCMSXPostFormContent {

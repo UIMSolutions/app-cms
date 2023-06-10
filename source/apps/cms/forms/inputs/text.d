@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.text;
+module apps.cms.views.components.forms.inputs.text;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXTextFormInput : DTextAreaFormInput {

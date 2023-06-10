@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.keywords;
+module apps.cms.views.components.forms.inputs.keywords;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXKeywordsFormInput : DFormInput {

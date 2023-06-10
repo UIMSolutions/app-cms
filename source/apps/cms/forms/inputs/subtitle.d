@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.subtitle;
+module apps.cms.views.components.forms.inputs.subtitle;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXSubTitleFormInput : DTextFormInput {

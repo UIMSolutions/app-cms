@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.summary;
+module apps.cms.views.components.forms.inputs.summary;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXSummaryFormInput : DTextAreaFormInput {

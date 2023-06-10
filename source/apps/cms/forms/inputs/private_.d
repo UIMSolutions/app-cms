@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.private_;
+module apps.cms.views.components.forms.inputs.private_;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXPrivateFormInput : DSwitchFormInput {

@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.mainTitle;
+module apps.cms.views.components.forms.inputs.mainTitle;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXMainTitleFormInput : DTextFormInput {

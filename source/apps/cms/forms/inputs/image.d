@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.inputs.image;
+module apps.cms.views.components.forms.inputs.image;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXImageFormInput : DTextFormInput {

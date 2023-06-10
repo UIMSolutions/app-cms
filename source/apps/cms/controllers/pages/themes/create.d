@@ -19,4 +19,4 @@ class DCMSThemesCreatePageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   }
 }
-mixin(ControllerCalls!("CMSThemesCreatePageController", "DCMSThemesCreatePageController"));
+mixin(ControllerCalls!("CMSThemesCreatePageController"));

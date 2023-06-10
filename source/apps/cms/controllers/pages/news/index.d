@@ -19,4 +19,4 @@ class DCMSNewsIndexPageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSNewsIndexPageController", "DCMSNewsIndexPageController"));
+mixin(ControllerCalls!("CMSNewsIndexPageController"));

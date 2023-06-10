@@ -19,4 +19,4 @@ class DCMSThemesDeletePageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   }  
 }
-mixin(ControllerCalls!("CMSThemesDeletePageController", "DCMSThemesDeletePageController"));
+mixin(ControllerCalls!("CMSThemesDeletePageController"));

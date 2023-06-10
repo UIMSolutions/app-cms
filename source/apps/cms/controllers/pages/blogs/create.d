@@ -31,4 +31,4 @@ class DCMSBlogsCreatePageController : DPageController {
     }
   }
 }
-mixin(ControllerCalls!("CMSBlogsCreatePageController", "DCMSBlogsCreatePageController"));
+mixin(ControllerCalls!("CMSBlogsCreatePageController"));

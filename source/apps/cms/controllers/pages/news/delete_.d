@@ -19,4 +19,4 @@ class DCMSNewsDeletePageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSNewsDeletePageController", "DCMSNewsDeletePageController"));
+mixin(ControllerCalls!("CMSNewsDeletePageController"));

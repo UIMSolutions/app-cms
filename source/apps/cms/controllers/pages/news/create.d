@@ -24,4 +24,4 @@ class DCMSNewsCreatePageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSNewsCreatePageController", "DCMSNewsCreatePageController"));
+mixin(ControllerCalls!("CMSNewsCreatePageController"));

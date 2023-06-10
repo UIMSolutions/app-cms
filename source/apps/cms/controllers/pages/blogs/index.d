@@ -19,4 +19,4 @@ class DCMSBlogsIndexPageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSBlogsIndexPageController", "DCMSBlogsIndexPageController"));
+mixin(ControllerCalls!("CMSBlogsIndexPageController"));

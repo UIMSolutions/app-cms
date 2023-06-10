@@ -19,4 +19,4 @@ class DCMSThemesEditPageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSThemesEditPageController", "DCMSThemesEditPageController"));
+mixin(ControllerCalls!("CMSThemesEditPageController"));

@@ -19,4 +19,4 @@ class DCMSThemesReadPageController : DPageController {
     if (hasError || hasRedirect) { return; }        
   } 
 }
-mixin(ControllerCalls!("CMSThemesReadPageController", "DCMSThemesReadPageController"));
+mixin(ControllerCalls!("CMSThemesReadPageController"));

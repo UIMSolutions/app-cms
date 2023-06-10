@@ -47,7 +47,7 @@ class DCMSLayout : DLayout {
     debug writeln("Add navigation");
     if (this.navigation) if (auto secNavBar = cast(DSecondNavbar)this.navigation.secondNavbar) {
       debug writeln("Adding leftslots");
-      secNavBar.leftSlots([CMSNavSlot]);
+      /* secNavBar.leftSlots([CMSNavSlot]); */
     }
   }
 

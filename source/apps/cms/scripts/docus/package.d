@@ -7,9 +7,9 @@ public:
 auto entity() {  
   string result;
 
-  result ~= jsClass("Docu", [
+/*   result ~= jsClass("Docu", [
     jsMethod("constructor", ["data"], "")
-  ]);
+  ]); */
 
   result ~= "async function fetchThemes(sessionId) {
   try {
@@ -25,7 +25,7 @@ auto entity() {
   }
 }
 async function setThemes(sessionId, selectedId) {
-  "~jsElementById(["entity_theme"])~"
+  "/* ~jsElementById(["entity_theme"]) */~"
   let themes = await fetchThemes(sessionId);
   let options = '';
   for (let i = 0; i < themes.length; i++) {
@@ -38,7 +38,7 @@ async function setThemes(sessionId, selectedId) {
   return result;
 }
 
-unittest {
+/* unittest {
   auto f = File("../../PUBLIC/js/apps"~myUrl~"/entity.js", "w"); // open for writing
   f.write(entity);
-}
+} */

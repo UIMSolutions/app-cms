@@ -53,6 +53,38 @@ class DCMSThemesIndexView : DCMSView {
             [this.rootPath, "CMS"],
             [this.rootPath~"/themes", "Themes"]
           );
+
+      override void beforeH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSXThemesIndexView~":DCMSXThemesIndexView("~this.name~")::beforeH5");
+    super.beforeH5(options);
+    if (hasError || "redirect" in options) { return; }
+
+    if (auto myForm = cast(DForm)this.form) {
+      myForm.entities(this.entities);
+    } 
+  }
+
+/*   override DH5Obj[] toH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSXThemesIndexView~":DCMSXThemesIndexView("~this.name~")::toH5");
+    super.toH5(options);
+
+    options["rootPath"] = myRootPath;
+
+    this// .rootPath(myRootPath);
+    debug writeln("RootPath in DCMSXThemesIndexView:toH5 -> ", this.rootPath);
+    debug writeln("this.form.rootPath(",this.rootPath,")");
+
+    return [
+      H5Div(["content"],
+        H5Div(["container-xl"], 
+          BS5Row("messages", [""]),
+          BS5Row(["row-deck row-cards"], 
+          this.form
+          .rootPath(this.rootPath)
+          .entities(this.entities)
+          .toH5(options)
+    )))].toH5;              
+  }  */
   }
 }
 mixin(ViewCalls!("CMSThemesIndexView", "DCMSThemesIndexView"));

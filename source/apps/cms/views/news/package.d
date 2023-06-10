@@ -9,3 +9,6 @@ public {
   import apps.cms.views.news.edit;
   import apps.cms.views.news.delete_;
 }
+
+package:
+  string myRootPath = "/cms/news";

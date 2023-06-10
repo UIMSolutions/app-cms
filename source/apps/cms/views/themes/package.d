@@ -11,3 +11,6 @@ public { // CRUD
   import apps.cms.views.themes.update;
   import apps.cms.views.themes.delete_;
 }
+
+package:
+  string myRootPath = "/cms/themes";

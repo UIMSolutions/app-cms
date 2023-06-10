@@ -49,6 +49,70 @@ class DCMSIndexPageController : DPageController {
       debug writeln("No AppSession");
     } */
   }
+
+
+/*   this(string jsPath, string myPath, string myEntities, string myEntity, string myCollectionName) { 
+    super(); 
+
+    this
+    .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
+    .title("UIM!CMSX > "~myEntities)
+    .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck, APPCheckDatabaseExists])
+    .header(
+      PageHeader
+      .rootPath(pgPath).preTitle(myEntities).title("Übersicht "~myEntities).actions(["refresh", "create"])
+      .breadcrumbs(
+        BS5BreadcrumbList(["breadcrumb-arrows"])
+        .link(["href":"/"], "UIM!CMSX")
+        .item(["active"], ["aria-current":"page"], H5A(["href":"#"], myEntities)))
+    )
+    .collectionName(myCollectionName)
+    .form(EntitiesListForm.rootPath(pgPath));
+
+    this.scripts.addLinks(
+      "/js/apps/"~jsPath~"/entity.js",
+      "/js/apps/"~jsPath~"/list.js");
+
+  } */
+  unittest {
+    version(test_uim_cms) {
+      /// TODO
+    }}
+
+  override void jsCode(STRINGAA reqParameters) {
+    super.jsCode(reqParameters);
+    if (viewMode == ViewModes.JS) 
+      addToPageScript(reqParameters, 
+      `window.addEventListener("load", event => `~
+        jsBlock("listEntities('"~"(session ? session.id.toString : \"\")"~"');")
+      ~`)`);
+  }
+  unittest {
+    version(test_uim_cms) {
+      /// TODO
+    }}
+
+  override void beforeResponse(STRINGAA options = null) {
+    // debugMethodCall(moduleName!DCMSXListPageController~":DCMSXListPageController::beforeResponse");
+    super.beforeResponse(options);   
+    if ("redirect" in options) return; 
+
+    auto appSession = getAppSession(options);
+
+    auto session  = appSession.session;
+    auto site     = appSession.site;
+      
+    // debug writeln(moduleName!DCMSXCreatePageController~":DCMSXCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
+    auto entities = database[site.name, collectionName].findMany;
+
+    auto poolId = uniform(1, 1_000_000_000);
+    entitiesPool[poolId] = entities;
+    options["poolId"] = to!string(poolId);
+  }
+  unittest {
+    version(test_uim_cms) {
+      /// TODO
+    }}
 }
 mixin(ControllerCalls!("CMSIndexPageController"));
 

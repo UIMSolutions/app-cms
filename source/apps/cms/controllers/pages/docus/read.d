@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.docus.read;
+module apps.cms.controllers.pages.docus.read;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXDocusReadPageController : DCMSXReadPageController {

@@ -1,6 +1,6 @@
-module uim.cms.data;
+module apps.cms.data;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
-public import uim.cms.data.app;
+public import apps.cms.data.app;

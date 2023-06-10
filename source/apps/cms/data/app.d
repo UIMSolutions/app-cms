@@ -1,6 +1,6 @@
-module uim.cms.data.app;
+module apps.cms.data.app;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXAppData : DSRVApi {

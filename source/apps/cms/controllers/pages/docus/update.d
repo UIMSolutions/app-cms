@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.docus.update;
+module apps.cms.controllers.pages.docus.update;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXDocusUpdatePageController : DCMSXUpdatePageController {

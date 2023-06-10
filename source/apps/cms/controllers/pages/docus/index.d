@@ -1,6 +1,6 @@
-module uim.cms.controllers.pages.docus.index;
+module apps.cms.controllers.pages.docus.index;
 
-import uim.cms;
+import apps.cms;
 @safe:
 
 class DCMSXDocusIndexPageController : DCMSXPageController {

@@ -1,6 +1,6 @@
-module uim.cms.views.components.forms.list;
+module apps.cms.views.components.forms.list;
 
-import uim.cms;
+import apps.cms;
 @safe: 
 
 class DCMSXListFormContentx : DListFormContent {

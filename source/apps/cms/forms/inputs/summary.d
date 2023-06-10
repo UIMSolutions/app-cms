@@ -3,11 +3,11 @@ module apps.cms.views.components.forms.inputs.summary;
 import apps.cms;
 @safe:
 
-class DCMSXSummaryFormInput : DTextAreaFormInput {
-  mixin(ViewComponentThis!("CMSXSummaryFormInput"));
+class DCMSSummaryFormInput : DTextAreaFormInput {
+  mixin(ViewComponentThis!("CMSSummaryFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
-    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSXSummaryFormInput~"::DCMSXSummaryFormInput("~this.className~"):initialize"); }
+    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSSummaryFormInput~"::DCMSSummaryFormInput("~this.className~"):initialize"); }
     super.initialize(configSettings);
 
     this
@@ -18,7 +18,7 @@ class DCMSXSummaryFormInput : DTextAreaFormInput {
     .label("Zusammenfassung");  
   }
 }
-mixin(ViewComponentCalls!("CMSXSummaryFormInput"));
+mixin(ViewComponentCalls!("CMSSummaryFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.private_;
 import apps.cms;
 @safe:
 
-class DCMSXPrivateFormInput : DSwitchFormInput {
-  mixin(ViewComponentThis!("CMSXPrivateFormInput"));  // not CMSXPrivateFormInput!
+class DCMSPrivateFormInput : DSwitchFormInput {
+  mixin(ViewComponentThis!("CMSPrivateFormInput"));  // not CMSPrivateFormInput!
   this(DEntity myEntity) { this().entity(myEntity); }
   this(DForm myForm, DEntity myEntity) { /* .form(myForm) */this.entity(myEntity); }
 
@@ -18,7 +18,7 @@ class DCMSXPrivateFormInput : DSwitchFormInput {
     .label("Privat"); 
   }
 }
-mixin(ViewComponentCalls!("CMSXPrivateFormInput"));
+mixin(ViewComponentCalls!("CMSPrivateFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

@@ -55,7 +55,7 @@ class DCMSThemesIndexView : DCMSView {
           );
 
       override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesIndexView~":DCMSXThemesIndexView("~this.name~")::beforeH5");
+    debugMethodCall(moduleName!DCMSThemesIndexView~":DCMSThemesIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
     if (hasError || "redirect" in options) { return; }
 
@@ -65,13 +65,13 @@ class DCMSThemesIndexView : DCMSView {
   }
 
 /*   override DH5Obj[] toH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSXThemesIndexView~":DCMSXThemesIndexView("~this.name~")::toH5");
+    debugMethodCall(moduleName!DCMSThemesIndexView~":DCMSThemesIndexView("~this.name~")::toH5");
     super.toH5(options);
 
     options["rootPath"] = myRootPath;
 
     this// .rootPath(myRootPath);
-    debug writeln("RootPath in DCMSXThemesIndexView:toH5 -> ", this.rootPath);
+    debug writeln("RootPath in DCMSThemesIndexView:toH5 -> ", this.rootPath);
     debug writeln("this.form.rootPath(",this.rootPath,")");
 
     return [

@@ -3,10 +3,10 @@ module apps.cms.views.components.forms.posts.glossary;
 import apps.cms;
 @safe:
 
-class DCMSXGlossaryItemForm : DCMSXPostForm {
-  mixin(ViewComponentThis!("CMSXGlossaryItemForm"));
+class DCMSGlossaryItemForm : DCMSPostForm {
+  mixin(ViewComponentThis!("CMSGlossaryItemForm"));
 }
-mixin(ViewComponentCalls!("CMSXGlossaryItemForm"));
+mixin(ViewComponentCalls!("CMSGlossaryItemForm"));
 
 version(test_uim_cms) { unittest {
     // TODO

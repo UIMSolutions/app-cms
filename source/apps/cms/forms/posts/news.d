@@ -3,10 +3,10 @@ module apps.cms.views.components.forms.posts.news;
 import apps.cms;
 @safe:
 
-class DCMSXNewsItemForm : DCMSXPostForm {
-  mixin(ViewComponentThis!("CMSXNewsItemForm"));
+class DCMSNewsItemForm : DCMSPostForm {
+  mixin(ViewComponentThis!("CMSNewsItemForm"));
 }
-mixin(ViewComponentCalls!("CMSXNewsItemForm"));
+mixin(ViewComponentCalls!("CMSNewsItemForm"));
 
 version(test_uim_cms) { unittest {
     // TODO

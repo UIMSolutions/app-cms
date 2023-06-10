@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.themes;
 import apps.cms;
 @safe:
 
-class DCMSXThemesFormInput : DFormInput {
-  mixin(ViewComponentThis!("CMSXThemesFormInput"));
+class DCMSThemesFormInput : DFormInput {
+  mixin(ViewComponentThis!("CMSThemesFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -59,7 +59,7 @@ class DCMSXThemesFormInput : DFormInput {
         BS5Col(["col"], input))].toH5;
   }
 }
-mixin(ViewComponentCalls!("CMSXThemesFormInput"));
+mixin(ViewComponentCalls!("CMSThemesFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

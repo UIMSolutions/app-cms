@@ -3,10 +3,10 @@ module apps.cms.views.components.forms.posts.demos;
 import apps.cms;
 @safe:
 
-class DCMSXDemoForm : DCMSXPostForm {
-  mixin(ViewComponentThis!("CMSXDemoForm"));
+class DCMSDemoForm : DCMSPostForm {
+  mixin(ViewComponentThis!("CMSDemoForm"));
 }
-mixin(ViewComponentCalls!("CMSXDemoForm"));
+mixin(ViewComponentCalls!("CMSDemoForm"));
 
 version(test_uim_cms) { unittest {
     // TODO

@@ -3,21 +3,21 @@ module apps.cms.views.components.forms.posts.form;
 import apps.cms;
 @safe:
 
-class DCMSXPostForm : DCMSXForm {
-  mixin(ViewComponentThis!("CMSXPostForm"));
+class DCMSPostForm : DCMSForm {
+  mixin(ViewComponentThis!("CMSPostForm"));
 
   override void initialize(Json configSettings = Json(null)) {
-    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSXPostForm~"::DCMSXPostForm("~this.className~"):initialize"); }
+    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSPostForm~"::DCMSPostForm("~this.className~"):initialize"); }
     super.initialize(configSettings);
     
 /*     this
       .content(
-        CMSXPostFormContent(this)); */
+        CMSPostFormContent(this)); */
   }
 
   mixin(OProperty!("DEntity[]", "themes"));
 }
-mixin(ViewComponentCalls!("CMSXPostForm"));
+mixin(ViewComponentCalls!("CMSPostForm"));
 
 version(test_uim_cms) { unittest {
     // TODO

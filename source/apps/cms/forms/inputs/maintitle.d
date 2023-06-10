@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.mainTitle;
 import apps.cms;
 @safe:
 
-class DCMSXMainTitleFormInput : DTextFormInput {
-  mixin(ViewComponentThis!("CMSXMainTitleFormInput"));
+class DCMSMainTitleFormInput : DTextFormInput {
+  mixin(ViewComponentThis!("CMSMainTitleFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -17,7 +17,7 @@ class DCMSXMainTitleFormInput : DTextFormInput {
     .label("Überschrift"); 
   }
 }
-mixin(ViewComponentCalls!("CMSXMainTitleFormInput"));
+mixin(ViewComponentCalls!("CMSMainTitleFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

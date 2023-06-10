@@ -3,11 +3,11 @@ module apps.cms.views.components.forms.inputs.text;
 import apps.cms;
 @safe:
 
-class DCMSXTextFormInput : DTextAreaFormInput {
-  mixin(ViewComponentThis!("CMSXTextFormInput"));
+class DCMSTextFormInput : DTextAreaFormInput {
+  mixin(ViewComponentThis!("CMSTextFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
-    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSXTextFormInput~"::DCMSXTextFormInput("~this.className~"):initialize"); }
+    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSTextFormInput~"::DCMSTextFormInput("~this.className~"):initialize"); }
     super.initialize(configSettings);
 
     this
@@ -18,8 +18,8 @@ class DCMSXTextFormInput : DTextAreaFormInput {
     .label("Inhalt");
   }
 }
-mixin(ViewComponentCalls!("CMSXTextFormInput"));
+mixin(ViewComponentCalls!("CMSTextFormInput"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXTextFormInput);
+    assert(CMSTextFormInput);
 }}

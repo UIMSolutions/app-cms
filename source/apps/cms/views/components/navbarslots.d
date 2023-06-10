@@ -3,15 +3,15 @@ module apps.cms.views.components.navbarslots;
 import apps.cms;
 @safe:
 
-class DCMSXNavSlot : DNavbarSlotViewComponent {
-  mixin(ViewComponentThis!("CMSXNavSlot"));
+class DCMSNavSlot : DNavbarSlotViewComponent {
+  mixin(ViewComponentThis!("CMSNavSlot"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto rootPath = options.get("rootPath", "/");
 
     return
       [BS5NavItem(["dropdown"], 
-        BS5NavLink(["dropdown-toggle"], ["href":"#navbar-extra", "data-bs-toggle":"dropdown", "role":"button", "aria-expanded":"false"], BS5NavLinkTitle("CMSX")),
+        BS5NavLink(["dropdown-toggle"], ["href":"#navbar-extra", "data-bs-toggle":"dropdown", "role":"button", "aria-expanded":"false"], BS5NavLinkTitle("CMS")),
         BS5DropdownMenu
         .link((options.get("serverCmsOverview", "") == "active" ? ["active"] : [""]), ["href":/* rootPath~ */"/cms"], "Übersicht")
         .divider
@@ -27,7 +27,7 @@ class DCMSXNavSlot : DNavbarSlotViewComponent {
       )].toH5;
   }
 }
-mixin(ViewComponentCalls!("CMSXNavSlot"));
+mixin(ViewComponentCalls!("CMSNavSlot"));
 
 class DBSIStructure : DNavbarSlotViewComponent {
   mixin(ViewComponentThis!("BSIStructure"));

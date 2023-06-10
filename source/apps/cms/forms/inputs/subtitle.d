@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.subtitle;
 import apps.cms;
 @safe:
 
-class DCMSXSubTitleFormInput : DTextFormInput {
-  mixin(ViewComponentThis!("CMSXSubTitleFormInput"));
+class DCMSSubTitleFormInput : DTextFormInput {
+  mixin(ViewComponentThis!("CMSSubTitleFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -17,7 +17,7 @@ class DCMSXSubTitleFormInput : DTextFormInput {
     .label("Untertitle"); 
   }
 }
-mixin(ViewComponentCalls!("CMSXSubTitleFormInput"));
+mixin(ViewComponentCalls!("CMSSubTitleFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.contents.tutorial;
 import apps.cms;
 @safe:
 
-class DCMSXTutorialFormContent : DCMSXPostFormContent {
-  mixin(ViewComponentThis!("CMSXTutorialFormContent"));
+class DCMSTutorialFormContent : DCMSPostFormContent {
+  mixin(ViewComponentThis!("CMSTutorialFormContent"));
 
   /* override DH5Obj[] formGroup(string field, bool readonly, STRINGAA options = null) {
     if (form) {
@@ -13,14 +13,14 @@ class DCMSXTutorialFormContent : DCMSXPostFormContent {
       if (auto formWithEntity = cast(IAPPWithEntity)form) {
         auto entity = formWithEntity.entity;
         if (entity) switch(field) {
-          case "maintitle": return CMSXFormGroupMainTitle(form).entity(entity).toH5(options);
-          case "subtitle":  return CMSXFormGroupSubTitle(form).entity(entity).toH5(options);
-          case "keywords":  return CMSXFormGroupKeywords(form).entity(entity).toH5(options);
-          case "image":     return CMSXFormGroupImage(form).entity(entity).toH5(options);
-          case "summary":   return CMSXFormGroupSummary(form).entity(entity).toH5(options);
-          case "themes":    return CMSXFormGroupTheme(form).entity(entity).themes(form ? (cast(DCMSXPostForm)form).themes : null).toH5(options);
-          case "text":      return CMSXFormGroupText(form).entity(entity).toH5(options);
-      /*       auto entitys = repository.find("entitys").map!(a => CMSXTutorial(a)).array;
+          case "maintitle": return CMSFormGroupMainTitle(form).entity(entity).toH5(options);
+          case "subtitle":  return CMSFormGroupSubTitle(form).entity(entity).toH5(options);
+          case "keywords":  return CMSFormGroupKeywords(form).entity(entity).toH5(options);
+          case "image":     return CMSFormGroupImage(form).entity(entity).toH5(options);
+          case "summary":   return CMSFormGroupSummary(form).entity(entity).toH5(options);
+          case "themes":    return CMSFormGroupTheme(form).entity(entity).themes(form ? (cast(DCMSPostForm)form).themes : null).toH5(options);
+          case "text":      return CMSFormGroupText(form).entity(entity).toH5(options);
+      /*       auto entitys = repository.find("entitys").map!(a => CMSTutorial(a)).array;
       , "readonly":"readonly", "value":entity.entity.toString], options
       DH5Obj[] options;
       options ~= cast(DH5Obj)H5Option(["value":"00000000-0000-0000-0000-000000000000"], "No entity");
@@ -39,8 +39,8 @@ class DCMSXTutorialFormContent : DCMSXPostFormContent {
     return null;
   } */
 }
-mixin(ViewComponentCalls!("CMSXTutorialFormContent"));
+mixin(ViewComponentCalls!("CMSTutorialFormContent"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXTutorialFormContent(myForm));
+    assert(CMSTutorialFormContent(myForm));
 }}

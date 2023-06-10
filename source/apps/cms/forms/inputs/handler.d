@@ -3,22 +3,22 @@ module apps.cms.views.components.forms.inputs.handler;
 import apps.cms;
 @safe:
 
-class DCMSXFormInputHandler : DFormInputHandler {
-  mixin(ViewComponentThis!("CMSXFormInputHandler"));
+class DCMSFormInputHandler : DFormInputHandler {
+  mixin(ViewComponentThis!("CMSFormInputHandler"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
     this
       .addFormInputs([
-        "private": CMSXPrivateFormInput, 
-        "maintitle": CMSXMainTitleFormInput, 
-        "subtitle": CMSXSubTitleFormInput, 
-        "keywords": CMSXKeywordsFormInput, 
-        "image": CMSXImageFormInput, 
-        "summary": CMSXSummaryFormInput, 
-        "text": CMSXTextFormInput, 
-        "themes": CMSXThemesFormInput]);
+        "private": CMSPrivateFormInput, 
+        "maintitle": CMSMainTitleFormInput, 
+        "subtitle": CMSSubTitleFormInput, 
+        "keywords": CMSKeywordsFormInput, 
+        "image": CMSImageFormInput, 
+        "summary": CMSSummaryFormInput, 
+        "text": CMSTextFormInput, 
+        "themes": CMSThemesFormInput]);
   } 
 }  
-mixin(ViewComponentCalls!("CMSXFormInputHandler"));
+mixin(ViewComponentCalls!("CMSFormInputHandler"));

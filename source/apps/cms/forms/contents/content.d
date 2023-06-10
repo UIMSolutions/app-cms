@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.contents.content;
 import apps.cms;
 @safe:
 
-class DCMSXFormContent : DEntityFormContent {
-  mixin(ViewComponentThis!("CMSXFormContent"));
+class DCMSFormContent : DEntityFormContent {
+  mixin(ViewComponentThis!("CMSFormContent"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -12,7 +12,7 @@ class DCMSXFormContent : DEntityFormContent {
     this
     .crudMode(CRUDModes.Read)
     .addFields(["private", "maintitle", "subtitle", "keywords", "image", "summary", "themes", "text"])
-    .inputHandler(CMSXFormInputHandler); 
+    .inputHandler(CMSFormInputHandler); 
   }
 
 /*   override DH5Obj[] formGroup(string field, bool readonly, STRINGAA options = null) {
@@ -22,13 +22,13 @@ class DCMSXFormContent : DEntityFormContent {
       if (auto formWithEntity = cast(IAPPWithEntity)form) {
         this.entity(formWithEntity.entity);
         if (entity) switch(field) {
-          case "private": return CMSXFormGroupPrivate(form).entity(entity).toH5(options);
-          case "maintitle": return CMSXFormGroupMainTitle(form).entity(entity).toH5(options);
-          case "subtitle": return CMSXFormGroupSubTitle(form).entity(entity).toH5(options);
-          case "keywords": return CMSXFormGroupKeywords(form).entity(entity).toH5(options);
-          case "image": return CMSXFormGroupImage(form).entity(entity).toH5(options);
-          case "summary": return CMSXFormGroupSummary(form).entity(entity).toH5(options);
-          case "text": return CMSXFormGroupText(form).entity(entity).toH5(options);
+          case "private": return CMSFormGroupPrivate(form).entity(entity).toH5(options);
+          case "maintitle": return CMSFormGroupMainTitle(form).entity(entity).toH5(options);
+          case "subtitle": return CMSFormGroupSubTitle(form).entity(entity).toH5(options);
+          case "keywords": return CMSFormGroupKeywords(form).entity(entity).toH5(options);
+          case "image": return CMSFormGroupImage(form).entity(entity).toH5(options);
+          case "summary": return CMSFormGroupSummary(form).entity(entity).toH5(options);
+          case "text": return CMSFormGroupText(form).entity(entity).toH5(options);
           default: return super.formGroup(field, readonly, options);
         }
       }
@@ -36,8 +36,8 @@ class DCMSXFormContent : DEntityFormContent {
     return null;
   } */
 }
-mixin(ViewComponentCalls!("CMSXFormContent"));
+mixin(ViewComponentCalls!("CMSFormContent"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXFormContent.form(myForm));
+    assert(CMSFormContent.form(myForm));
 }}

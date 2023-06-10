@@ -3,11 +3,11 @@ module apps.cms.views.components.forms.contents.page;
 import apps.cms;
 @safe:
 
-class DCMSXPageFormContent : DCMSXPostFormContent {
-  mixin(ViewComponentThis!("CMSXPageFormContent"));
+class DCMSPageFormContent : DCMSPostFormContent {
+  mixin(ViewComponentThis!("CMSPageFormContent"));
 }
-mixin(ViewComponentCalls!("CMSXPageFormContent"));
+mixin(ViewComponentCalls!("CMSPageFormContent"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXPageFormContent(myForm));
+    assert(CMSPageFormContent(myForm));
 }}

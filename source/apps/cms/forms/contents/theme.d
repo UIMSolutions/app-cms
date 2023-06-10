@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.contents.theme;
 import apps.cms;
 @safe:
 
-class DCMSXThemeFormContent : DEntityFormContent {
-  mixin(ViewComponentThis!("CMSXThemeFormContent"));
+class DCMSThemeFormContent : DEntityFormContent {
+  mixin(ViewComponentThis!("CMSThemeFormContent"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,14 +19,14 @@ class DCMSXThemeFormContent : DEntityFormContent {
       this.crudMode(form.crudMode);
     
       if (auto formWithEntity = cast(IAPPWithEntity)form) { 
-        DCMSXTheme entity = cast(DCMSXTheme)formWithEntity.entity;
+        DCMSTheme entity = cast(DCMSTheme)formWithEntity.entity;
         if (entity) switch(field) {
-          case "maintitle": return CMSXFormGroupMainTitle(form).entity(entity).toH5(options);
-          case "subtitle":  return CMSXFormGroupSubTitle(form).entity(entity).toH5(options);
-          case "image":     return CMSXFormGroupImage(form).entity(entity).toH5(options);
-          case "summary":   return CMSXFormGroupSummary(form).entity(entity).toH5(options);
-          case "themes":    return CMSXFormGroupTheme(form).entity(entity).toH5(options);
-          case "text":      return CMSXFormGroupText(form).entity(entity).toH5(options);
+          case "maintitle": return CMSFormGroupMainTitle(form).entity(entity).toH5(options);
+          case "subtitle":  return CMSFormGroupSubTitle(form).entity(entity).toH5(options);
+          case "image":     return CMSFormGroupImage(form).entity(entity).toH5(options);
+          case "summary":   return CMSFormGroupSummary(form).entity(entity).toH5(options);
+          case "themes":    return CMSFormGroupTheme(form).entity(entity).toH5(options);
+          case "text":      return CMSFormGroupText(form).entity(entity).toH5(options);
           default: return super.formGroup(field, readonly, options); 
         }
       }
@@ -34,8 +34,8 @@ class DCMSXThemeFormContent : DEntityFormContent {
     return null;
   } */
 }
-mixin(ViewComponentCalls!("CMSXThemeFormContent"));
+mixin(ViewComponentCalls!("CMSThemeFormContent"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXThemeFormContent(myForm));
+    assert(CMSThemeFormContent(myForm));
 }}

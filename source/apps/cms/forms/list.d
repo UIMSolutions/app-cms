@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.list;
 import apps.cms;
 @safe: 
 
-class DCMSXListFormContentx : DListFormContent {
-  // mixin(FormCompoentThis!("CMSXNewsItemFormContent"));
+class DCMSListFormContentx : DListFormContent {
+  // mixin(FormCompoentThis!("CMSNewsItemFormContent"));
 
   mixin(SProperty!("string", "entitiesName"));
 
@@ -39,5 +39,5 @@ class DCMSXListFormContentx : DListFormContent {
  */  
   }
 }
-/* auto CMSXListFormContent() { return new DCMSXListFormContent; }
-auto CMSXListFormContent(DForm myForm) { return new DCMSXListFormContent(myForm); } */
+/* auto CMSListFormContent() { return new DCMSListFormContent; }
+auto CMSListFormContent(DForm myForm) { return new DCMSListFormContent(myForm); } */

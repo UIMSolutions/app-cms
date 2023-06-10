@@ -3,11 +3,11 @@ module apps.cms.views.components.forms.contents.link;
 import apps.cms;
 @safe:
 
-class DCMSXLinkFormContent : DCMSXPostFormContent {
-  mixin(ViewComponentThis!("CMSXLinkFormContent"));
+class DCMSLinkFormContent : DCMSPostFormContent {
+  mixin(ViewComponentThis!("CMSLinkFormContent"));
 }
-mixin(ViewComponentCalls!("CMSXLinkFormContent"));
+mixin(ViewComponentCalls!("CMSLinkFormContent"));
 
 version(test_uim_cms) { unittest {
-    assert(CMSXLinkFormContent(myForm));
+    assert(CMSLinkFormContent(myForm));
 }}

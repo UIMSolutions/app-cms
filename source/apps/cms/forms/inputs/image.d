@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.image;
 import apps.cms;
 @safe:
 
-class DCMSXImageFormInput : DTextFormInput {
-  mixin(ViewComponentThis!("CMSXImageFormInput"));
+class DCMSImageFormInput : DTextFormInput {
+  mixin(ViewComponentThis!("CMSImageFormInput"));
   
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -17,8 +17,8 @@ class DCMSXImageFormInput : DTextFormInput {
     .label("Titelbild"); 
   }
 }
-mixin(ViewComponentCalls!("CMSXImageFormInput"));
+mixin(ViewComponentCalls!("CMSImageFormInput"));
 
 version(test_uim_cms) { unittest {
-    // assert(CMSXImageFormInput);
+    // assert(CMSImageFormInput);
 }}

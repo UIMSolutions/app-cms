@@ -3,7 +3,7 @@ module apps.cms.data.app;
 import apps.cms;
 @safe:
 
-class DCMSXAppData : DSRVApi {
+class DCMSAppData : DSRVApi {
   this() {
     super();
     // this.sessionRequired(true).siteRequired(true); }

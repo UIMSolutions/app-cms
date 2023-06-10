@@ -3,19 +3,19 @@ module apps.cms.views.components.forms.themes;
 import apps.cms;
 @safe:
 
-class DCMSXThemeForm : DForm {
-  mixin(ViewComponentThis!("CMSXThemeForm"));
+class DCMSThemeForm : DForm {
+  mixin(ViewComponentThis!("CMSThemeForm"));
 
   override void initialize(Json configSettings = Json(null)) {
-    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSXThemeForm~"::DCMSXThemeForm("~this.className~"):initialize"); }
+    version(test_uim_mvc) { debugMethodCall(moduleName!DCMSThemeForm~"::DCMSThemeForm("~this.className~"):initialize"); }
     super.initialize(configSettings);
     
     this
       .content(
-        CMSXThemeFormContent.form(this));
+        CMSThemeFormContent.form(this));
   }
 }
-mixin(ViewComponentCalls!("CMSXThemeForm"));
+mixin(ViewComponentCalls!("CMSThemeForm"));
 
 version(test_uim_cms) { unittest {
     // TODO

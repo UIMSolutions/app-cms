@@ -3,8 +3,8 @@ module apps.cms.views.components.forms.inputs.keywords;
 import apps.cms;
 @safe:
 
-class DCMSXKeywordsFormInput : DFormInput {
-  mixin(ViewComponentThis!("CMSXKeywordsFormInput"));
+class DCMSKeywordsFormInput : DFormInput {
+  mixin(ViewComponentThis!("CMSKeywordsFormInput"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -31,7 +31,7 @@ class DCMSXKeywordsFormInput : DFormInput {
         BS5Col(["col"], input))].toH5;
   }
 }
-mixin(ViewComponentCalls!("CMSXKeywordsFormInput"));
+mixin(ViewComponentCalls!("CMSKeywordsFormInput"));
 
 version(test_uim_cms) { unittest {
     // TODO Tests

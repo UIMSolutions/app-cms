@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.posts.docus;
 import apps.cms;
 @safe:
 
-class DCMSDocuForm : DCMSPostForm {
+class DCMSDocuForm : DCMSForm {
   mixin(ViewComponentThis!("CMSDocuForm"));
 }
 mixin(ViewComponentCalls!("CMSDocuForm"));

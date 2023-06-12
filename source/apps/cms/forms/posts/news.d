@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.posts.news;
 import apps.cms;
 @safe:
 
-class DCMSNewsItemForm : DCMSPostForm {
+class DCMSNewsItemForm : DCMSForm {
   mixin(ViewComponentThis!("CMSNewsItemForm"));
 }
 mixin(ViewComponentCalls!("CMSNewsItemForm"));

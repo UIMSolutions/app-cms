@@ -42,7 +42,9 @@ class DCMSThemesIndexView : DCMSView {
   }
 
   override void beforeH5(STRINGAA options = null) {
+    debugMethodCall(moduleName!DCMSThemesIndexView~":DCMSThemesIndexView("~this.name~")::beforeH5");
     super.beforeH5(options);
+    if (hasError || "redirect" in options) { return; }
 
     this
       .pageHeader
@@ -53,11 +55,6 @@ class DCMSThemesIndexView : DCMSView {
             [this.rootPath, "CMS"],
             [this.rootPath~"/themes", "Themes"]
           );
-
-      override void beforeH5(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSThemesIndexView~":DCMSThemesIndexView("~this.name~")::beforeH5");
-    super.beforeH5(options);
-    if (hasError || "redirect" in options) { return; }
 
     if (auto myForm = cast(DForm)this.form) {
       myForm.entities(this.entities);
@@ -85,6 +82,5 @@ class DCMSThemesIndexView : DCMSView {
           .toH5(options)
     )))].toH5;              
   }  */
-  }
 }
 mixin(ViewCalls!("CMSThemesIndexView", "DCMSThemesIndexView"));

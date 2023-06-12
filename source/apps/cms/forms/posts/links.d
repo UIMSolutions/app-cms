@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.posts.links;
 import apps.cms;
 @safe:
 
-class DCMSLinkForm : DCMSPostForm {
+class DCMSLinkForm : DCMSForm {
   mixin(ViewComponentThis!("CMSLinkForm"));
 }
 mixin(ViewComponentCalls!("CMSLinkForm"));

@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.contents.tutorial;
 import apps.cms;
 @safe:
 
-class DCMSTutorialFormContent : DCMSPostFormContent {
+class DCMSTutorialFormContent : DCMSFormContent {
   mixin(ViewComponentThis!("CMSTutorialFormContent"));
 
   /* override DH5Obj[] formGroup(string field, bool readonly, STRINGAA options = null) {

@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.inputs.mainTitle;
+module apps.cms.forms.inputs.mainTitle;
 
 import apps.cms;
 @safe:

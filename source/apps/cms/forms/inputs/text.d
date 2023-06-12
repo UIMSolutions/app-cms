@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.inputs.text;
+module apps.cms.forms.inputs.text;
 
 import apps.cms;
 @safe:

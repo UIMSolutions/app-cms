@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.inputs.subtitle;
+module apps.cms.forms.inputs.subtitle;
 
 import apps.cms;
 @safe:

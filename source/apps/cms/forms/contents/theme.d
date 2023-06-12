@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.contents.theme;
+module apps.cms.forms.contents.theme;
 
 import apps.cms;
 @safe:

@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.inputs.keywords;
+module apps.cms.forms.inputs.keywords;
 
 import apps.cms;
 @safe:

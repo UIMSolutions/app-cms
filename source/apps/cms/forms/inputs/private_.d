@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.inputs.private_;
+module apps.cms.forms.inputs.private_;
 
 import apps.cms;
 @safe:

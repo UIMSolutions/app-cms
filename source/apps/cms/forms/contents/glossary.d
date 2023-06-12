@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.contents.glossary;
 import apps.cms;
 @safe:
 
-class DCMSGlossaryItemFormContent : DCMSPostFormContent {
+class DCMSGlossaryItemFormContent : DCMSFormContent {
   mixin(ViewComponentThis!("CMSGlossaryItemFormContent"));
 }
 mixin(ViewComponentCalls!("CMSGlossaryItemFormContent"));

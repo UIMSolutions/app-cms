@@ -16,6 +16,10 @@ public { // Pages Controllers
 }
 
 public {
+  import apps.cms.controllers.pages.controller;
+}
+
+public {
   import apps.cms.controllers.pages.blogs;
   import apps.cms.controllers.pages.news;
   import apps.cms.controllers.pages.themes;

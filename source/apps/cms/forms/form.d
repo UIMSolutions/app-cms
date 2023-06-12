@@ -9,9 +9,9 @@ class DCMSForm : DForm {
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
-/*     this
+     this
       .content(
-        CMSFormContent(this)); */
+        CMSFormContent(this));
   }
 }
 mixin(ViewComponentCalls!("CMSForm"));

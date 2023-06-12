@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.contents.demo;
 import apps.cms;
 @safe:
 
-class DCMSDemoFormContent : DCMSPostFormContent {
+class DCMSDemoFormContent : DCMSFormContent {
   mixin(ViewComponentThis!("CMSDemoFormContent"));
 }
 mixin(ViewComponentCalls!("CMSDemoFormContent"));

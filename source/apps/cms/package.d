@@ -27,6 +27,7 @@ public {
 
 public { // App packages
   import apps.cms.controllers;
+  import apps.cms.forms;
   import apps.cms.helpers;
   import apps.cms.javascripts;
   import apps.cms.layouts;
@@ -34,7 +35,6 @@ public { // App packages
   import apps.cms.scripts;
   import apps.cms.settings;
   import apps.cms.tests;
-  import apps.cms.translations;
   import apps.cms.views;
 }
 

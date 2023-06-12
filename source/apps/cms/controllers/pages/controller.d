@@ -1,10 +1,10 @@
-module apps.cms.controllers.pages.cms;
+module apps.cms.controllers.pages.controller;
 
 import apps.cms;
 @safe:
 
-class DCMSCmsPageController : DCMSPageController {
-  mixin(PageControllerThis!("CMSCmsPageController"));
+class DCMSPageController : DPageController {
+  mixin(PageControllerThis!("CMSPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -19,7 +19,7 @@ class DCMSCmsPageController : DCMSPageController {
   mixin(OProperty!("string", "entityName"));
 
   override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSCmsPageController~":DCMSCmsPageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSPageController~":DCMSPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
@@ -33,15 +33,15 @@ class DCMSCmsPageController : DCMSPageController {
   }
 
   override void afterResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSCmsPageController~":DCMSCmsPageController::afterResponse");
+    // debugMethodCall(moduleName!DCMSPageController~":DCMSPageController::afterResponse");
     super.afterResponse(options);
   }
 
 }
-mixin(PageControllerCalls!("CMSCmsPageController"));
+mixin(PageControllerCalls!("CMSPageController"));
 
 version(test_uim_cms) { unittest {
-    assert(new DCMSCmsPageController);
-    assert(CMSCmsPageController);
+    assert(new DCMSPageController);
+    assert(CMSPageController);
   }
 } 

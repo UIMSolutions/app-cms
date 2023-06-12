@@ -12,16 +12,17 @@ class DCMSBlogsReadPageController : DPageController {
     this
       .view(CMSBlogsReadView(this));
 
-          this
+    this
       .view(
         CMSBlogsReadView(this))
       .rootPath("/cms/blogs") 
       .collectionName("cms_blogs")    
-      .scripts.addContents(
-      editorSummary~
-      editorText~
-      "editorSummary.disabled();"~
-      "editorText.disabled();"
+      .scripts
+        .addContents(
+          editorSummary~
+          editorText~
+          "editorSummary.disabled();"~
+          "editorText.disabled();");
 
 
     this.scripts.addContents(
@@ -34,7 +35,6 @@ class DCMSBlogsReadPageController : DPageController {
     this
       .rootPath("/cms/themes") 
       .collectionName("cms_themes"); 
-    );
   }
 
   override void beforeResponse(STRINGAA options = null) {

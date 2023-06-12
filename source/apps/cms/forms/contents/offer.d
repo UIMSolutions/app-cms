@@ -3,7 +3,7 @@ module apps.cms.views.components.forms.contents.offer;
 import apps.cms;
 @safe:
 
-class DCMSOfferFormContent : DCMSPostFormContent {
+class DCMSOfferFormContent : DCMSFormContent {
   mixin(ViewComponentThis!("CMSOfferFormContent"));
 }
 mixin(ViewComponentCalls!("CMSOfferFormContent"));

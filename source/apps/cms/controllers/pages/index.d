@@ -24,6 +24,18 @@ class DCMSIndexPageController : DPageController {
     this.view(
       CMSIndexView(this));
 
+    auto appSession = getAppSession(options);
+
+    auto session  = appSession.session;
+    auto site     = appSession.site;
+      
+    // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
+    auto entities = database[site.name, collectionName].findMany;
+
+    auto poolId = uniform(1, 1_000_000_000);
+    entitiesPool[poolId] = entities;
+    options["poolId"] = to!string(poolId);
+
     /* if (auto appSession = getAppSession(options)) {      
       debug writeln(appSession.debugInfo);
       auto session = appSession.session; 
@@ -48,8 +60,6 @@ class DCMSIndexPageController : DPageController {
     else {
       debug writeln("No AppSession");
     } */
-  }
-
 
 /*   this(string jsPath, string myPath, string myEntities, string myEntity, string myCollectionName) { 
     super(); 
@@ -74,11 +84,8 @@ class DCMSIndexPageController : DPageController {
       "/js/apps/"~jsPath~"/list.js");
 
   } */
-  unittest {
-    version(test_uim_cms) {
-      /// TODO
-    }}
-
+  }
+  
   override void jsCode(STRINGAA reqParameters) {
     super.jsCode(reqParameters);
     if (viewMode == ViewModes.JS) 
@@ -86,28 +93,6 @@ class DCMSIndexPageController : DPageController {
       `window.addEventListener("load", event => `~
         jsBlock("listEntities('"~"(session ? session.id.toString : \"\")"~"');")
       ~`)`);
-  }
-  unittest {
-    version(test_uim_cms) {
-      /// TODO
-    }}
-
-  override void beforeResponse(STRINGAA options = null) {
-    // debugMethodCall(moduleName!DCMSListPageController~":DCMSListPageController::beforeResponse");
-    super.beforeResponse(options);   
-    if ("redirect" in options) return; 
-
-    auto appSession = getAppSession(options);
-
-    auto session  = appSession.session;
-    auto site     = appSession.site;
-      
-    // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
-    auto entities = database[site.name, collectionName].findMany;
-
-    auto poolId = uniform(1, 1_000_000_000);
-    entitiesPool[poolId] = entities;
-    options["poolId"] = to!string(poolId);
   }
   unittest {
     version(test_uim_cms) {

@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.posts.glossary;
+module apps.cms.forms.posts.glossary;
 
 import apps.cms;
 @safe:

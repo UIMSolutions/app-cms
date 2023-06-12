@@ -1,4 +1,4 @@
-module apps.cms.views.components.forms.posts.pages;
+module apps.cms.forms.posts.pages;
 
 import apps.cms;
 @safe:

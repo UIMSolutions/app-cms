@@ -1,16 +1,16 @@
-module apps.cms.views.components.forms;
+module apps.cms.forms;
 
 import apps.cms;
 @safe:
 
 // Main
-public import apps.cms.views.components.forms.form;
+public import apps.cms.forms.form;
 
 // Packages
-public import apps.cms.views.components.forms.contents;
-public import apps.cms.views.components.forms.inputs;
-public import apps.cms.views.components.forms.posts;
+public import apps.cms.forms.contents;
+public import apps.cms.forms.inputs;
+public import apps.cms.forms.posts;
 
 // Modules
-public import apps.cms.views.components.forms.list;
-public import apps.cms.views.components.forms.themes;
+public import apps.cms.forms.list;
+public import apps.cms.forms.themes;

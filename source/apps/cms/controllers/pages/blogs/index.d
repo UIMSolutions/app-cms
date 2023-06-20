@@ -20,9 +20,13 @@ class DCMSBlogsIndexPageController : DPageController {
 
     // if (hasError || "redirect" in options) { return; }
     
-    auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
+    if (!manager) { return; } // No manager no fun ;-)
+
+    auto mySession = manager.session(options);
+    if (!mySession) { return; } // Session required  
+
+    if (mySession) {
+      if (!mySession.site) { 
         this.error("AppSession missing"); 
         return; }
     }
@@ -48,7 +52,7 @@ class DCMSBlogsIndexPageController : DPageController {
       this.error("entitiesView missing"); 
       return; }
 
-        auto appSession = getAppSession(options);
+    auto appSession = getAppSession(options);
     if (appSession) {
       if (!appSession.site) { 
         this.error("AppSession missing"); 

@@ -19,9 +19,9 @@ class DCMSDocusIndexPageController : DCMSPageController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
-    auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
+    auto mySession = sessionManager.session(options);
+    if (mySession) {
+      if (!mySession.site) { 
         this.error("AppSession missing"); 
         return; }
     }

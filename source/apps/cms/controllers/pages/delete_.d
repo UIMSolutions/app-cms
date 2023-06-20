@@ -22,7 +22,7 @@ class DCMSDeletePageController : DPageController {
     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
     .title("UIM!CMS > "~myEntities~" > Löschen")
-    .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck])
+    .checks([mySessionExistsCheck, mySessionHasSessionCheck, mySessionHasSiteCheck])
     .header(
       APPDeletePageHeader
       .rootPath(pgPath)// .mainTitle(myEntities)// .subTitle("Löschen "~myEntity)
@@ -47,24 +47,25 @@ class DCMSDeletePageController : DPageController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
 
-    if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
-      if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSCreateDCMSCreatePageControllerAction: mySession "~mySession.id.toString);
+    if (mySession.isNull) return;
+    
+    if (auto tenant = database[mySession.site]) {
+      debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
 
-        if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSCreatePageController: collection "~collectionName);
+      if (auto collection = tenant[collectionName]) {
+        debug writeln("In DCMSCreatePageController: collection "~collectionName);
 
-          auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
-          if (entityId.isUUID) {  
-            if (auto entity = collection.findOne(UUID(entityId))) {
-              if (auto entityView = cast(DEntityCRUDView)this.view) {
-                entityView
-                  .entity(entity)
-                  .crudMode(CRUDModes.Delete)
-                  .rootPath(this.rootPath)
-                  .readonly(true);
-              }
+        auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
+        if (entityId.isUUID) {  
+          if (auto entity = collection.findOne(UUID(entityId))) {
+            if (auto entityView = cast(DEntityCRUDView)this.view) {
+              entityView
+                .entity(entity)
+                .crudMode(CRUDModes.Delete)
+                .rootPath(this.rootPath)
+                .readonly(true);
             }
           }
         }

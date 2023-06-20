@@ -11,7 +11,7 @@ class DCMSPageController : DPageController {
 
         this
     .addChecks([
-      AppSessionHasSessionCheck, AppSessionHasSiteCheck, // Check appSesssion
+      SessionHasHTTPSessionCheck, SessionHasSiteCheck, // Check appSesssion
       DatabaseHasSessionsCheck, DatabaseHasSitesCheck // Check database
     ]);
   }

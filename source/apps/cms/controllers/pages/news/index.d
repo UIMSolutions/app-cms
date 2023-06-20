@@ -18,13 +18,16 @@ class DCMSNewsIndexPageController : DPageController {
     super.beforeResponse(options);
     if (hasError || hasRedirect) { return; } 
 
-        auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
-        this.error("AppSession missing"); 
-        return; }
+    auto mySession = sessionManager.session(options);
+    if (mySession.isNull) { 
+      debug writeln("AppSession missing"); 
+      return; 
     }
-    else { debug writeln("AppSession missing"); return; }
+
+    if (!appSession.site) { 
+      this.error("AppSession missing"); 
+      return; 
+    }
 
     auto db = this.database;
     if (db) { debug writeln("Database found"); }

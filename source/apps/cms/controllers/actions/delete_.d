@@ -11,9 +11,11 @@ class DCMSDeleteActionController : DActionController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }    
 
-    auto appSession = getAppSession(options);
-    debug writeln("In DCMSDeleteActionController: appSession "~(appSession ? appSession.id : null));
-    if (auto myTenant = database[appSession.site]) {
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSDeleteActionController: mySession "~mySession.id.toString);
+    if (mySession.isNull) return ;
+
+    if (auto myTenant = database[mySession.site]) {
       debug writeln("In DCMSDeleteActionController: tenant "/* ~tenant.name */);
 
       if (auto myCollection = myTenant[collectionName]) {

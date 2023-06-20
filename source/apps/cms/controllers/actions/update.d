@@ -11,9 +11,11 @@ class DCMSUpdateActionController : DActionController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }     
 
-    auto appSession = getAppSession(options);
-    debug writeln("In DCMSUpdateActionController: appSession "~(appSession ? appSession.id : null));
-    if (auto tenant = database[appSession.site]) {
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSUpdateActionController: mySession "~mySession.id.toString);
+    if (mySession.isNull) return;
+
+    if (auto tenant = database[mySession.site]) {
       debug writeln("In DCMSUpdateActionController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {

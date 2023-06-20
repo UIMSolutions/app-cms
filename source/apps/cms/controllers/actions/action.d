@@ -11,7 +11,7 @@ class DCMSActionController : DActionController {
 
     this
     .checks([
-      AppSessionHasSessionCheck, AppSessionHasSiteCheck, // AppSession related checks
+      SessionHasHTTPSessionCheck, SessionHasSiteCheck, // AppSession related checks
       DatabaseHasAccountsCheck]); // Database related checks
   }
 }

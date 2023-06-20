@@ -19,7 +19,7 @@ class DCMSCreatePageController : DPageController {
 /*     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
     .title("UIM!CMS > "~myEntities~" > Erstellen")
-    .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck, APPCheckDatabaseExists])
+    .checks([mySessionExistsCheck, mySessionHasSessionCheck, mySessionHasSiteCheck, APPCheckDatabaseExists])
     // .securityController(APPSecurityController(this))      
     .view(
       CMSCreateView
@@ -73,23 +73,24 @@ override void jsCode(STRINGAA options = null) {
     super.beforeResponse(options);   
     if (hasError || hasRedirect) { return; }    
 
-    if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
-      if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSCreateDCMSCreatePageControllerAction: mySession "~mySession.id.toString);
+    if (mySession.isNull) return;
 
-        if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSCreatePageController: collection "~collectionName);
+    if (auto tenant = database[mySession.site]) {
+      debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
 
-          if (auto entity = collection.createFromTemplate) {                            
-            if (auto entityView = cast(DEntityCRUDView)this.view) {
-              entityView
-                .entity(entity)
-                .crudMode(CRUDModes.Create)
-                .rootPath(this.rootPath)
-                .readonly(true);
-            }          
-          }
+      if (auto collection = tenant[collectionName]) {
+        debug writeln("In DCMSCreatePageController: collection "~collectionName);
+
+        if (auto entity = collection.createFromTemplate) {                            
+          if (auto entityView = cast(DEntityCRUDView)this.view) {
+            entityView
+              .entity(entity)
+              .crudMode(CRUDModes.Create)
+              .rootPath(this.rootPath)
+              .readonly(true);
+          }          
         }
       }
     }

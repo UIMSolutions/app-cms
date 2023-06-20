@@ -11,25 +11,26 @@ class DCMSCreateActionController : DActionController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }    
 
-    if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateActionController: appSession "~(appSession ? appSession.id : null));
-      if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSCreateActionController: tenant "/* ~tenant.name */);
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSCreateActionController: mySession "~mySession.id.toString);
+    if (mySession.isNull) return;
 
-        if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSCreateActionController: collection "~collectionName);
+    if (auto tenant = database[mySession.site]) {
+      debug writeln("In DCMSCreateActionController: tenant "/* ~tenant.name */);
 
-          if (auto entity = collection.createFromTemplate) {
-            debug writeln("In DCMSCreateActionController: entity "~entity.name);
-            entity.readFromRequest(options);   
+      if (auto collection = tenant[collectionName]) {
+        debug writeln("In DCMSCreateActionController: collection "~collectionName);
 
-            collection.insertOne(entity);
-            debug writeln("entity.id = ", entity.id);
-            options["redirect"] = this.rootPath ~ "/view?id="~entity.id.toString; 
-          }  
-        }
+        if (auto entity = collection.createFromTemplate) {
+          debug writeln("In DCMSCreateActionController: entity "~entity.name);
+          entity.readFromRequest(options);   
+
+          collection.insertOne(entity);
+          debug writeln("entity.id = ", entity.id);
+          options["redirect"] = this.rootPath ~ "/view?id="~entity.id.toString; 
+        }  
       }
     }
-	}
+  }
 }
 mixin(ControllerCalls!("CMSCreateActionController", "DCMSCreateActionController"));

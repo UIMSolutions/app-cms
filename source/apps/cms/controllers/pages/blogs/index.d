@@ -13,10 +13,9 @@ class DCMSBlogsIndexPageController : DPageController {
       .view(CMSBlogsIndexView(this));
   }
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSBlogsIndexPageController~":DCMSBlogsIndexPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
 
     // if (hasError || "redirect" in options) { return; }
     

@@ -73,34 +73,36 @@ class DCMSUpdatePageController : DPageController {
       /// TODO
     }}
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSBlogsUpdatePageController~":DCMSBlogsUpdatePageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
-    if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
-      if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
+    if (mySession.isNull) { return false; }
 
-        if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSCreatePageController: collection "~collectionName);
+    if (auto tenant = database[appSession.site]) {
+      debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
 
-          auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
-          if (entityId.isUUID) {  
-            if (auto entity = collection.findOne(UUID(entityId))) {
-              if (auto entityView = cast(DEntityCRUDView)this.view) {
-                entityView
-                  .entity(entity)
-                  .crudMode(CRUDModes.Update)
-                  .rootPath(this.rootPath)
-                  .readonly(false);
-              }
+      if (auto collection = tenant[collectionName]) {
+        debug writeln("In DCMSCreatePageController: collection "~collectionName);
+
+        auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
+        if (entityId.isUUID) {  
+          if (auto entity = collection.findOne(UUID(entityId))) {
+            if (auto entityView = cast(DEntityCRUDView)this.view) {
+              entityView
+                .entity(entity)
+                .crudMode(CRUDModes.Update)
+                .rootPath(this.rootPath)
+                .readonly(false);
             }
           }
         }
       }
     }
+    
+    return true;
   }
 }
 mixin(ControllerCalls!("CMSUpdatePageController"));

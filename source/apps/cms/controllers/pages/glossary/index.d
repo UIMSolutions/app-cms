@@ -14,7 +14,7 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
         CMSGlossaryIndexView(this));
   }
   
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     // debugMethodCall(moduleName!DCMSGlossaryIndexPageController~":DCMSGlossaryIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }

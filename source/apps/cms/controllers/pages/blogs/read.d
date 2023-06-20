@@ -36,11 +36,5 @@ class DCMSBlogsReadPageController : DPageController {
       .rootPath("/cms/themes") 
       .collectionName("cms_themes"); 
   }
-
-  override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsReadPageController~":DCMSBlogsReadPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
-  } 
 }
 mixin(ControllerCalls!("CMSBlogsReadPageController", "DCMSBlogsReadPageController"));

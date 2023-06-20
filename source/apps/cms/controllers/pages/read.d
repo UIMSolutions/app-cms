@@ -23,7 +23,7 @@ class DCMSReadPageController : DPageController {
     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
     .title("UIM!CMS > "~myEntities~" > Anzeigen")
-    .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck])
+    .checks([mySessionExistsCheck, mySessionHasSessionCheck, mySessionHasSiteCheck])
     // .securityController(APPSecurityController(this))      
     .header(
       ViewPageHeader
@@ -69,29 +69,29 @@ else addToPageScript(reqParameters,
 
   }
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSReadPageController~":DCMSReadPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
-    if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateDCMSReadPageControllerAction: appSession "~(appSession ? appSession.id : null));
-      if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSReadPageController: tenant "/* ~tenant.name */);
+    auto mySession = sessionManager.session(options);
+    debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~(mySession ? mySession.id : null));
+    if (mySession.isNull) { return false; }
 
-        if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSReadPageController: collection "~collectionName);
+    if (auto myTenant = database[mySession.site]) {
+      debug writeln("In DCMSReadPageController: tenant "/* ~tenant.name */);
 
-          auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
-          if (entityId.isUUID) {  
-            if (auto entity = collection.findOne(UUID(entityId))) {
-              if (auto entityView = cast(DEntityCRUDView)this.view) {
-                entityView
-                  .entity(entity)
-                  .crudMode(CRUDModes.Read)
-                  .rootPath(this.rootPath)
-                  .readonly(true);
-              }
+      if (auto myCollection = myTenant[collectionName]) {
+        debug writeln("In DCMSReadPageController: collection "~collectionName);
+
+        auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
+        if (entityId.isUUID) {  
+          if (auto entity = myCollection.findOne(UUID(entityId))) {
+            if (auto entityView = cast(DEntityCRUDView)this.view) {
+              entityView
+                .entity(entity)
+                .crudMode(CRUDModes.Read)
+                .rootPath(this.rootPath)
+                .readonly(true);
             }
           }
         }

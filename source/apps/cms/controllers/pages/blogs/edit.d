@@ -45,11 +45,5 @@ class DCMSBlogsEditPageController : DPageController {
       .collectionName("cms_themes"); 
     }}
   }
-
-  override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsEditPageController~":DCMSBlogsEditPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
-  } 
 }
 mixin(ControllerCalls!("CMSBlogsEditPageController"));

@@ -16,11 +16,14 @@ class DCMSOffersIndexPageController : DCMSIndexPageController {
     
     auto mySession = sessionManager.session(options);
     if (mySession.isNull) { 
-      if (!mySession.site) { 
-        this.error("mySession missing"); 
-        return false; }
+      debug writeln("mySession missing"); 
+      return false; 
     }
-    else { debug writeln("mySession missing"); return; }
+    
+    if (!mySession.site) { 
+      this.error("mySession missing"); 
+      return false; 
+    }
 
     auto db = this.database;
     if (db) { debug writeln("Database found"); }

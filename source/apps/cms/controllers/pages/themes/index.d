@@ -12,10 +12,5 @@ class DCMSThemesIndexPageController : DPageController {
     this
       .view(CMSThemesIndexView(this));
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSThemesIndexPageController~":DCMSThemesIndexPageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  }   
 }
 mixin(ControllerCalls!("CMSThemesIndexPageController", "DCMSThemesIndexPageController"));

@@ -12,25 +12,24 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
   
   override bool beforeResponse(STRINGAA options = null) {
     // debugMethodCall(moduleName!DCMSPagesIndexPageController~":DCMSPagesIndexPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
     auto mySession = sessionManager.session(options);
     if (mySession.isNull) { 
       debug writeln("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     if (!mySession.site) { 
       this.error("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     auto myDatabase = this.database;
     if (myDatabase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
-      return; }
+      return false; }
 
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
@@ -44,7 +43,9 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     }
     else { 
       this.error("entitiesView missing"); 
-      return; }
+      return false; }
+
+    return true;
   }
 }
 mixin(ControllerCalls!("CMSPagesIndexPageController"));

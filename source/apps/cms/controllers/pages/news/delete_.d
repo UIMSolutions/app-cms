@@ -23,10 +23,5 @@ class DCMSNewsDeletePageController : DPageController {
       .rootPath("/cms/news") 
       .collectionName("cms_news"); 
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSNewsDeletePageController~":DCMSNewsDeletePageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSNewsDeletePageController"));

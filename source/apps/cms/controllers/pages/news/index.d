@@ -19,12 +19,12 @@ class DCMSNewsIndexPageController : DPageController {
 
     auto mySession = sessionManager.session(options);
     if (mySession.isNull) { 
-      debug writeln("AppSession missing"); 
+      debug writeln("mySession missing"); 
       return false; 
     }
 
-    if (!appSession.site) { 
-      this.error("AppSession missing"); 
+    if (!mySession.site) { 
+      this.error("mySession missing"); 
       return false; 
     }
 
@@ -46,7 +46,9 @@ class DCMSNewsIndexPageController : DPageController {
     }
     else { 
       this.error("entitiesView missing"); 
-      return false; }       
+      return false; }   
+
+    return true;    
   } 
 }
 mixin(ControllerCalls!("CMSNewsIndexPageController"));

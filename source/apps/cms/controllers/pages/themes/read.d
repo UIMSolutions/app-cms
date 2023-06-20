@@ -12,10 +12,5 @@ class DCMSThemesReadPageController : DPageController {
     this
       .view(CMSThemesReadView(this));
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSThemesReadPageController~":DCMSThemesReadPageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSThemesReadPageController"));

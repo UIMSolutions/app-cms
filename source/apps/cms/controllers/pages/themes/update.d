@@ -12,10 +12,5 @@ class DCMSThemesEditPageController : DPageController {
     this
       .view(CMSThemesUpdateView(this));
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSThemesEditPageController~":DCMSThemesEditPageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSThemesEditPageController"));

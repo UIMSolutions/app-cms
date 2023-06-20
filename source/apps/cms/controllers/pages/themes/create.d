@@ -27,10 +27,5 @@ class DCMSThemesCreatePageController : DPageController {
       .rootPath("/cms/themes") 
       .collectionName("cms_themes"); 
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSThemesCreatePageController~":DCMSThemesCreatePageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  }
 }
 mixin(ControllerCalls!("CMSThemesCreatePageController"));

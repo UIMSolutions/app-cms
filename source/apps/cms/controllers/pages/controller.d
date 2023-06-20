@@ -18,10 +18,9 @@ class DCMSPageController : DPageController {
 
   mixin(OProperty!("string", "entityName"));
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSPageController~":DCMSPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return; }
     
     if (database) {
       auto blogs = database["uim", "cms_sites"].findMany;
@@ -30,6 +29,8 @@ class DCMSPageController : DPageController {
       auto news = database["uim", "cms_news"].findMany;
       auto links = database["uim", "cms_links"].findMany;
     }    
+
+    return true;
   }
 
   override void afterResponse(STRINGAA options = null) {

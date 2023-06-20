@@ -36,7 +36,7 @@ void uimPagesDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreatePage : DCMSPageAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreatePage~":DCMSAction_CreatePage::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -62,7 +62,7 @@ void uimPagesCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdatePage : DCMSPageAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdatePage~":DCMSAction_UpdatePage::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -87,7 +87,7 @@ void uimPagesUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeletePage : DCMSPageAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeletePage~":DCMSAction_DeletePage::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

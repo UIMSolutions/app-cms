@@ -37,7 +37,7 @@ void uimTutorialsDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateTutorial : DCMSTutorialAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateTutorial~":DCMSAction_CreateTutorial::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -63,7 +63,7 @@ void uimTutorialsCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateTutorial : DCMSTutorialAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateTutorial~":DCMSAction_UpdateTutorial::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -88,7 +88,7 @@ void uimTutorialsUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteTutorial : DCMSTutorialAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteTutorial~":DCMSAction_DeleteTutorial::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

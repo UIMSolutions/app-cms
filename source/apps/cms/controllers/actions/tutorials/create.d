@@ -8,10 +8,9 @@ class DCMSTutorialsCreateActionController : DCMSCreateActionController {
 
 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSTutorialsCreateActionController~":DCMSTutorialsCreateActionController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
   } 
 }
 mixin(ControllerCalls!("CMSTutorialsCreateActionController", "DCMSTutorialsCreateActionController"));

@@ -68,7 +68,7 @@ override void jsCode(STRINGAA options = null) {
       /// TODO
     }}
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse");
     super.beforeResponse(options);   
     if (hasError || hasRedirect) { return; }    

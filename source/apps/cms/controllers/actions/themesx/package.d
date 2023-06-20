@@ -36,7 +36,7 @@ void uimThemesDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateTheme : DCMSThemeAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateTheme~":DCMSAction_CreateTheme::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -62,7 +62,7 @@ void uimThemesCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateTheme : DCMSThemeAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateTheme~":DCMSAction_UpdateTheme::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -87,7 +87,7 @@ void uimThemesUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteTheme : DCMSThemeAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteTheme~":DCMSAction_DeleteTheme::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

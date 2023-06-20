@@ -14,7 +14,7 @@ class DCMSIndexPageController : DPageController {
       .view(CMSIndexView(this));
   }
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }

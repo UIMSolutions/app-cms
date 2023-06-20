@@ -37,7 +37,7 @@ void uimOffersDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateOffer : DCMSOfferAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateOffer~":DCMSAction_CreateOffer::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -63,7 +63,7 @@ void uimOffersCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateOffer : DCMSOfferAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateOffer~":DCMSAction_UpdateOffer::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -88,7 +88,7 @@ void uimOffersUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteOffer : DCMSOfferAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteOffer~":DCMSAction_DeleteOffer::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

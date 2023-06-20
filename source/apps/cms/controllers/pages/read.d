@@ -70,17 +70,17 @@ else addToPageScript(reqParameters,
   }
 
   override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsUpdatePageController~":DCMSBlogsUpdatePageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSReadPageController~":DCMSReadPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
 
     if (auto appSession = getAppSession(options)) {
-      debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
+      debug writeln("In DCMSCreateDCMSReadPageControllerAction: appSession "~(appSession ? appSession.id : null));
       if (auto tenant = database[appSession.site]) {
-        debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+        debug writeln("In DCMSReadPageController: tenant "/* ~tenant.name */);
 
         if (auto collection = tenant[collectionName]) {
-          debug writeln("In DCMSCreatePageController: collection "~collectionName);
+          debug writeln("In DCMSReadPageController: collection "~collectionName);
 
           auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
           if (entityId.isUUID) {  

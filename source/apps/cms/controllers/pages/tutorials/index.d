@@ -15,13 +15,13 @@ class DCMSTutorialsIndexPageController : DCMSIndexPageController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
-    auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
-        this.error("AppSession missing"); 
+    auto mySession = sessionManager.session(options);
+    if (mySession) {
+      if (!mySession.site) { 
+        this.error("mySession missing"); 
         return; }
     }
-    else { debug writeln("AppSession missing"); return; }
+    else { debug writeln("mySession missing"); return; }
 
     auto db = this.database;
     if (db) { debug writeln("Database found"); }

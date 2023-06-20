@@ -43,19 +43,19 @@ class DCMSDeletePageController : DPageController {
     }}
 
    override void beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsUpdatePageController~":DCMSBlogsUpdatePageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSDeletePageController~":DCMSDeletePageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
 
     auto mySession = sessionManager.session(options);
-    debug writeln("In DCMSCreateDCMSCreatePageControllerAction: mySession "~mySession.id.toString);
+    debug writeln("In DCMSDeletePageController: mySession "~mySession.id.toString);
     if (mySession.isNull) return;
     
     if (auto tenant = database[mySession.site]) {
-      debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+      debug writeln("In DCMSDeletePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {
-        debug writeln("In DCMSCreatePageController: collection "~collectionName);
+        debug writeln("In DCMSDeletePageController: collection "~collectionName);
 
         auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
         if (entityId.isUUID) {  

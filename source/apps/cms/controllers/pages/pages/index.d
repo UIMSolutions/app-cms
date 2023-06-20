@@ -15,16 +15,19 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
-    auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
-        this.error("AppSession missing"); 
-        return; }
+    auto mySession = sessionManager.session(options);
+    if (mySession.isNull) { 
+      debug writeln("AppSession missing"); 
+      return; 
     }
-    else { debug writeln("AppSession missing"); return; }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    if (!mySession.site) { 
+      this.error("AppSession missing"); 
+      return; 
+    }
+
+    auto myDatabase = this.database;
+    if (myDatabase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return; }
@@ -32,7 +35,7 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_pages"].findMany();
+      auto dbEntities = myDatabase["uim", "cms_pages"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

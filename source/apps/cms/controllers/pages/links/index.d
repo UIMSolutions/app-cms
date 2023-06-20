@@ -16,7 +16,10 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
     if (hasError || "redirect" in options) { return; }
     
     auto mySession = sessionManager.session(options);
-    if (mySession.isNull) debug writeln("Session missing"); return; }
+    if (mySession.isNull) {
+      debug writeln("Session missing"); 
+      return; 
+    }
 
     if (!mySession.site) { 
       this.error("Session missing"); 

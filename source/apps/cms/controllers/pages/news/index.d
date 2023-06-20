@@ -35,7 +35,7 @@ class DCMSNewsIndexPageController : DPageController {
       this.error("Database missing"); 
       return; }
 
-    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
+    if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
       auto dbEntities = db["uim", "cms_news"].findMany();

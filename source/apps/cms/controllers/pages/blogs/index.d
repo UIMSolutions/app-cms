@@ -22,58 +22,31 @@ class DCMSBlogsIndexPageController : DPageController {
     
     if (!manager) { return; } // No manager no fun ;-)
 
-    auto mySession = manager.session(options);
-    if (!mySession) { return; } // Session required  
-
-    if (mySession) {
-      if (!mySession.site) { 
-        this.error("AppSession missing"); 
-        return; }
+    auto mySession = sessionManager.session(options);
+    if (mySession.isNull) { 
+      debug writeln("AppSession missing"); 
+      return; 
     }
-    else { debug writeln("AppSession missing"); return; }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    if (!mySession.site) { 
+      this.error("AppSession missing"); 
+      return; 
+    }
+
+    auto myDatabase = this.database;
+    if (myDatabase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return; }
 
-    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
+    if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_blogs"].findMany();
+      auto dbEntities = myDatabase["uim", "cms_blogs"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView
         .rootPath("/cms/blogs")
-        .entities(dbEntities);
-    }
-    else { 
-      this.error("entitiesView missing"); 
-      return; }
-
-    auto appSession = getAppSession(options);
-    if (appSession) {
-      if (!appSession.site) { 
-        this.error("AppSession missing"); 
-        return; }
-    }
-    else { debug writeln("AppSession missing"); return; }
-
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
-    else { 
-      this.error("Database missing"); 
-      return; }
-
-    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
-      debug writeln("entitiesView found");
-
-      auto dbEntities = db["uim", "cms_themes"].findMany();
-      debug writeln("Found entities: ", dbEntities.length);
-
-      entitiesView
-        .rootPath("/cms/themes")
         .entities(dbEntities);
     }
     else { 

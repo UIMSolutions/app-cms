@@ -24,10 +24,8 @@ class DCMSIndexPageController : DPageController {
     this.view(
       CMSIndexView(this));
 
-    auto appSession = getAppSession(options);
-
-    auto session  = appSession.session;
-    auto site     = appSession.site;
+    auto mySession = sessionManager.session(options);
+    auto mySite    = mySession.site;
       
     // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
     auto entities = database[site.name, collectionName].findMany;

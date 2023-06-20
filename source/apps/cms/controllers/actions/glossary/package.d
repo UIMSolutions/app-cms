@@ -38,7 +38,7 @@ void uimGlossaryDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateGlossary : DCMSGlossaryAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateGlossary~":DCMSAction_CreateGlossary::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -64,7 +64,7 @@ void uimGlossaryCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateGlossary : DCMSGlossaryAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateGlossary~":DCMSAction_UpdateGlossary::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -89,7 +89,7 @@ void uimGlossaryUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteGlossary : DCMSGlossaryAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteGlossary~":DCMSAction_DeleteGlossary::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

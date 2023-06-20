@@ -6,14 +6,13 @@ import apps.cms;
 class DCMSUpdateActionController : DActionController {
   mixin(ControllerThis!("CMSUpdateActionController"));
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSUpdateActionController~":DCMSUpdateActionController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }     
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }     
 
     auto mySession = sessionManager.session(options);
     debug writeln("In DCMSUpdateActionController: mySession "~mySession.id.toString);
-    if (mySession.isNull) return;
+    if (mySession.isNull) return false;
 
     if (auto tenant = database[mySession.site]) {
       debug writeln("In DCMSUpdateActionController: tenant "/* ~tenant.name */);
@@ -32,6 +31,8 @@ class DCMSUpdateActionController : DActionController {
         }
       }
     }
+
+    return true;
 	}  
 }
 mixin(ControllerCalls!("CMSUpdateActionController", "DCMSUpdateActionController"));

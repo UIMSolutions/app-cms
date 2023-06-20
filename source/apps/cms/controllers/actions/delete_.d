@@ -6,7 +6,7 @@ import apps.cms;
 class DCMSDeleteActionController : DActionController {
   mixin(ControllerThis!("CMSDeleteActionController"));
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSDeleteActionController~":DCMSDeleteActionController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }    

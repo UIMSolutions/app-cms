@@ -6,10 +6,9 @@ import apps.cms;
 class DCMSBlogsUpdateActionController : DCMSUpdateActionController {
   mixin(ControllerThis!("CMSBlogsUpdateActionController"));
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSBlogsUpdateActionController~":DCMSBlogsUpdateActionController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
   }   
 }
 mixin(ControllerCalls!("CMSBlogsUpdateActionController", "DCMSBlogsUpdateActionController"));

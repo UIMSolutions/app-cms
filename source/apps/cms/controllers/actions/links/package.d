@@ -37,7 +37,7 @@ void uimLinksDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateLink : DCMSLinkAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateLink~":DCMSAction_CreateLink::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -63,7 +63,7 @@ void uimLinksCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateLink : DCMSLinkAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateLink~":DCMSAction_UpdateLink::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -88,7 +88,7 @@ void uimLinksUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteLink : DCMSLinkAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteLink~":DCMSAction_DeleteLink::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

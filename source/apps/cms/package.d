@@ -86,7 +86,7 @@ static this() { // Create and init app
   AppRegistry.register("apps.cms",  
     myApp
       .rootPath("/apps/cms")
-                       .importTranslations()
+      .importTranslations()
       .addRoute(Route("", HTTPMethod.GET, CMSIndexPageController))
       .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController))
   );

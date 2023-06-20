@@ -37,7 +37,7 @@ void uimNewsDeleteAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_CreateNews : DCMSNewsAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_CreateNews~":DCMSAction_CreateNews::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    
@@ -63,7 +63,7 @@ void uimNewsCreateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_UpdateNews : DCMSNewsAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_UpdateNews~":DCMSAction_UpdateNews::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;     
@@ -88,7 +88,7 @@ void uimNewsUpdateAction(HTTPServerRequest req, HTTPServerResponse res) {
 class DCMSAction_DeleteNews : DCMSNewsAction {
   this() { super(); } 
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debug writeln(StyledString(moduleName!DCMSAction_DeleteNews~":DCMSAction_DeleteNews::beforeResponse").setForeground(AnsiColor.black).setBackground(AnsiColor.white));
     super.beforeResponse(options);
     if ("redirect" in options) return;    

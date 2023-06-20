@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSPageController : DPageController {
-  mixin(PageControllerThis!("CMSPageController"));
+  mixin(ControllerThis!("CMSPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -39,7 +39,7 @@ class DCMSPageController : DPageController {
   }
 
 }
-mixin(PageControllerCalls!("CMSPageController"));
+mixin(ControllerCalls!("CMSPageController"));
 
 version(test_uim_cms) { unittest {
     assert(new DCMSPageController);

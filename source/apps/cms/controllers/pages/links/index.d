@@ -44,6 +44,8 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
     else { 
       this.error("entitiesView missing"); 
       return false; }
+
+    return true;
   }
 }
 mixin(ControllerCalls!("CMSLinksIndexPageController"));

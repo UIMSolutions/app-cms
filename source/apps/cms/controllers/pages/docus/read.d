@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSDocusReadPageController : DCMSReadPageController {
-  mixin(PageControllerThis!("CMSDocusReadPageController"));
+  mixin(ControllerThis!("CMSDocusReadPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -24,4 +24,4 @@ class DCMSDocusReadPageController : DCMSReadPageController {
       .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSDocusReadPageController"));
+mixin(ControllerCalls!("CMSDocusReadPageController"));

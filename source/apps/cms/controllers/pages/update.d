@@ -21,7 +21,7 @@ class DCMSUpdatePageController : DPageController {
     this
     .jsPath(jsPath).pgPath(myPath).entitiesName(myEntities).entityName(myEntity).collectionName(myCollectionName)
     .title("UIM!CMS > "~myEntities~" > Bearbeiten")
-    .checks([AppSessionExistsCheck, AppSessionHasSessionCheck, AppSessionHasSiteCheck])
+    .checks([mySessionExistsCheck, mySessionHasSessionCheck, mySessionHasSiteCheck])
     // .securityController(APPSecurityController(this))
     .header(
       APPEditPageHeader
@@ -74,18 +74,18 @@ class DCMSUpdatePageController : DPageController {
     }}
 
   override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsUpdatePageController~":DCMSBlogsUpdatePageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSUpdatePageController~":DCMSUpdatePageController::beforeResponse");
     if (super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     auto mySession = sessionManager.session(options);
-    debug writeln("In DCMSCreateDCMSCreatePageControllerAction: appSession "~(appSession ? appSession.id : null));
+    debug writeln("In DCMSCreateDCMSUpdatePageControllerAction: mySession "~mySession.id.toString);
     if (mySession.isNull) { return false; }
 
-    if (auto tenant = database[appSession.site]) {
-      debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
+    if (auto tenant = database[mySession.site]) {
+      debug writeln("In DCMSUpdatePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {
-        debug writeln("In DCMSCreatePageController: collection "~collectionName);
+        debug writeln("In DCMSUpdatePageController: collection "~collectionName);
 
         auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));
         if (entityId.isUUID) {  

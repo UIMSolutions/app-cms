@@ -16,8 +16,7 @@ class DCMSIndexPageController : DPageController {
 
   override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
 
@@ -82,6 +81,7 @@ class DCMSIndexPageController : DPageController {
       "/js/apps/"~jsPath~"/list.js");
 
   } */
+    return true;
   }
   
   override void jsCode(STRINGAA reqParameters) {

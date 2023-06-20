@@ -32,10 +32,5 @@ class DCMSNewsCreatePageController : DPageController {
       .rootPath("/cms/news") 
       .collectionName("cms_news"); 
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSNewsCreatePageController~":DCMSNewsCreatePageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSNewsCreatePageController"));

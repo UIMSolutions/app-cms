@@ -74,7 +74,7 @@ else addToPageScript(reqParameters,
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     auto mySession = sessionManager.session(options);
-    debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~(mySession ? mySession.id : null));
+    debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~mySession.id.toString);
     if (mySession.isNull) { return false; }
 
     if (auto myTenant = database[mySession.site]) {
@@ -97,6 +97,8 @@ else addToPageScript(reqParameters,
         }
       }
     }
+
+    return true;
   }
 }
 mixin(ControllerCalls!("CMSReadPageController"));

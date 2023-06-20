@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSDocusDeletePageController : DCMSDeletePageController {
-  mixin(PageControllerThis!("CMSDocusDeletePageController"));
+  mixin(ControllerThis!("CMSDocusDeletePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -23,4 +23,4 @@ class DCMSDocusDeletePageController : DCMSDeletePageController {
     .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSDocusDeletePageController"));
+mixin(ControllerCalls!("CMSDocusDeletePageController"));

@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSDocusCreatePageController : DCMSCreatePageController {
-  mixin(PageControllerThis!("CMSDocusCreatePageController"));
+  mixin(ControllerThis!("CMSDocusCreatePageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -28,4 +28,4 @@ class DCMSDocusCreatePageController : DCMSCreatePageController {
     .collectionName("cms_docus"); 
   }
 }
-mixin(PageControllerCalls!("CMSDocusCreatePageController"));
+mixin(ControllerCalls!("CMSDocusCreatePageController"));

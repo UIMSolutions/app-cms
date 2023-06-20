@@ -51,6 +51,8 @@ class DCMSBlogsIndexPageController : DPageController {
     else { 
       this.error("entitiesView missing"); 
       return false; }
+
+    return true;
   } 
 }
 mixin(ControllerCalls!("CMSBlogsIndexPageController"));

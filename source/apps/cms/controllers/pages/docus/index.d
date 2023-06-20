@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 
 class DCMSDocusIndexPageController : DCMSPageController {
-  mixin(PageControllerThis!("CMSDocusIndexPageController"));
+  mixin(ControllerThis!("CMSDocusIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -50,4 +50,4 @@ class DCMSDocusIndexPageController : DCMSPageController {
     return true;
   }
 }
-mixin(PageControllerCalls!("CMSDocusIndexPageController"));
+mixin(ControllerCalls!("CMSDocusIndexPageController"));

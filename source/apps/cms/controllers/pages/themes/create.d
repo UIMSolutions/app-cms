@@ -28,10 +28,9 @@ class DCMSThemesCreatePageController : DPageController {
       .collectionName("cms_themes"); 
   }
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSThemesCreatePageController~":DCMSThemesCreatePageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
   }
 }
 mixin(ControllerCalls!("CMSThemesCreatePageController"));

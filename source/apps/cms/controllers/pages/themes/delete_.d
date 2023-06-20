@@ -24,10 +24,9 @@ class DCMSThemesDeletePageController : DPageController {
       .collectionName("cms_themes"); 
   }
 
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSThemesDeletePageController~":DCMSThemesDeletePageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || hasRedirect) { return; }        
+    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
   }  
 }
 mixin(ControllerCalls!("CMSThemesDeletePageController"));

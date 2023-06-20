@@ -10,7 +10,7 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     super.initialize(configSettings);
   }
   
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     // debugMethodCall(moduleName!DCMSPagesIndexPageController~":DCMSPagesIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }

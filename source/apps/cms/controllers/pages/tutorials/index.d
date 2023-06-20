@@ -10,16 +10,16 @@ class DCMSTutorialsIndexPageController : DCMSIndexPageController {
     super.initialize(configSettings);
   }
   
-  override void beforeResponse(STRINGAA options = null) {
+  override bool beforeResponse(STRINGAA options = null) {
     // debugMethodCall(moduleName!DCMSTutorialsIndexPageController~":DCMSTutorialsIndexPageController::beforeResponse");
     super.beforeResponse(options);
     if (hasError || "redirect" in options) { return; }
     
     auto mySession = sessionManager.session(options);
-    if (mySession) {
+    if (mySession.isNull) {
       if (!mySession.site) { 
         this.error("mySession missing"); 
-        return; }
+        return false; }
     }
     else { debug writeln("mySession missing"); return; }
 

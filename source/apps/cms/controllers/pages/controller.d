@@ -9,18 +9,18 @@ class DCMSPageController : DPageController {
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
 
-        this
-    .addChecks([
-      SessionHasHTTPSessionCheck, SessionHasSiteCheck, // Check appSesssion
-      DatabaseHasSessionsCheck, DatabaseHasSitesCheck // Check database
-    ]);
+    this
+      .addChecks([
+        SessionHasHTTPSessionCheck, SessionHasSiteCheck, // Check appSesssion
+        DatabaseHasSessionsCheck, DatabaseHasSitesCheck // Check database
+      ]);
   }
 
   mixin(OProperty!("string", "entityName"));
 
   override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSPageController~":DCMSPageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
     if (database) {
       auto blogs = database["uim", "cms_sites"].findMany;

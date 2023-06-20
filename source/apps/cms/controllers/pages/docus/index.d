@@ -16,27 +16,27 @@ class DCMSDocusIndexPageController : DCMSPageController {
   
   override bool beforeResponse(STRINGAA options = null) {
     // debugMethodCall(moduleName!DCMSDocusIndexPageController~":DCMSDocusIndexPageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
     auto mySession = sessionManager.session(options);
-    if (mySession) {
-      if (!mySession.site) { 
-        this.error("AppSession missing"); 
-        return; }
-    }
-    else { debug writeln("AppSession missing"); return; }
+    if (mySession.isNull) { 
+      debug writeln("AppSession missing"); 
+      return false; }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    if (!mySession.site) { 
+      this.error("AppSession missing"); 
+      return false; }
+
+    auto myDatabase = this.database;
+    if (myDatabase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
-      return; }
+      return false; }
 
-    if (auto entitiesView = cast(DAPPEntitiesListView)this.view) {
+    if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_docus"].findMany();
+      auto dbEntities = myDatabase["uim", "cms_docus"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView
@@ -45,7 +45,9 @@ class DCMSDocusIndexPageController : DCMSPageController {
     }
     else { 
       this.error("entitiesView missing"); 
-      return; }
+      return false; }
+
+    return true;
   }
 }
 mixin(PageControllerCalls!("CMSDocusIndexPageController"));

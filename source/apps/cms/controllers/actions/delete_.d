@@ -8,12 +8,11 @@ class DCMSDeleteActionController : DActionController {
 
   override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSDeleteActionController~":DCMSDeleteActionController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }    
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }    
 
     auto mySession = sessionManager.session(options);
     debug writeln("In DCMSDeleteActionController: mySession "~mySession.id.toString);
-    if (mySession.isNull) return ;
+    if (mySession.isNull) return false;
 
     if (auto myTenant = database[mySession.site]) {
       debug writeln("In DCMSDeleteActionController: tenant "/* ~tenant.name */);
@@ -31,6 +30,8 @@ class DCMSDeleteActionController : DActionController {
         options["redirect"] = rootPath;
       }  
     }
+
+    return true;
 	} 
 }
 mixin(ControllerCalls!("CMSDeleteActionController", "DCMSDeleteActionController"));

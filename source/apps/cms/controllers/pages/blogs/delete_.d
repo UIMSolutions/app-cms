@@ -25,10 +25,5 @@ class DCMSBlogsDeletePageController : DPageController {
           "editorText.disabled();"
         );
   }
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsDeletePageController~":DCMSBlogsDeletePageController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSBlogsDeletePageController"));

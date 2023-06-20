@@ -5,10 +5,5 @@ import apps.cms;
 
 class DCMSBlogsCreateActionController : DCMSCreateActionController {
   mixin(ControllerThis!("CMSBlogsCreateActionController"));
-
-  override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSBlogsCreateActionController~":DCMSBlogsCreateActionController::beforeResponse");
-    if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }        
-  } 
 }
 mixin(ControllerCalls!("CMSBlogsCreateActionController", "DCMSBlogsCreateActionController"));

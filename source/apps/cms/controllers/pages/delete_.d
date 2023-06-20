@@ -44,12 +44,11 @@ class DCMSDeletePageController : DPageController {
 
    override bool beforeResponse(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSDeletePageController~":DCMSDeletePageController::beforeResponse");
-    super.beforeResponse(options);
-    if (hasError || "redirect" in options) { return; }
+    if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     auto mySession = sessionManager.session(options);
     debug writeln("In DCMSDeletePageController: mySession "~mySession.id.toString);
-    if (mySession.isNull) return;
+    if (mySession.isNull) return false;
     
     if (auto tenant = database[mySession.site]) {
       debug writeln("In DCMSDeletePageController: tenant "/* ~tenant.name */);
@@ -71,6 +70,8 @@ class DCMSDeletePageController : DPageController {
         }
       }
     }
+
+    return true;
   }
 }
 mixin(ControllerCalls!("CMSDeletePageController"));

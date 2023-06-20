@@ -19,24 +19,24 @@ class DCMSBlogsIndexPageController : DPageController {
 
     // if (hasError || "redirect" in options) { return; }
     
-    if (!manager) { return; } // No manager no fun ;-)
+    if (!manager) { return false; } // No manager no fun ;-)
 
     auto mySession = sessionManager.session(options);
     if (mySession.isNull) { 
       debug writeln("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     if (!mySession.site) { 
       this.error("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     auto myDatabase = this.database;
     if (myDatabase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
-      return; }
+      return false; }
 
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
@@ -50,7 +50,7 @@ class DCMSBlogsIndexPageController : DPageController {
     }
     else { 
       this.error("entitiesView missing"); 
-      return; }
+      return false; }
   } 
 }
 mixin(ControllerCalls!("CMSBlogsIndexPageController"));

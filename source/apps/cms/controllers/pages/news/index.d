@@ -20,19 +20,19 @@ class DCMSNewsIndexPageController : DPageController {
     auto mySession = sessionManager.session(options);
     if (mySession.isNull) { 
       debug writeln("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     if (!appSession.site) { 
       this.error("AppSession missing"); 
-      return; 
+      return false; 
     }
 
     auto db = this.database;
     if (db) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
-      return; }
+      return false; }
 
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
@@ -46,7 +46,7 @@ class DCMSNewsIndexPageController : DPageController {
     }
     else { 
       this.error("entitiesView missing"); 
-      return; }       
+      return false; }       
   } 
 }
 mixin(ControllerCalls!("CMSNewsIndexPageController"));

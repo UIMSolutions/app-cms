@@ -11,7 +11,9 @@ class DCMSImageFormInput : DTextFormInput {
 
     this
     .id("entity_imagepath")
-    .name("entity_imagepath")
+    .name("entity_imagepath");
+
+    this
     .inputName("entity_imagepath")
     .fieldName("imagePath")
     .label("Titelbild"); 

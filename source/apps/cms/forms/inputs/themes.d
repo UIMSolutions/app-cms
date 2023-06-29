@@ -11,7 +11,9 @@ class DCMSThemesFormInput : DFormInput {
 
     this
     .id("entity_theme")
-    .name("entity_theme")
+    .name("entity_theme");
+
+    this
     .inputName("entity_theme")
     .fieldName("themeId")
     .label("Thema"); 

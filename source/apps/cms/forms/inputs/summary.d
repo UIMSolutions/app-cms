@@ -12,7 +12,9 @@ class DCMSSummaryFormInput : DTextAreaFormInput {
 
     this
     .id("entity_summary")
-    .name("entity_summary")
+    .name("entity_summary");
+
+    this
     .inputName("entity_summary")
     .fieldName("summary")
     .label("Zusammenfassung");  

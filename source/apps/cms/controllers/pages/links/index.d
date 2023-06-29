@@ -15,7 +15,7 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
     auto mySession = manager.session(options);
-    if (mySession.isNull) {
+    if (mySession is null) {
       debug writeln("Session missing"); 
       return false; 
     }

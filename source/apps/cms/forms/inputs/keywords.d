@@ -11,7 +11,9 @@ class DCMSKeywordsFormInput : DFormInput {
 
     this
     .id("entity_keywords")
-    .name("entity_keywords")
+    .name("entity_keywords");
+
+    this
     .inputName("entity_keywords")
     .fieldName("keywords")
     .label("Stichworte")

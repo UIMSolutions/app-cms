@@ -18,7 +18,7 @@ class DCMSNewsIndexPageController : DPageController {
     if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; } 
 
     auto mySession = manager.session(options);
-    if (mySession.isNull) { 
+    if (mySession is null) { 
       debug writeln("mySession missing"); 
       return false; 
     }

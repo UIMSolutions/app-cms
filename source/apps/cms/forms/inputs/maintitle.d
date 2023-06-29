@@ -11,7 +11,9 @@ class DCMSMainTitleFormInput : DTextFormInput {
 
     this
     .id("entity_mainTitle")
-    .name("entity_mainTitle")
+    .name("entity_mainTitle");
+
+    this
     .inputName("entity_mainTitle")
     .fieldName("mainTitle")
     .label("Überschrift"); 

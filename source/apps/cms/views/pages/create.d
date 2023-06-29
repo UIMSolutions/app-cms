@@ -45,8 +45,8 @@ class DCMSPagesCreateView : DCMSCreateView {
 
     options["rootPath"] = this.rootPath;
 
-    if (this.controller && this.controller.database) {
-      this.entity(this.controller.database["uim"]["cms_pages"].createFromTemplate);
+    if (this.controller && this.manager.entityBase) {
+      this.entity(this.manager.entityBase.tenant("uim")["cms_pages"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

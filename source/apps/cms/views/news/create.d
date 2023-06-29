@@ -56,7 +56,7 @@ class DCMSNewsCreateView : DCMSView {
         options["rootPath"] = this.rootPath;
 
     if (this.controller && this.manager.entityBase) {
-      this.entity(this.manager.entityBase["uim"]["cms_news"].createFromTemplate);
+      this.entity(this.manager.entityBase.tenant("uim")["cms_news"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

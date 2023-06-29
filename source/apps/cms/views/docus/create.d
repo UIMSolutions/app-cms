@@ -50,7 +50,7 @@ class DCMSDocusCreateView : DEntityCreateView {
     options["rootPath"] = this.rootPath;
 
     if (this.controller && this.manager.entityBase) {
-      this.entity(this.manager.entityBase["uim"]["cms_docus"].createFromTemplate);
+      this.entity(this.manager.entityBase.tenant("uim")["cms_docus"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

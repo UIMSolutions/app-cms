@@ -45,7 +45,7 @@ class DCMSLinksCreateView : DCMSCreateView {
     options["rootPath"] = this.rootPath;
 
     if (this.controller && this.manager.entityBase) {
-      this.entity(this.manager.entityBase["uim"]["cms_links"].createFromTemplate);
+      this.entity(this.manager.entityBase.tenant("uim")["cms_links"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

@@ -20,22 +20,13 @@ class DCMSThemesFormInput : DFormInput {
   }
   mixin(SProperty!("DEntity[]", "themes"));
 
-  DEntityBase _database; 
-  O database(this O)(DEntityBase aDatabase) { 
-    _database = aDatabase; 
-    return cast(O)this; }
-
-  DEntityBase database() {
-    if (_database) { return _database; } // has his own database
-    // if (this.form && this.form.database) { return this.form.database; } // owner class has database
-    return null; // no database found
-  }
+  mixin EntityBaseTemplate;
 
   override void beforeH5(STRINGAA options = null) { 
     super.beforeH5(options);
 
-    if (this.entityBase) {
-      this.themes(entityBase.tenant("uim").collection("cms_themes").findMany());
+    if (entityBase) {
+      this.themes(entityBase.collection("uim", "cms_themes").findMany());
     }
   }
 

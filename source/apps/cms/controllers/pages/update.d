@@ -81,7 +81,7 @@ class DCMSUpdatePageController : DPageController {
     debug writeln("In DCMSCreateDCMSUpdatePageControllerAction: mySession "~mySession.id.toString);
     if (mySession is null) { return false; }
 
-    if (auto tenant = entityBase[mySession.site]) {
+    if (auto tenant = entityBase.tenant(mySession.site.name)) {
       debug writeln("In DCMSUpdatePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {

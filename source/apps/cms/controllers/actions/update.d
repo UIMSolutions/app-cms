@@ -11,7 +11,7 @@ class DCMSUpdateActionController : DActionController {
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }     
 
     auto mySession = manager.session(options);
-    debug writeln("In DCMSUpdateActionController: mySession "~mySession.id.toString);
+    debug writeln("In DCMSUpdateActionController: mySession "~mySession.httpSessionId);
     if (mySession is null) return false;
 
     if (auto tenant = entityBase(mySession.site)) {

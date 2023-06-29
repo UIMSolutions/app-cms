@@ -23,11 +23,11 @@ class DCMSPageController : DPageController {
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
     if (entityBase) {
-      auto blogs = entityBase["uim", "cms_sites"].findMany;
-      auto docus = entityBase["uim", "cms_docus"].findMany;
-      auto glossary = entityBase["uim", "cms_glossary"].findMany;
-      auto news = entityBase["uim", "cms_news"].findMany;
-      auto links = entityBase["uim", "cms_links"].findMany;
+      auto blogs = entityBase["uim", "cms_sites").findMany;
+      auto docus = entityBase["uim", "cms_docus").findMany;
+      auto glossary = entityBase["uim", "cms_glossary").findMany;
+      auto news = entityBase["uim", "cms_news").findMany;
+      auto links = entityBase["uim", "cms_links").findMany;
     }    
 
     return true;

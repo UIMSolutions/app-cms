@@ -38,7 +38,7 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myEntityBase["uim", "cms_glossary"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_glossary").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

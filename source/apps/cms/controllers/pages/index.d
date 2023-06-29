@@ -27,7 +27,7 @@ class DCMSIndexPageController : DPageController {
     auto mySite    = mySession.site;
       
     // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
-    auto entities = entityBase[site.name, collectionName].findMany;
+    auto entities = entityBase[site.name, collectionName).findMany;
 
     auto poolId = uniform(1, 1_000_000_000);
     entitiesPool[poolId] = entities;
@@ -47,7 +47,7 @@ class DCMSIndexPageController : DPageController {
       else {
         debug writeln("No Site");
 
-        auto dbSites = database ? database["systems", "system_sites"].findMany : null;
+        auto dbSites = database ? database["systems", "system_sites").findMany : null;
         debug writeln("Found sites = ", dbSites.length);
 
         this.view(

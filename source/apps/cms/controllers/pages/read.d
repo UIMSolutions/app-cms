@@ -77,7 +77,7 @@ else addToPageScript(reqParameters,
     debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~mySession.id.toString);
     if (mySession is null) { return false; }
 
-    if (auto myTenant = entityBase[mySession.site]) {
+    if (auto myTenant = entityBase.tenant(mySession.site.name)) {
       debug writeln("In DCMSReadPageController: tenant "/* ~tenant.name */);
 
       if (auto myCollection = myTenant.collection(collectionName)) {

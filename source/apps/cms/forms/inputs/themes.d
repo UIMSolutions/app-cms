@@ -35,7 +35,7 @@ class DCMSThemesFormInput : DFormInput {
     super.beforeH5(options);
 
     if (this.database) {
-      this.themes(database["uim", "cms_themes"].findMany());
+      this.themes(database["uim", "cms_themes").findMany());
     }
   }
 

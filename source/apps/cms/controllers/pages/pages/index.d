@@ -34,7 +34,7 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myEntityBase["uim", "cms_pages"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_pages").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

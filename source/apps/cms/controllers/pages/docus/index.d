@@ -36,7 +36,7 @@ class DCMSDocusIndexPageController : DCMSPageController {
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myDatabase["uim", "cms_docus"].findMany();
+      auto dbEntities = myDatabase["uim", "cms_docus").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

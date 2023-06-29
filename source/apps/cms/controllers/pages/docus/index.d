@@ -27,8 +27,8 @@ class DCMSDocusIndexPageController : DCMSPageController {
       this.error("AppSession missing"); 
       return false; }
 
-    auto myDatabase = this.database;
-    if (myDatabase) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -36,7 +36,7 @@ class DCMSDocusIndexPageController : DCMSPageController {
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myDatabase["uim", "cms_docus").findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_docus").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

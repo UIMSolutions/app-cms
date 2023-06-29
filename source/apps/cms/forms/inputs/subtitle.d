@@ -11,7 +11,9 @@ class DCMSSubTitleFormInput : DTextFormInput {
 
     this
     .id("entity_subTitle")
-    .name("entity_subTitle")
+    .name("entity_subTitle");
+
+    this
     .inputName("entity_subTitle")
     .fieldName("subTitle")
     .label("Untertitle"); 

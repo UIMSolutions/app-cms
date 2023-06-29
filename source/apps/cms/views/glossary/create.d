@@ -48,8 +48,8 @@ class DCMSGlossaryCreateView : DCMSCreateView {
 
     options["rootPath"] = this.rootPath;
 
-    if (this.controller && this.controller.database) {
-      this.entity(this.controller.database["uim"]["cms_glossary"].createFromTemplate);
+    if (this.manager && this.manager.entityBase) {
+      this.entity(this.manager.entityBase["uim"]["cms_glossary"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

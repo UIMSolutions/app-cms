@@ -58,8 +58,8 @@ class DCMSBlogsCreateView : DCMSCreateView {
 
     options["rootPath"] = this.rootPath;
 
-    if (this.controller && this.controller.entityBase) {
-      this.entity(this.controller.entityBase["uim"]["cms_blogs"].createFromTemplate);
+    if (this.manager && this.manager.entityBase) {
+      this.entity(this.manager.entityBase["uim"]["cms_blogs"].createFromTemplate);
     }
 
     if (auto myForm = cast(DForm)this.form) {

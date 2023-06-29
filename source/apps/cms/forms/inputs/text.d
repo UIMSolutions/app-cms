@@ -12,7 +12,9 @@ class DCMSTextFormInput : DTextAreaFormInput {
 
     this
     .id("entity_text")
-    .name("entity_text")
+    .name("entity_text");
+
+    this
     .inputName("entity_text")
     .fieldName("text")
     .label("Inhalt");

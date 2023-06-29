@@ -34,8 +34,8 @@ class DCMSThemesFormInput : DFormInput {
   override void beforeH5(STRINGAA options = null) { 
     super.beforeH5(options);
 
-    if (this.database) {
-      this.themes(database["uim", "cms_themes").findMany());
+    if (this.entityBase) {
+      this.themes(entityBase.tenant("uim").collection("cms_themes").findMany());
     }
   }
 

@@ -27,7 +27,7 @@ class DCMSIndexPageController : DPageController {
     auto mySite    = mySession.site;
       
     // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
-    auto entities = entityBase[site.name, collectionName).findMany;
+    auto entities = entityBase.tenant(site.name).collection(collectionName).findMany;
 
     auto poolId = uniform(1, 1_000_000_000);
     entitiesPool[poolId] = entities;

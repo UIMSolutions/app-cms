@@ -10,21 +10,21 @@ class DCMSCreateActionController : DActionController {
     debugMethodCall(moduleName!DCMSCreateActionController~":DCMSCreateActionController::beforeResponse");    
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }    
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     debug writeln("In DCMSCreateActionController: mySession "~mySession.id.toString);
     if (mySession.isNull) return false;
 
-    if (auto tenant = database[mySession.site]) {
+    if (auto myTenant = entityBase(mySession.site)) {
       debug writeln("In DCMSCreateActionController: tenant "/* ~tenant.name */);
 
-      if (auto collection = tenant[collectionName]) {
+      if (auto myCollection = myTenant.collection(collectionName)) {
         debug writeln("In DCMSCreateActionController: collection "~collectionName);
 
-        if (auto entity = collection.createFromTemplate) {
+        if (auto entity = myCollection.createFromTemplate) {
           debug writeln("In DCMSCreateActionController: entity "~entity.name);
           entity.readFromRequest(options);   
 
-          collection.insertOne(entity);
+          myCollection.insertOne(entity);
           debug writeln("entity.id = ", entity.id);
           options["redirect"] = this.rootPath ~ "/view?id="~entity.id.toString; 
         }  

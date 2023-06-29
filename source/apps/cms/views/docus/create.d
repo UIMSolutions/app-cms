@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.docus;
 
-class DCMSDocusCreateView : DAPPEntityCreateView {
+class DCMSDocusCreateView : DEntityCreateView {
   mixin(ViewThis!("CMSDocusCreateView"));
 
   override void initialize(Json configSettings = Json(null)) {

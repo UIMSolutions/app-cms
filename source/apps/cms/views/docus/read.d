@@ -4,7 +4,7 @@ import apps.cms;
 @safe:
 import apps.cms.views.docus;
 
-class DCMSDocusReadView : DAPPEntityReadView {
+class DCMSDocusReadView : DEntityReadView {
   mixin(ViewThis!("CMSDocusReadView"));
 
   override void initialize(Json configSettings = Json(null)) {

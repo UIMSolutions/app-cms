@@ -50,7 +50,7 @@ class DCMSDeletePageController : DPageController {
     debug writeln("In DCMSDeletePageController: mySession "~mySession.id.toString);
     if (mySession.isNull) return false;
     
-    if (auto tenant = database[mySession.site]) {
+    if (auto tenant = entityBase(mySession.site)) {
       debug writeln("In DCMSDeletePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {

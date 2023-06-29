@@ -22,12 +22,12 @@ class DCMSPageController : DPageController {
     debugMethodCall(moduleName!DCMSPageController~":DCMSPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
-    if (database) {
-      auto blogs = database["uim", "cms_sites"].findMany;
-      auto docus = database["uim", "cms_docus"].findMany;
-      auto glossary = database["uim", "cms_glossary"].findMany;
-      auto news = database["uim", "cms_news"].findMany;
-      auto links = database["uim", "cms_links"].findMany;
+    if (entityBase) {
+      auto blogs = entityBase["uim", "cms_sites"].findMany;
+      auto docus = entityBase["uim", "cms_docus"].findMany;
+      auto glossary = entityBase["uim", "cms_glossary"].findMany;
+      auto news = entityBase["uim", "cms_news"].findMany;
+      auto links = entityBase["uim", "cms_links"].findMany;
     }    
 
     return true;

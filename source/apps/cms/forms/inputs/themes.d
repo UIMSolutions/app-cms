@@ -18,12 +18,12 @@ class DCMSThemesFormInput : DFormInput {
   }
   mixin(SProperty!("DEntity[]", "themes"));
 
-  DETBBase _database; 
-  O database(this O)(DETBBase aDatabase) { 
+  DEntityBase _database; 
+  O database(this O)(DEntityBase aDatabase) { 
     _database = aDatabase; 
     return cast(O)this; }
 
-  DETBBase database() {
+  DEntityBase database() {
     if (_database) { return _database; } // has his own database
     // if (this.form && this.form.database) { return this.form.database; } // owner class has database
     return null; // no database found

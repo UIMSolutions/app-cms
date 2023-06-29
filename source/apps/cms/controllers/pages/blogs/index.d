@@ -21,7 +21,7 @@ class DCMSBlogsIndexPageController : DPageController {
     
     if (!manager) { return false; } // No manager no fun ;-)
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     if (mySession.isNull) { 
       debug writeln("AppSession missing"); 
       return false; 
@@ -32,8 +32,8 @@ class DCMSBlogsIndexPageController : DPageController {
       return false; 
     }
 
-    auto myDatabase = this.database;
-    if (myDatabase) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -41,7 +41,7 @@ class DCMSBlogsIndexPageController : DPageController {
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myDatabase["uim", "cms_blogs"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_blogs").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

@@ -79,7 +79,7 @@ class DCMSUpdatePageController : DPageController {
 
     auto mySession = manager.session(options);
     debug writeln("In DCMSCreateDCMSUpdatePageControllerAction: mySession "~mySession.id.toString);
-    if (mySession.isNull) { return false; }
+    if (mySession is null) { return false; }
 
     if (auto tenant = entityBase[mySession.site]) {
       debug writeln("In DCMSUpdatePageController: tenant "/* ~tenant.name */);

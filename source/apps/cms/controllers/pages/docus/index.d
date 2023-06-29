@@ -18,8 +18,8 @@ class DCMSDocusIndexPageController : DCMSPageController {
     // debugMethodCall(moduleName!DCMSDocusIndexPageController~":DCMSDocusIndexPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
-    auto mySession = sessionManager.session(options);
-    if (mySession.isNull) { 
+    auto mySession = manager.session(options);
+    if (mySession is null) { 
       debug writeln("AppSession missing"); 
       return false; }
 

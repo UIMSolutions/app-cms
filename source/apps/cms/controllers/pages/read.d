@@ -75,12 +75,12 @@ else addToPageScript(reqParameters,
 
     auto mySession = cast(DSession)manager.session(options);
     debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~mySession.id.toString);
-    if (mySession.isNull) { return false; }
+    if (mySession is null) { return false; }
 
-    if (auto myTenant = database[mySession.site]) {
+    if (auto myTenant = entityBase[mySession.site]) {
       debug writeln("In DCMSReadPageController: tenant "/* ~tenant.name */);
 
-      if (auto myCollection = myTenant[collectionName]) {
+      if (auto myCollection = myTenant.collection(collectionName)) {
         debug writeln("In DCMSReadPageController: collection "~collectionName);
 
         auto entityId = options.get("entity_id", options.get("id", options.get("entityId", null)));

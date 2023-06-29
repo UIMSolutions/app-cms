@@ -12,7 +12,7 @@ class DCMSUpdateActionController : DActionController {
 
     auto mySession = manager.session(options);
     debug writeln("In DCMSUpdateActionController: mySession "~mySession.id.toString);
-    if (mySession.isNull) return false;
+    if (mySession is null) return false;
 
     if (auto tenant = entityBase(mySession.site)) {
       debug writeln("In DCMSUpdateActionController: tenant "/* ~tenant.name */);

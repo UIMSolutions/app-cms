@@ -22,7 +22,7 @@ class DCMSBlogsIndexPageController : DPageController {
     if (!manager) { return false; } // No manager no fun ;-)
 
     auto mySession = manager.session(options);
-    if (mySession.isNull) { 
+    if (mySession is null) { 
       debug writeln("AppSession missing"); 
       return false; 
     }

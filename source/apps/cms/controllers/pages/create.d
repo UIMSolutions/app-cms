@@ -74,7 +74,7 @@ override void jsCode(STRINGAA options = null) {
 
     auto mySession = cast(DSession)manager.session(options);
     debug writeln("In DCMSCreateDCMSCreatePageControllerAction: mySession "~mySession.id.toString);
-    if (mySession.isNull) return false;
+    if (mySession is null) return false;
 
     if (auto tenant = entityBase.tenant(mySession.site.id.toString)) {
       debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);

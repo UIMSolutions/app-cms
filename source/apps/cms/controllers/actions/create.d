@@ -12,7 +12,7 @@ class DCMSCreateActionController : DActionController {
 
     auto mySession = manager.session(options);
     debug writeln("In DCMSCreateActionController: mySession "~mySession.httpSessionId);
-    if (mySession.isNull) return false;
+    if (mySession is null) return false;
 
     if (auto myTenant = entityBase.tenant(mySession.site.name)) {
       debug writeln("In DCMSCreateActionController: tenant "/* ~tenant.name */);

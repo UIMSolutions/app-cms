@@ -14,7 +14,7 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
     // debugMethodCall(moduleName!DCMSLinksIndexPageController~":DCMSLinksIndexPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
     
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     if (mySession.isNull) {
       debug writeln("Session missing"); 
       return false; 
@@ -25,8 +25,8 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
       return false; 
     }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -34,7 +34,7 @@ class DCMSLinksIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_links"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_links").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

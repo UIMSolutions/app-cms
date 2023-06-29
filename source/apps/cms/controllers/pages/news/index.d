@@ -17,7 +17,7 @@ class DCMSNewsIndexPageController : DPageController {
     debugMethodCall(moduleName!DCMSNewsIndexPageController~":DCMSNewsIndexPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; } 
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     if (mySession.isNull) { 
       debug writeln("mySession missing"); 
       return false; 
@@ -28,8 +28,8 @@ class DCMSNewsIndexPageController : DPageController {
       return false; 
     }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -37,7 +37,7 @@ class DCMSNewsIndexPageController : DPageController {
     if (auto entitiesView = cast(DEntitiesListView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_news"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_news").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

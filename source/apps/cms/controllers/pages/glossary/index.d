@@ -29,8 +29,8 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
       return false; 
     }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -38,7 +38,7 @@ class DCMSGlossaryIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_glossary"].findMany();
+      auto dbEntities = myEntityBase["uim", "cms_glossary"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

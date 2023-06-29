@@ -25,8 +25,8 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
       return false; 
     }
 
-    auto myDatabase = this.database;
-    if (myDatabase) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -34,7 +34,7 @@ class DCMSPagesIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = myDatabase["uim", "cms_pages"].findMany();
+      auto dbEntities = myEntityBase["uim", "cms_pages"].findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

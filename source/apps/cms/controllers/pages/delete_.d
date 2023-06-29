@@ -46,7 +46,7 @@ class DCMSDeletePageController : DPageController {
     debugMethodCall(moduleName!DCMSDeletePageController~":DCMSDeletePageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     debug writeln("In DCMSDeletePageController: mySession "~mySession.id.toString);
     if (mySession.isNull) return false;
     

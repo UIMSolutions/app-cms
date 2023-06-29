@@ -73,7 +73,7 @@ else addToPageScript(reqParameters,
     debugMethodCall(moduleName!DCMSReadPageController~":DCMSReadPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = cast(DSession)manager.session(options);
     debug writeln("In DCMSCreateDCMSReadPageControllerAction: mySession "~mySession.id.toString);
     if (mySession.isNull) { return false; }
 

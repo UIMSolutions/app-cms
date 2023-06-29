@@ -11,10 +11,10 @@ class DCMSCreateActionController : DActionController {
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }    
 
     auto mySession = manager.session(options);
-    debug writeln("In DCMSCreateActionController: mySession "~mySession.id.toString);
+    debug writeln("In DCMSCreateActionController: mySession "~mySession.httpSessionId);
     if (mySession.isNull) return false;
 
-    if (auto myTenant = entityBase(mySession.site)) {
+    if (auto myTenant = entityBase.tenant(mySession.site.name)) {
       debug writeln("In DCMSCreateActionController: tenant "/* ~tenant.name */);
 
       if (auto myCollection = myTenant.collection(collectionName)) {

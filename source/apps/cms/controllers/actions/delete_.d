@@ -10,14 +10,14 @@ class DCMSDeleteActionController : DActionController {
     debugMethodCall(moduleName!DCMSDeleteActionController~":DCMSDeleteActionController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }    
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = cast(DSession)manager.session(options);
     debug writeln("In DCMSDeleteActionController: mySession "~mySession.id.toString);
-    if (mySession.isNull) return false;
+    if (mySession is null) return false;
 
-    if (auto myTenant = database[mySession.site]) {
+    if (auto myTenant = entityBase.tenant(mySession.site.id.toString)) {
       debug writeln("In DCMSDeleteActionController: tenant "/* ~tenant.name */);
 
-      if (auto myCollection = myTenant[collectionName]) {
+      if (auto myCollection = myTenant.collection(collectionName)) {
         debug writeln("In DCMSDeleteActionController: collection "~collectionName);
 
         if (auto entity = myCollection.createFromTemplate) {

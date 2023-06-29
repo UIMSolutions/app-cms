@@ -72,11 +72,11 @@ override void jsCode(STRINGAA options = null) {
     debugMethodCall(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || hasRedirect) { return false; }    
 
-    auto mySession = manager.session(options);
+    auto mySession = cast(DSession)manager.session(options);
     debug writeln("In DCMSCreateDCMSCreatePageControllerAction: mySession "~mySession.id.toString);
     if (mySession.isNull) return false;
 
-    if (auto tenant = entityBase.tenant(mySession.site)) {
+    if (auto tenant = entityBase.tenant(mySession.site.id.toString)) {
       debug writeln("In DCMSCreatePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {

@@ -77,11 +77,11 @@ class DCMSUpdatePageController : DPageController {
     debugMethodCall(moduleName!DCMSUpdatePageController~":DCMSUpdatePageController::beforeResponse");
     if (super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
-    auto mySession = sessionManager.session(options);
+    auto mySession = manager.session(options);
     debug writeln("In DCMSCreateDCMSUpdatePageControllerAction: mySession "~mySession.id.toString);
     if (mySession.isNull) { return false; }
 
-    if (auto tenant = database[mySession.site]) {
+    if (auto tenant = entityBase[mySession.site]) {
       debug writeln("In DCMSUpdatePageController: tenant "/* ~tenant.name */);
 
       if (auto collection = tenant[collectionName]) {

@@ -25,8 +25,8 @@ class DCMSOffersIndexPageController : DCMSIndexPageController {
       return false; 
     }
 
-    auto db = this.database;
-    if (db) { debug writeln("Database found"); }
+    auto myEntityBase = this.entityBase;
+    if (myEntityBase) { debug writeln("Database found"); }
     else { 
       this.error("Database missing"); 
       return false; }
@@ -34,7 +34,7 @@ class DCMSOffersIndexPageController : DCMSIndexPageController {
     if (auto entitiesView = cast(DCMSIndexView)this.view) {
       debug writeln("entitiesView found");
 
-      auto dbEntities = db["uim", "cms_offers"].findMany();
+      auto dbEntities = myEntityBase.tenant("uim").collection("cms_offers").findMany();
       debug writeln("Found entities: ", dbEntities.length);
 
       entitiesView

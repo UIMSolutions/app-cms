@@ -1,2 +1,1 @@
-# Package 📦 apps.cms.components
-
+# Package 📦 apps.cms.views.components

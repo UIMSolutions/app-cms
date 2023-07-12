@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.index;
 import apps.cms;
 @safe:
 
-class DCMSIndexPageController : DPageController {
-  mixin(ControllerThis!("CMSIndexPageController"));
+class DIndexPageController : DPageController {
+  mixin(ControllerThis!("IndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -15,7 +15,7 @@ class DCMSIndexPageController : DPageController {
   }
 
   override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse");
+    debugMethodCall(moduleName!DIndexPageController~":DIndexPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
@@ -97,6 +97,6 @@ class DCMSIndexPageController : DPageController {
       /// TODO
     }}
 }
-mixin(ControllerCalls!("CMSIndexPageController"));
+mixin(ControllerCalls!("IndexPageController"));
 
 

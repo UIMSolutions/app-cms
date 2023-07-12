@@ -14,7 +14,7 @@ class DCMSUpdateActionController : DActionController {
     debug writeln("In DCMSUpdateActionController: mySession "~mySession.httpSessionId);
     if (mySession is null) return false;
 
-    if (auto myTenant = entityBase.tenant(mySession.site)) {
+    if (auto myTenant = entityBase.tenant(mySession.site.name)) {
       debug writeln("In DCMSUpdateActionController: tenant "/* ~tenant.name */);
 
       if (auto myCollection = myTenant.collection(collectionName)) {

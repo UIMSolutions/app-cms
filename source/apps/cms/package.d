@@ -47,8 +47,11 @@ static this() { // Create and init app
       this
         .name("cmsApp");  
 
+      debug writeln("In %s: Create view & controllers".format(name));
       foreach(entityName; ["Blog", "Glossary", "Link", "News", "Offer", "Theme"]) {      
         foreach(crudName; ["list", "create", "read", "update", "update", "delete"]) {  
+
+          debug writeln("In %s: Create view %s".format(name, crudName~entityName));
           auto myView = CMSView;
           myView
             .pageHeader(
@@ -60,10 +63,11 @@ static this() { // Create and init app
             .pageFooter(MVCPageFooterViewComponent)      
             .rootPath("/cms");
           
-          this.views.add(crudName~entityName, myView);
+          this.addView(crudName~entityName, myView);
 
+          debug writeln("In %s: Create controller %s".format(name, crudName~entityName));
           auto myController = PageController.view(myView);
-          this.controllers.add(crudName~entityName, myController);
+          this.addController(crudName~entityName, myController);
 
           auto myPath = ("/"~entityName~"/"~crudName).toLower;
           this.addRoute(Route(myPath, HTTPMethod.GET, myController));
@@ -76,20 +80,22 @@ static this() { // Create and init app
       }
 
       writeln("In App %s registered views:".format(name));
-      writeln(views.keys);
+      writeln(viewNames);
 
       writeln("In App %s registered controllers:".format(name));
-      writeln(controllers.keys);
+      writeln(controllerNames);
     }
   };
 
-  AppRegistry.register("apps.cms",  
-    myApp
-      .rootPath("/apps/cms")
-      .importTranslations()
-      .addRoute(Route("", HTTPMethod.GET, CMSIndexPageController))
-      .addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController))
-  );
+  with (myApp) {
+      rootPath("/apps/cms");
+      importTranslations();
+      addRoute(Route("", HTTPMethod.GET, CMSIndexPageController));
+      addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController));
+  }
+  
+  debug writeln("In App %s Registered App:".format(myApp.name));
+  AppRegistry.register("apps.cms",  myApp);
 }
 
 @safe:

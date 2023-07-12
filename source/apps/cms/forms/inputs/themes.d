@@ -20,8 +20,6 @@ class DCMSThemesFormInput : DFormInput {
   }
   mixin(SProperty!("DEntity[]", "themes"));
 
-  mixin EntityBaseTemplate;
-
   override void beforeH5(STRINGAA options = null) { 
     super.beforeH5(options);
 

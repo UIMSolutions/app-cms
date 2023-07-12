@@ -88,10 +88,13 @@ static this() { // Create and init app
   };
 
   with (myApp) {
-      rootPath("/apps/cms");
-      importTranslations();
-      addRoute(Route("", HTTPMethod.GET, CMSIndexPageController));
-      addRoute(Route("/", HTTPMethod.GET, CMSIndexPageController));
+      .rootPath("/apps/cms");
+      .importTranslations()
+      .addRoutes(
+        Route("", HTTPMethod.GET, IndexPageController),
+        Route("/", HTTPMethod.GET, IndexPageController)
+      )
+    );
   }
   
   debug writeln("In App %s Registered App:".format(myApp.name));

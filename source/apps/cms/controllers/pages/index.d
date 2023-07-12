@@ -3,8 +3,8 @@ module apps.cms.controllers.pages.index;
 import apps.cms;
 @safe:
 
-class DIndexPageController : DPageController {
-  mixin(ControllerThis!("IndexPageController"));
+class DCMSIndexPageController : DPageController {
+  mixin(ControllerThis!("CMSIndexPageController"));
 
   override void initialize(Json configSettings = Json(null)) {
     super.initialize(configSettings);
@@ -15,7 +15,7 @@ class DIndexPageController : DPageController {
   }
 
   override bool beforeResponse(STRINGAA options = null) {
-    debugMethodCall(moduleName!DIndexPageController~":DIndexPageController::beforeResponse");
+    debugMethodCall(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse");
     if (!super.beforeResponse(options) || hasError || "redirect" in options) { return false; }
 
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
@@ -26,7 +26,7 @@ class DIndexPageController : DPageController {
     auto mySession = manager.session(options);
     auto mySite    = mySession.site;
       
-    // debug writeln(moduleName!DCMSCreatePageController~":DCMSCreatePageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
+    // debug writeln(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
     auto entities = entityBase.tenant(site.name).collection(collectionName).findMany;
 
     auto poolId = uniform(1, 1_000_000_000);
@@ -97,6 +97,6 @@ class DIndexPageController : DPageController {
       /// TODO
     }}
 }
-mixin(ControllerCalls!("IndexPageController"));
+mixin(ControllerCalls!("CMSIndexPageController"));
 
 

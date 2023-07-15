@@ -8,7 +8,7 @@ public import apps.cms.layouts.layout;
 
 /*     new class DH5AppLayout {
 
-    override string toString(DH5APPPageController page, string[string] reqParameters) {
+    override string toString(DH5PageController page, string[string] reqParameters) {
       // debug writeln("in app.grundschutz.layout");
       // debug writeln(page.scripts.map!(a => a.toString));
 

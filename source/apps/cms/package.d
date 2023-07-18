@@ -89,7 +89,7 @@ static this() { // Create and init app
 
   with(myApp) {
     name("appCMS");
-    rootPath("/apps/cms");
+    rootPath("apps/cms");
     importTranslations();
     addRoutes(
       Route("", HTTPMethod.GET, CMSIndexPageController),

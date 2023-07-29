@@ -2,8 +2,10 @@ module apps.cms;
 
 mixin(ImportPhobos!());
 
-// Dub
-public import vibe.d;
+// External
+public {
+  import vibe.d;
+}
 
 // UIM
 public {
@@ -48,8 +50,8 @@ static this() { // Create and init app
         .name("cmsApp");  
 
       debug writeln("In %s: Create view & controllers".format(name));
-      foreach(entityName; ["Blog", "Glossary", "Link", "News", "Offer", "Theme"]) {      
-        foreach(crudName; ["list", "create", "read", "update", "update", "delete"]) {  
+      foreach(entityName; ["blogs", "glossary", "links", "news", "offer", "themes"]) {      
+        foreach(crudName; ["list", "create", "read", "update", "delete"]) {  
 
           debug writeln("In %s: Create view %s".format(name, crudName~entityName));
           auto myView = CMSView;
@@ -57,24 +59,25 @@ static this() { // Create and init app
             .pageHeader(
               PageHeaderViewComponent
                 .rootPath(rootPath)
-                .title("CMS -> "~crudName~" -> "~entityName)
+                .title("CMS -> "~entityName ~"->"~crudName)
             )
             .pageBody(PageBodyViewComponent)
             .pageFooter(MVCPageFooterViewComponent)      
             .rootPath("/cms");
           
           this.addView(crudName~entityName, myView);
+          auto controllerName = (crudName == "list" ? "cms."~entityName : "cms."~entityName~"."~crudName);
 
-          debug writeln("In %s: Create controller %s".format(name, crudName~entityName));
+          debug writeln("In %s: Create controller %s".format(name, controllerName));
           auto myController = PageController.view(myView);
-          this.addController(crudName~entityName, myController);
+          this.addController(controllerName, myController);
 
-          auto myPath = ("/"~entityName~"/"~crudName).toLower;
-          this.addRoute(Route(myPath, HTTPMethod.GET, myController));
+          auto myPath = (crudName == "list" ? "/"~entityName : "/"~entityName~"/"~crudName);
+          this.addRoute(Route(myPath, HTTPMethod.GET, controller(controllerName)));
           if (crudName == "create" || crudName == "update" || crudName == "delete") {
             auto myAction = CMSActionController;
             this.actions.add(crudName~entityName, myAction);
-            this.addRoute(Route(myPath~"_action", HTTPMethod.POST, myAction));
+            this.addRoute(Route(myPath~"_action", HTTPMethod.POST, controller(controllerName)));
           }
         }
       }
@@ -91,9 +94,12 @@ static this() { // Create and init app
     name("appCMS");
     rootPath("apps/cms");
     importTranslations();
+    addControllers(
+      ["cms.index": CMSIndexPageController]
+    );
     addRoutes(
-      Route("", HTTPMethod.GET, CMSIndexPageController),
-      Route("/", HTTPMethod.GET, CMSIndexPageController)
+      Route("", HTTPMethod.GET, controller("cms.index")),
+      Route("/", HTTPMethod.GET, controller("cms.index"))
     );
   }
 
@@ -103,67 +109,3 @@ static this() { // Create and init app
   AppRegistry.register("apps.cms",  myApp);
 }
 
-@safe:
-auto editorSummary = `const editorSummary = KothingEditor.create("entity_summary", {
-  display: "block",
-  width: "100%",
-  height: "auto",
-  popupDisplay: "full",
-  katex: katex,
-  toolbarItem: [
-    ["undo", "redo"],
-    ["font", "fontSize", "formatBlock"],
-    ["bold", "underline", "italic", "strike", "subscript", "superscript", "fontColor", "hiliteColor"],
-    ["outdent", "indent", "align", "list", "horizontalRule"],
-    ["link", "table", "image", "audio", "video"],
-    ["lineHeight", "paragraphStyle", "textStyle"],
-    ["showBlocks", "codeView"],
-    ["math"],
-    ["preview", "print", "fullScreen"],
-    ["save", "template"],
-    ["removeFormat"],
-  ],
-  templates: [
-    {
-      name: "Template-1",
-      html: "<p>HTML source1</p>",
-    },
-    {
-      name: "Template-2",
-      html: "<p>HTML source2</p>",
-    },
-  ],
-  charCounter: true,
-});`;
-
-auto editorText = `const editorText = KothingEditor.create("entity_text", {
-  display: "block",
-  width: "100%",
-  height: "auto",
-  popupDisplay: "full",
-  katex: katex,
-  toolbarItem: [
-    ["undo", "redo"],
-    ["font", "fontSize", "formatBlock"],
-    ["bold", "underline", "italic", "strike", "subscript", "superscript", "fontColor", "hiliteColor"],
-    ["outdent", "indent", "align", "list", "horizontalRule"],
-    ["link", "table", "image", "audio", "video"],
-    ["lineHeight", "paragraphStyle", "textStyle"],
-    ["showBlocks", "codeView"],
-    ["math"],
-    ["preview", "print", "fullScreen"],
-    ["save", "template"],
-    ["removeFormat"],
-  ],
-  templates: [
-    {
-      name: "Template-1",
-      html: "<p>HTML source1</p>",
-    },
-    {
-      name: "Template-2",
-      html: "<p>HTML source2</p>",
-    },
-  ],
-  charCounter: true,
-});`;

@@ -10,8 +10,8 @@ class DCMSIndexPageController : DPageController {
     super.initialize(configSettings);
 
     this
-      /* .checks([AppSessionHasSessionCheck]) */
       .view(CMSIndexView(this));
+      /* .checks([AppSessionHasSessionCheck]) */
   }
 
   override bool beforeResponse(STRINGAA options = null) {
@@ -20,19 +20,19 @@ class DCMSIndexPageController : DPageController {
 
     // AppSessionHasSiteCheckId(this).check(_request, _response, reqParameters);
 
-    this.view(
-      CMSIndexView(this));
+    debug writeln("Manager ", (manager ? "exists" : "missing"));
+    debug writeln("Looking for current Session");
+    if (auto mySession = manager.session(options)) {
+      debug writeln("Found current Session");
+      auto mySite    = mySession.site;
+        
+      // debug writeln(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
+      auto entities = entityBase.tenant(site.name).collection(collectionName).findMany;
 
-    auto mySession = manager.session(options);
-    auto mySite    = mySession.site;
-      
-    // debug writeln(moduleName!DCMSIndexPageController~":DCMSIndexPageController::beforeResponse - Looking for entities in ", site.name, ":", collectionName);
-    auto entities = entityBase.tenant(site.name).collection(collectionName).findMany;
-
-    auto poolId = uniform(1, 1_000_000_000);
-    entitiesPool[poolId] = entities;
-    options["poolId"] = to!string(poolId);
-
+      auto poolId = uniform(1, 1_000_000_000);
+      entitiesPool[poolId] = entities;
+      options["poolId"] = to!string(poolId);
+    }
     /* if (auto appSession = getAppSession(options)) {      
       debug writeln(appSession.debugInfo);
       auto session = appSession.session; 

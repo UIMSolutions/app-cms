@@ -22,12 +22,11 @@
 	],
 	"targetType": "library",
 	"dependencies": {
-		"colored": "~>0.0.31",
-		"vibe-d": "~>0.9.6"
+		"colored": "~>0.0.27",
+		"vibe-d": "~>0.9.7",
+		"uim": "~>24.1.2"
 	},
 	"importPaths": [
-		"../../LIBS/uim-core",
-		"../../LIBS/uim-oop",
 		"../../LIBS/uim-css",
 		"../../LIBS/uim-mvc",
 		"../../LIBS/uim-html",
@@ -49,8 +48,6 @@
 		"./"
 	],
 	"sourcePaths": [
-		"../../LIBS/uim-core",
-		"../../LIBS/uim-oop",
 		"../../LIBS/uim-css",
 		"../../LIBS/uim-mvc",
 		"../../LIBS/uim-html",

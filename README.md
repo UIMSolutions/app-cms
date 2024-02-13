@@ -1,1 +1,2 @@
 # App 🎁 app-cms
+CMS stands for **Content Management System**, which is a software or service that allows users to create, edit, organize, display, and deliver digital content for various media formats, such as websites, apps, digital signage, etc. Some examples of popular CMS are WordPress, Joomla, TYPO3, Drupal, Wix.com, Shopify, and Adobe.  CMS can have different features and functions depending on the purpose and design of the system. CMS can also be classified into different types based on the level of dynamism and staticity of the content. 
